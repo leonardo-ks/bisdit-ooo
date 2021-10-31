@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
     <h5>Produk yang cocok untuk kolega</h5>
     <div class="row row-cols-4 align-items-center">
         <div class="col">
@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
     <h5>Produk yang cocok untuk keluarga</h5>
     <div class="row row-cols-4 align-items-center">
         <div class="col">
@@ -123,7 +123,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
     <h5>Produk yang cocok untuk sendiri</h5>
     <div class="row row-cols-4 align-items-center">
         <div class="col">

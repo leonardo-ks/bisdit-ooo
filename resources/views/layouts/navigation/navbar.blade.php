@@ -17,7 +17,7 @@
               <li><a class="dropdown-item" href="#">Tekstur</a></li>
             </ul>
           </li>
-          <li><a href="#" class="nav-link px-2 link-dark">Mitra</a></li>
+          <li><a href="#" class="nav-link px-2 link-secondary">Mitra</a></li>
         </ul>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
