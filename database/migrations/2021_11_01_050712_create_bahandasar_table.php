@@ -17,7 +17,7 @@ class CreateBahandasarTable extends Migration
             $table->id('idbahan');
             $table->string('namabahan',50);
             $table->string('gambarbahan',255);
-            $table->string('pantangan',255);
+            $table->string('pantangan',255)->nullable();
             $table->timestamps();
         });
     }
