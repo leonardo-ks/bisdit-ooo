@@ -14,7 +14,10 @@ class CreateLokasiTable extends Migration
     public function up()
     {
         Schema::create('lokasi', function (Blueprint $table) {
-            $table->id();
+            $table->id('idlokasi');
+            $table->string('kota',25);
+            $table->string('provinsi',25);
+            $table->string('gambarlokasi',255);
             $table->timestamps();
         });
     }

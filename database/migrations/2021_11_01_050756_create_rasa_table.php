@@ -14,7 +14,8 @@ class CreateRasaTable extends Migration
     public function up()
     {
         Schema::create('rasa', function (Blueprint $table) {
-            $table->id();
+            $table->id('idrasa');
+            $table->string('namarasa',25);
             $table->timestamps();
         });
     }

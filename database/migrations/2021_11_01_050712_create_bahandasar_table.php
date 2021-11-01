@@ -14,7 +14,10 @@ class CreateBahandasarTable extends Migration
     public function up()
     {
         Schema::create('bahandasar', function (Blueprint $table) {
-            $table->id();
+            $table->id('idbahan');
+            $table->string('namabahan',50);
+            $table->string('gambarbahan',255);
+            $table->string('pantangan',255);
             $table->timestamps();
         });
     }

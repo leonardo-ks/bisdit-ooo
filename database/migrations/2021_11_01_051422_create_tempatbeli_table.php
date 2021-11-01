@@ -14,7 +14,12 @@ class CreateTempatbeliTable extends Migration
     public function up()
     {
         Schema::create('tempatbeli', function (Blueprint $table) {
-            $table->id();
+            $table->id('idtempatbeli');
+            $table->string('merk',25);
+            $table->string('varianjual',25);
+            $table->foreign('idoleh')->references('idoleh')->on('varianoleh');
+            $table->foreign('idlokasi')->references('idlokasi')->on('lokasi');
+            $table->foreign('idmitra')->references('idmitra')->on('mitra');
             $table->timestamps();
         });
     }

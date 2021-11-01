@@ -14,7 +14,8 @@ class CreateTeksturTable extends Migration
     public function up()
     {
         Schema::create('tekstur', function (Blueprint $table) {
-            $table->id();
+            $table->id('idtekstur');
+            $table->string('namatekstur',25);
             $table->timestamps();
         });
     }

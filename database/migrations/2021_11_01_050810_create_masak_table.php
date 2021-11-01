@@ -14,7 +14,8 @@ class CreateMasakTable extends Migration
     public function up()
     {
         Schema::create('masak', function (Blueprint $table) {
-            $table->id();
+            $table->id('idmasak');
+            $table->string('namamasak',25);
             $table->timestamps();
         });
     }

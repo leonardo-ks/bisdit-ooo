@@ -14,7 +14,24 @@ class CreateVarianolehTable extends Migration
     public function up()
     {
         Schema::create('varianoleh', function (Blueprint $table) {
-            $table->id();
+            $table->id('idoleh');
+            $table->string('namaoleh',25);
+            $table->string('namalain',255)->nullable();
+            $table->string('deskripsioleh',255);
+            $table->foreign('idtipe')->references('idtipe')->on('tipeoleh');
+            $table->foreign('idrasa')->references('idrasa')->on('rasa');
+            $table->foreign('idtekstur')->references('idtekstur')->on('tekstur');
+            $table->foreign('idbahan')->references('idbahan')->on('bahandasar');
+            $table->string('komposisi',255);
+            $table->foreign('idmasak')->references('idmasak')->on('masak');
+            $table->foreign('idlokasi')->references('idlokasi')->on('lokasi');
+            $table->string('harga',25);
+            $table->boolean('statushalal');
+            $table->string('kadarluarsa',25);
+            $table->string('carapenyimpanan',255);
+            $table->string('carapenyajian',255);
+            $table->string('trivia',255)->nullable();
+            $table->foreign('idmitra')->references('idmitra')->on('mitra')->nullable();
             $table->timestamps();
         });
     }
