@@ -38,6 +38,7 @@ class CreateVarianolehTable extends Migration
             $table->string('carapenyimpanan',255);
             $table->string('carapenyajian',255);
             $table->string('trivia',255)->nullable();
+            $table->string('namacocok',25);
             $table->bigInteger('idmitra')->unsigned();
             $table->foreign('idmitra')->references('idmitra')->on('mitra')->nullable();
             $table->timestamps();
