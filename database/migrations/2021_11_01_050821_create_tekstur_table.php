@@ -16,6 +16,7 @@ class CreateTeksturTable extends Migration
         Schema::create('tekstur', function (Blueprint $table) {
             $table->id('idtekstur');
             $table->string('namatekstur',25);
+            $table->mediumText('gambartekstur');
             $table->timestamps();
         });
     }

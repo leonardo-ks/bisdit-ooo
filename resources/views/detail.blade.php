@@ -17,7 +17,7 @@ $photos = preg_split("/---/", $v->gambaroleh);
     <div class="carousel-inner">
       @foreach( $photos as $photo )
          <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-             <img class="d-block w-100" src="{{$photo}}">
+             <img class="d-block w-100" src="{{$photo}}" style="height:500px">
          </div>
       @endforeach
     </div>

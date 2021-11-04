@@ -16,6 +16,7 @@ class CreateRasaTable extends Migration
         Schema::create('rasa', function (Blueprint $table) {
             $table->id('idrasa');
             $table->string('namarasa',25);
+            $table->mediumText('gambarasa');
             $table->timestamps();
         });
     }

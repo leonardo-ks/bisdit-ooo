@@ -17,6 +17,7 @@ class CreateVarianolehTable extends Migration
             $table->id('idoleh');
             $table->string('namaoleh',25);
             $table->string('namalain',255)->nullable();
+            $table->text('gambarutama');
             $table->mediumText('gambaroleh');
             $table->text('deskripsioleh');
             $table->bigInteger('idtipe')->unsigned();

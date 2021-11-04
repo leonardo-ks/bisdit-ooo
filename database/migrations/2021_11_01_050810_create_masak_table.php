@@ -16,6 +16,7 @@ class CreateMasakTable extends Migration
         Schema::create('masak', function (Blueprint $table) {
             $table->id('idmasak');
             $table->string('namamasak',25);
+            $table->mediumText('gambarmasak');
             $table->timestamps();
         });
     }
