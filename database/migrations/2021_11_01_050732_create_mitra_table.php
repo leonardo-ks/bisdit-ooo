@@ -19,8 +19,8 @@ class CreateMitraTable extends Migration
             $table->string('kontak',25);
             $table->bigInteger('idlokasi')->unsigned();
             $table->foreign('idlokasi')->references('idlokasi')->on('lokasi');
-            $table->string('logo',255);
-            $table->string('deskripsimitra',255);
+            $table->mediumText('logo');
+            $table->text('deskripsimitra');
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ class CreateBahandasarTable extends Migration
         Schema::create('bahandasar', function (Blueprint $table) {
             $table->id('idbahan');
             $table->string('namabahan',50);
-            $table->string('gambarbahan',255);
-            $table->string('pantangan',255)->nullable();
+            $table->mediumText('gambarbahan');
+            $table->text('pantangan')->nullable();
             $table->timestamps();
         });
     }

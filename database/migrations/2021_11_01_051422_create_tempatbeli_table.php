@@ -16,7 +16,7 @@ class CreateTempatbeliTable extends Migration
         Schema::create('tempatbeli', function (Blueprint $table) {
             $table->id('idtempatbeli');
             $table->string('merk',25);
-            $table->string('gambarproduk',255);
+            $table->mediumText('gambarproduk');
             $table->string('varianjual',25);
             $table->bigInteger('idoleh')->unsigned();
             $table->foreign('idoleh')->references('idoleh')->on('varianoleh');

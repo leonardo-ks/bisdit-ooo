@@ -17,8 +17,8 @@ class CreateVarianolehTable extends Migration
             $table->id('idoleh');
             $table->string('namaoleh',25);
             $table->string('namalain',255)->nullable();
-            $table->string('gambaroleh',255);
-            $table->string('deskripsioleh',255);
+            $table->mediumText('gambaroleh');
+            $table->text('deskripsioleh');
             $table->bigInteger('idtipe')->unsigned();
             $table->foreign('idtipe')->references('idtipe')->on('tipeoleh');
             $table->bigInteger('idrasa')->unsigned();
@@ -34,13 +34,13 @@ class CreateVarianolehTable extends Migration
             $table->foreign('idlokasi')->references('idlokasi')->on('lokasi');
             $table->string('harga',25);
             $table->boolean('statushalal');
-            $table->string('kadarluarsa',25);
+            $table->string('kadarluarsa');
             $table->string('carapenyimpanan',255);
             $table->string('carapenyajian',255);
-            $table->string('trivia',255)->nullable();
+            $table->text('trivia')->nullable();
             $table->string('namacocok',25);
-            $table->bigInteger('idmitra')->unsigned();
-            $table->foreign('idmitra')->references('idmitra')->on('mitra')->nullable();
+            $table->bigInteger('idmitra')->unsigned()->nullable();
+            $table->foreign('idmitra')->references('idmitra')->on('mitra');
             $table->timestamps();
         });
     }

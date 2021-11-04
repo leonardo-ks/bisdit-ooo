@@ -17,7 +17,7 @@ class CreateLokasiTable extends Migration
             $table->id('idlokasi');
             $table->string('kota',25);
             $table->string('provinsi',25);
-            $table->string('gambarlokasi',255);
+            $table->mediumText('gambarlokasi');
             $table->timestamps();
         });
     }
