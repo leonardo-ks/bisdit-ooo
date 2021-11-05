@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('detail','App\Http\Controllers\detailController@caro');
+Route::get('varianoleh/{idoleh}','App\Http\Controllers\indexController@detailvarianoleh');
