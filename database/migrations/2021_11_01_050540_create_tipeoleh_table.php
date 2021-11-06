@@ -16,6 +16,7 @@ class CreateTipeolehTable extends Migration
         Schema::create('tipeoleh', function (Blueprint $table) {
             $table->id('idtipe');
             $table->string('namatipe',25);
+            $table->text('deskripsitipe');
             $table->mediumText('gambartipe',255);
             $table->timestamps();
         });

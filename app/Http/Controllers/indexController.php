@@ -22,7 +22,7 @@ class indexController extends Controller
         ->join('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
         ->where('idoleh',$idoleh)
         ->get();
-        return view('varianoleh', ['pos' => $varianoleh]);
+        return view('varianoleh', ['varianoleh' => $varianoleh]);
     }
 
 }
