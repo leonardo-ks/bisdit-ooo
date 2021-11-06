@@ -40,7 +40,7 @@ class CreateVarianolehTable extends Migration
             $table->string('carapenyajian',255);
             $table->text('trivia')->nullable();
             $table->string('namacocok',25);
-            $table->bigInteger('idmitra')->unsigned()->nullable();
+            $table->bigInteger('idmitra')->nullable()->unsigned();
             $table->foreign('idmitra')->references('idmitra')->on('mitra');
             $table->timestamps();
         });

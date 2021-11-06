@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class indexController extends Controller
 {
-    //
+    //untuk function tembatbeli jangan lupa dimitra di left join
 
     public function detailvarianoleh($idoleh)
     {
@@ -16,7 +16,7 @@ class indexController extends Controller
         ->join('bahandasar', 'bahandasar.idbahan', '=', 'varianoleh.idbahan')
         ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
         ->join('masak', 'masak.idmasak', '=', 'varianoleh.idmasak')
-        ->join('mitra', 'mitra.idmitra', '=', 'varianoleh.idmitra')
+        ->leftjoin('mitra', 'mitra.idmitra', '=', 'varianoleh.idmitra')
         ->join('rasa', 'rasa.idrasa', '=', 'rasa.idrasa')
         ->join('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
         ->join('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
