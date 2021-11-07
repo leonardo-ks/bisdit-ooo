@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GeoLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('detail','App\Http\Controllers\detailController@caro');
-Route::get('varianoleh/{idoleh}','App\Http\Controllers\indexController@detailvarianoleh');
+Route::get('/', 'App\Http\Controllers\indexController@index');
+Route::get('detail', 'App\Http\Controllers\detailController@caro');
+Route::get('varianoleh/{idoleh}', 'App\Http\Controllers\indexController@detailvarianoleh');

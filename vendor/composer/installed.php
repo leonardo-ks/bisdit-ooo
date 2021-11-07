@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v8.6.5',
-        'version' => '8.6.5.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9be834bc1c9afd8039e484962b4b055cfb29e575',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -26,6 +26,15 @@
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
             'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+            'dev_requirement' => false,
+        ),
+        'composer/ca-bundle' => array(
+            'pretty_version' => '1.3.1',
+            'version' => '1.3.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/./ca-bundle',
+            'aliases' => array(),
+            'reference' => '4c679186f2aca4ab6a0f1b0b9cf9252decb44d0b',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -146,6 +155,15 @@
             'install_path' => __DIR__ . '/../fruitcake/laravel-cors',
             'aliases' => array(),
             'reference' => 'a8ccedc7ca95189ead0e407c43b530dc17791d6a',
+            'dev_requirement' => false,
+        ),
+        'geoip2/geoip2' => array(
+            'pretty_version' => 'v2.11.0',
+            'version' => '2.11.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../geoip2/geoip2',
+            'aliases' => array(),
+            'reference' => 'd01be5894a5c1a3381c58c9b1795cd07f96c30f7',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -395,12 +413,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.5',
-            'version' => '8.6.5.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9be834bc1c9afd8039e484962b4b055cfb29e575',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -473,6 +491,24 @@
             'install_path' => __DIR__ . '/../league/mime-type-detection',
             'aliases' => array(),
             'reference' => 'b38b25d7b372e9fddb00335400467b223349fd7e',
+            'dev_requirement' => false,
+        ),
+        'maxmind-db/reader' => array(
+            'pretty_version' => 'v1.11.0',
+            'version' => '1.11.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maxmind-db/reader',
+            'aliases' => array(),
+            'reference' => 'b1f3c0699525336d09cc5161a2861268d9f2ae5b',
+            'dev_requirement' => false,
+        ),
+        'maxmind/web-service-common' => array(
+            'pretty_version' => 'v0.8.1',
+            'version' => '0.8.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maxmind/web-service-common',
+            'aliases' => array(),
+            'reference' => '32f274051c543fc865e5a84d3a2c703913641ea8',
             'dev_requirement' => false,
         ),
         'mockery/mockery' => array(
@@ -769,8 +805,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -973,6 +1009,15 @@
             'aliases' => array(),
             'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
             'dev_requirement' => true,
+        ),
+        'stevebauman/location' => array(
+            'pretty_version' => 'v6.2.0',
+            'version' => '6.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../stevebauman/location',
+            'aliases' => array(),
+            'reference' => 'cc2e63fc2b64f17d4404fe206612bc67dca16b10',
+            'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',

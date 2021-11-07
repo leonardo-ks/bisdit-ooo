@@ -1,15 +1,13 @@
 @extends('layouts.master')
 @section('content')
 
-    <div class="container mb-3">
+    <div class="container">
         <div class="card px-5 mx-5">
             <!-- Card stats -->
-            @foreach ($varianoleh as $v)
-
+            @foreach ($varianoleh->slice(0, 1) as $v)
                 @php
                     $photos = preg_split('/---/', $v->gambaroleh);
                 @endphp
-
                 <div id="demo" class="carousel slide mt-4" data-bs-ride="carousel">
 
                     <div class="carousel-indicators">
@@ -45,12 +43,17 @@
                             <div class="row">
                                 <div class="col">
                                     <h3 class="card-title">{{ $v->namaoleh }}</h3>
-                                    <p class="fs-5 fw-light fst-italic lh-1">({{ $v->namalain }}) </p>
+                                    @if ($v->namalain != null)
+                                        <p class="fs-5 fw-light fst-italic lh-1">({{ $v->namalain }}) </p>
+                                    @endif
                                 </div>
-                                <div class="col">
-                                    <img src="https://cdn.discordapp.com/attachments/906163180328325130/906801367820165140/logohalal.png"
-                                        style="width:64px;height:auto;">
-                                </div>
+                                @if ($v->statushalal = 1)
+                                    <div class="col">
+                                        <img src="https://cdn.discordapp.com/attachments/906163180328325130/906801367820165140/logohalal.png"
+                                            style="width:64px;height:auto;">
+                                    </div>
+                                @endif
+
 
                             </div>
 
@@ -195,7 +198,7 @@
                             @endphp
                             <div class="container mt-2">
                                 @foreach ($trivia as $triv)
-                                    {{ $triv }}<br>
+                                    <p class="{{ $loop->index % 2 == 0 ? 'fw-bold' : '' }}">{{ $triv }}<br></p>
                                 @endforeach
                             </div>
                         </div>
@@ -203,7 +206,8 @@
                             @foreach ($tempatbeli as $t)
 
                                 <div class="card mt-2" style="width: 18rem;">
-                                    <img src="{{ $t->gambarproduk }}" class="card-img-top d-block ratio ratio-16x9 rounded"
+                                    <img src="{{ $t->gambarproduk }}"
+                                        class="card-img-top d-block ratio ratio-16x9 rounded"
                                         style="width: object-fit: cover">
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $t->merk }}</h5>
@@ -225,13 +229,7 @@
                         </div>
                     </div>
                 </div>
+            @endforeach
         </div>
     </div>
-    @endforeach
-
-
-
-
-
-
 @endsection
