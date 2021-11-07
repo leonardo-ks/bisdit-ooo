@@ -20,16 +20,16 @@ class indexController extends Controller
         ->join('rasa', 'rasa.idrasa', '=', 'rasa.idrasa')
         ->join('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
         ->join('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
-        ->where('idoleh',$idoleh)
+        ->where('varianoleh.idoleh',$idoleh)
         ->get();
 
         $tempatbeli = DB::table('tempatbeli')
         ->join('lokasi','lokasi.idlokasi','=','tempatbeli.idlokasi')
         ->join('varianoleh','varianoleh.idoleh','=','tempatbeli.idoleh')
-        ->where('idoleh',$idoleh)
+        ->where('tempatbeli.idoleh',$idoleh)
         ->get();
 
-        return view('varianoleh', ['varianoleh','tempatbeli' => $varianoleh,$tempatbeli]);
+        return view('varianoleh', ['varianoleh' => $varianoleh,'tempatbeli' => $tempatbeli]);
     }
 
 }

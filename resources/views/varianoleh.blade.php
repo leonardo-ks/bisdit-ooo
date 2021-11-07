@@ -23,7 +23,8 @@
                     <div class="carousel-inner">
                         @foreach ($photos as $photo)
                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <img class="d-block ratio ratio-16x9 rounded" src="{{ $photo }}" style="object-fit: cover;">
+                                <img class="d-block ratio ratio-16x9 rounded" src="{{ $photo }}"
+                                    style="object-fit: cover;">
                             </div>
                         @endforeach
                     </div>
@@ -56,19 +57,20 @@
                         </div>
                         <div class="col d-flex justify-content-end">
                             <div class="align-items-center">
-                                <button type="button" class="btn btn-light btn-lg">64 K <i class="bi bi-heart"></i></button>
+                                <button type="button" class="btn btn-light btn-lg">64 K <i
+                                        class="bi bi-heart"></i></button>
                             </div>
                         </div>
                     </div>
 
                     @php
-                    $deskripsi = preg_split('/---/', $v->deskripsioleh);
+                        $deskripsi = preg_split('/---/', $v->deskripsioleh);
                     @endphp
 
                     @foreach ($deskripsi as $desk)
-                    <p class="card-text">
-                    {{$desk}}
-                    </p>
+                        <p class="card-text">
+                            {{ $desk }}
+                        </p>
                     @endforeach
                 </div>
 
@@ -76,19 +78,24 @@
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Detail</button>
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">Detail</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#standard" type="button" role="tab" aria-controls="standard" aria-selected="false">Standar Oleh-oleh</button>
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#standard"
+                                type="button" role="tab" aria-controls="standard" aria-selected="false">Standar
+                                Oleh-oleh</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                          <button class="nav-link" id="trivia-tab" data-bs-toggle="tab" data-bs-target="#trivia" type="button" role="tab" aria-controls="trivia" aria-selected="false">Trivia</button>
+                            <button class="nav-link" id="trivia-tab" data-bs-toggle="tab" data-bs-target="#trivia"
+                                type="button" role="tab" aria-controls="trivia" aria-selected="false">Trivia</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tempat-tab" data-bs-toggle="tab" data-bs-target="#tempat" type="button" role="tab" aria-controls="tempat" aria-selected="false">Tempat Beli</button>
-                          </li>
-                      </ul>
-                      <div class="tab-content" id="myTabContent">
+                            <button class="nav-link" id="tempat-tab" data-bs-toggle="tab" data-bs-target="#tempat"
+                                type="button" role="tab" aria-controls="tempat" aria-selected="false">Tempat Beli</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
                                 <div class="col-8">
@@ -97,45 +104,45 @@
                                             <tr>
                                                 <td>Tipe</td>
                                                 <td>:</td>
-                                                <td>{{$v->namatipe}}</td>
+                                                <td>{{ $v->namatipe }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Rasa</td>
                                                 <td>:</td>
-                                                <td>{{$v->namarasa}}</td>
+                                                <td>{{ $v->namarasa }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Tekstur</td>
                                                 <td>:</td>
-                                                <td>{{$v->namatekstur}}</td>
+                                                <td>{{ $v->namatekstur }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Bahan Dasar</td>
                                                 <td>:</td>
-                                                <td>{{$v->namabahan}}</td>
+                                                <td>{{ $v->namabahan }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Komposisi</td>
                                                 <td>:</td>
-                                                <td>{{$v->komposisi}}</td>
+                                                <td>{{ $v->komposisi }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Cara Masak</td>
                                                 <td>:</td>
-                                                <td>{{$v->namamasak}}</td>
+                                                <td>{{ $v->namamasak }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Harga</td>
                                                 <td>:</td>
-                                                <td>{{$v->harga}}</td>
+                                                <td>{{ $v->harga }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Daerah Asal</td>
                                                 <td>:</td>
-                                                <td>{{$v->kota}}, {{$v->provinsi}}</td>
+                                                <td>{{ $v->kota }}, {{ $v->provinsi }}</td>
                                             </tr>
                                         </tbody>
-                                      </table>
+                                    </table>
                                 </div>
                                 <div class="col"></div>
                             </div>
@@ -150,11 +157,11 @@
                                                 <td>Kadaluwarsa</td>
                                                 <td>:</td>
                                                 @php
-                                                $kadarl = preg_split('/---/', $v->kadarluarsa);
+                                                    $kadarl = preg_split('/---/', $v->kadarluarsa);
                                                 @endphp
                                                 <td>
                                                     @foreach ($kadarl as $kar)
-                                                        {{$kar}}<br>
+                                                        {{ $kar }}<br>
                                                     @endforeach
                                                 </td>
                                             </tr>
@@ -162,22 +169,22 @@
                                                 <td><i class="bi bi-stack"></i></td>
                                                 <td>Cara Penyimpanan</td>
                                                 <td>:</td>
-                                                <td>{{$v->carapenyimpanan}}</td>
+                                                <td>{{ $v->carapenyimpanan }}</td>
                                             </tr>
                                             <tr>
                                                 <td><i class="bi bi-cup"></i></td>
                                                 <td>Cara Penyajian</td>
                                                 <td>:</td>
-                                                <td>{{$v->carapenyajian}}</td>
+                                                <td>{{ $v->carapenyajian }}</td>
                                             </tr>
                                             <tr>
                                                 <td><i class="bi bi-exclamation-diamond-fill"></i></td>
                                                 <td>Pantangan</td>
                                                 <td>:</td>
-                                                <td>{{$v->pantangan}}</td>
+                                                <td>{{ $v->pantangan }}</td>
                                             </tr>
                                         </tbody>
-                                      </table>
+                                    </table>
                                 </div>
                                 <div class="col"></div>
                             </div>
@@ -188,22 +195,37 @@
                             @endphp
                             <div class="container mt-2">
                                 @foreach ($trivia as $triv)
-                                    {{$triv}}<br>
+                                    {{ $triv }}<br>
                                 @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">...</div>
-                      </div>
+                        <div class="tab-pane fade" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">
+                            @foreach ($tempatbeli as $t)
 
+                                <div class="card mt-2" style="width: 18rem;">
+                                    <img src="{{ $t->gambarproduk }}" class="card-img-top d-block ratio ratio-16x9 rounded"
+                                        style="width: object-fit: cover">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $t->merk }}</h5>
+                                        <p class="card-text">Varian yang dijual :</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        @php
+                                            $varianjual = preg_split('/---/', $t->varianjual);
+                                        @endphp
+                                        @foreach ($varianjual as $var)
+                                            <li class="list-group-item">{{ $var }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <div class="card-body">
+                                        <h6><i class="bi bi-geo-alt-fill"></i>{{ $t->kota }}</h6>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-
-
         </div>
-
-
-
-
-
     </div>
     @endforeach
 
