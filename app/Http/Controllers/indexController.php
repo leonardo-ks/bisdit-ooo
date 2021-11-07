@@ -22,7 +22,14 @@ class indexController extends Controller
         ->join('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
         ->where('idoleh',$idoleh)
         ->get();
-        return view('varianoleh', ['varianoleh' => $varianoleh]);
+
+        $tempatbeli = DB::table('tempatbeli')
+        ->join('lokasi','lokasi.idlokasi','=','tempatbeli.idlokasi')
+        ->join('varianoleh','varianoleh.idoleh','=','tempatbeli.idoleh')
+        ->where('idoleh',$idoleh)
+        ->get();
+
+        return view('varianoleh', ['varianoleh','tempatbeli' => $varianoleh,$tempatbeli]);
     }
 
 }

@@ -17,7 +17,7 @@ class CreateTempatbeliTable extends Migration
             $table->id('idtempatbeli');
             $table->string('merk',25);
             $table->mediumText('gambarproduk');
-            $table->string('varianjual',25);
+            $table->text('varianjual');
             $table->bigInteger('idoleh')->unsigned();
             $table->foreign('idoleh')->references('idoleh')->on('varianoleh');
             $table->bigInteger('idlokasi')->unsigned();

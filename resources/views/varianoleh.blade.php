@@ -23,7 +23,7 @@
                     <div class="carousel-inner">
                         @foreach ($photos as $photo)
                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <img class="d-block ratio ratio-16x9" src="{{ $photo }}" style="object-fit: cover;">
+                                <img class="d-block ratio ratio-16x9 rounded" src="{{ $photo }}" style="object-fit: cover;">
                             </div>
                         @endforeach
                     </div>
@@ -84,11 +84,115 @@
                         <li class="nav-item" role="presentation">
                           <button class="nav-link" id="trivia-tab" data-bs-toggle="tab" data-bs-target="#trivia" type="button" role="tab" aria-controls="trivia" aria-selected="false">Trivia</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="tempat-tab" data-bs-toggle="tab" data-bs-target="#tempat" type="button" role="tab" aria-controls="tempat" aria-selected="false">Tempat Beli</button>
+                          </li>
                       </ul>
                       <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                        <div class="tab-pane fade" id="standard" role="tabpanel" aria-labelledby="standard-tab">...</div>
-                        <div class="tab-pane fade" id="trivia" role="tabpanel" aria-labelledby="trivia-tab">...</div>
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-8">
+                                    <table class="table table-borderless mt-2">
+                                        <tbody>
+                                            <tr>
+                                                <td>Tipe</td>
+                                                <td>:</td>
+                                                <td>{{$v->namatipe}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rasa</td>
+                                                <td>:</td>
+                                                <td>{{$v->namarasa}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tekstur</td>
+                                                <td>:</td>
+                                                <td>{{$v->namatekstur}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bahan Dasar</td>
+                                                <td>:</td>
+                                                <td>{{$v->namabahan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Komposisi</td>
+                                                <td>:</td>
+                                                <td>{{$v->komposisi}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cara Masak</td>
+                                                <td>:</td>
+                                                <td>{{$v->namamasak}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Harga</td>
+                                                <td>:</td>
+                                                <td>{{$v->harga}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Daerah Asal</td>
+                                                <td>:</td>
+                                                <td>{{$v->kota}}, {{$v->provinsi}}</td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="standard" role="tabpanel" aria-labelledby="standard-tab">
+                            <div class="row">
+                                <div class="col-10 mt-2">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td><i class="bi bi-clock"></i></td>
+                                                <td>Kadaluwarsa</td>
+                                                <td>:</td>
+                                                @php
+                                                $kadarl = preg_split('/---/', $v->kadarluarsa);
+                                                @endphp
+                                                <td>
+                                                    @foreach ($kadarl as $kar)
+                                                        {{$kar}}<br>
+                                                    @endforeach
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-stack"></i></td>
+                                                <td>Cara Penyimpanan</td>
+                                                <td>:</td>
+                                                <td>{{$v->carapenyimpanan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-cup"></i></td>
+                                                <td>Cara Penyajian</td>
+                                                <td>:</td>
+                                                <td>{{$v->carapenyajian}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-exclamation-diamond-fill"></i></td>
+                                                <td>Pantangan</td>
+                                                <td>:</td>
+                                                <td>{{$v->pantangan}}</td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="trivia" role="tabpanel" aria-labelledby="trivia-tab">
+                            @php
+                                $trivia = preg_split('/---/', $v->trivia);
+                            @endphp
+                            <div class="container mt-2">
+                                @foreach ($trivia as $triv)
+                                    {{$triv}}<br>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">...</div>
                       </div>
 
                 </div>
