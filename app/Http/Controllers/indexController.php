@@ -18,7 +18,7 @@ class indexController extends Controller
         $key = 'pk.025798fb95072c0fb2b76c1ad03e9da6';
         $lat = $location->latitude;
         $lon = $location->longitude;
-        $api_query = 'https://us1.locationiq.com/v1/reverse.php?key=' . $key . '&lat=' . $lat . '&lon=' . $lon . '&accept-language=id&format=json';
+        $api_query = 'https://us1.locationiq.com/v1/reverse.php?key=' . $key . '&lat=' . $lat . '&lon=' . $lon . '&accept-language=ID&format=json';
         $response = @file_get_contents($api_query);
         $decoded = json_decode($response, true);
         $address = $decoded['address'];
