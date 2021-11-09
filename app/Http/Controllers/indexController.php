@@ -44,21 +44,22 @@ class indexController extends Controller
     public function detailvarianoleh($idoleh)
     {
         $varianoleh = DB::table('varianoleh')
-            ->join('bahandasar', 'bahandasar.idbahan', '=', 'varianoleh.idbahan')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->join('masak', 'masak.idmasak', '=', 'varianoleh.idmasak')
+            ->leftjoin('bahandasar', 'bahandasar.idbahan', '=', 'varianoleh.idbahan')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->leftjoin('masak', 'masak.idmasak', '=', 'varianoleh.idmasak')
             ->leftjoin('mitra', 'mitra.idmitra', '=', 'varianoleh.idmitra')
-            ->join('rasa', 'rasa.idrasa', '=', 'rasa.idrasa')
-            ->join('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
-            ->join('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
+            ->leftjoin('rasa', 'rasa.idrasa', '=', 'varianoleh.idrasa')
+            ->leftjoin('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
+            ->leftjoin('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
             ->where('idoleh', $idoleh)
             ->get();
 
         $tempatbeli = DB::table('tempatbeli')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'tempatbeli.idlokasi')
-            ->join('varianoleh', 'varianoleh.idoleh', '=', 'tempatbeli.idoleh')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'tempatbeli.idlokasi')
+            ->leftjoin('varianoleh', 'varianoleh.idoleh', '=', 'tempatbeli.idoleh')
             ->where('tempatbeli.idoleh', $idoleh)
             ->get();
+
         return view('varianoleh', compact('varianoleh', 'tempatbeli'));
     }
 }
