@@ -60,6 +60,16 @@ class indexController extends Controller
             ->where('tempatbeli.idoleh', $idoleh)
             ->get();
 
-        return view('varianoleh', compact('varianoleh', 'tempatbeli'));
+        $provinsi='';
+        foreach($varianoleh as $v){
+            $provinsi= $v->provinsi;
+        }
+        $rekomlokasi= DB::table('varianoleh')
+        ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+        ->select('gambarutama','namaoleh','kota','provinsi')
+        ->where('provinsi',$provinsi)
+        ->get();
+
+        return view('varianoleh', compact('varianoleh', 'tempatbeli','rekomlokasi'));
     }
 }
