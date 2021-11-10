@@ -105,9 +105,9 @@
                                     <table class="table table-borderless mt-2">
                                         <tbody>
                                             <tr>
-                                                <td>Tipe</td>
+                                                <td>Varian Jenis</td>
                                                 <td>:</td>
-                                                <td>{{ $v->namatipe }}</td>
+                                                <td>{{ $v->namavarian }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Rasa</td>
@@ -332,6 +332,109 @@
                     </section>
                 </div>
                 <span class="border-top mb-3"></span>
+
+                <div class="container mb-3">
+
+                    <section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h5>Rekomendasi {{$v->namavarian}} lain yang dapat kamu temukan</h5>
+                                </div>
+                                <div class="col-4 text-end">
+
+                                    <a class="btn btn-primary mb-3 mr-1" data-bs-target="#carouselExampleIndicators2"
+                                        role="button" data-bs-slide="prev">
+                                        <i class="bi bi-arrow-left"></i>
+                                    </a>
+                                    <a class="btn btn-primary mb-3 " data-bs-target="#carouselExampleIndicators2"
+                                        role="button" data-bs-slide="next">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="row">
+
+                                                    @foreach ($rekomvarianjenis->slice(0, 3) as $rek)
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <img class="img-fluid" alt="100%x280"
+                                                                    src={{ $rek->gambarutama }}>
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">{{ $rek->namaoleh }}</h4>
+                                                                    <p class="card-text">{{ $rek->kota }}</p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+
+                                                </div>
+                                            </div>
+                                            @if (count($rekomvarianjenis) > 3)
+
+                                                <div class="carousel-item">
+                                                    <div class="row">
+
+                                                        @foreach ($rekomvarianjenis->slice(3, 3) as $rek)
+                                                                <div class="col-md-4 mb-3">
+                                                                    <div class="card">
+                                                                        <img class="img-fluid" alt="100%x280"
+                                                                            src={{ $rek->gambarutama }}>
+                                                                        <div class="card-body">
+                                                                            <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                            </h4>
+                                                                            <p class="card-text">{{ $rek->kota }}
+                                                                            </p>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                        @endforeach
+
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if (count($rekomvarianjenis) > 6)
+
+                                                <div class="carousel-item">
+                                                    <div class="row">
+
+                                                        @foreach ($rekomvarianjenis->slice(6, 3) as $rek)
+                                                                <div class="col-md-4 mb-3">
+                                                                    <div class="card">
+                                                                        <img class="img-fluid" alt="100%x280"
+                                                                            src={{ $rek->gambarutama }}>
+                                                                        <div class="card-body">
+                                                                            <h4 class="card-title">
+                                                                                {{ $rek->namaoleh }}</h4>
+                                                                            <p class="card-text">{{ $rek->kota }}
+                                                                            </p>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                        @endforeach
+
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
             @endforeach
         </div>
     </div>

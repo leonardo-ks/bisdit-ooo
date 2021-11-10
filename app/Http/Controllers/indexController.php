@@ -50,7 +50,7 @@ class indexController extends Controller
             ->leftjoin('mitra', 'mitra.idmitra', '=', 'varianoleh.idmitra')
             ->leftjoin('rasa', 'rasa.idrasa', '=', 'varianoleh.idrasa')
             ->leftjoin('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
-            ->leftjoin('tipeoleh', 'tipeoleh.idtipe', '=', 'varianoleh.idtipe')
+            ->leftjoin('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
             ->where('idoleh', $idoleh)
             ->get();
 
@@ -70,6 +70,18 @@ class indexController extends Controller
         ->where('provinsi',$provinsi)
         ->get();
 
-        return view('varianoleh', compact('varianoleh', 'tempatbeli','rekomlokasi'));
+        $namavarian='';
+        foreach($varianoleh as $v){
+            $namavarian = $v->namavarian;
+        }
+
+        $rekomvarianjenis= DB::table('varianoleh')
+        ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+        ->leftjoin('varianjenis','varianjenis.id_varian','=','varianoleh.id_varian')
+        ->select('gambarutama','namaoleh','kota','provinsi')
+        ->where('namavarian',$namavarian)
+        ->get();
+
+        return view('varianoleh', compact('varianoleh', 'tempatbeli','rekomlokasi','rekomvarianjenis'));
     }
 }
