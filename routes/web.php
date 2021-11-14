@@ -25,4 +25,5 @@ Route::post('login', [LoginController::class, 'auth']);
 Route::post('logout', [LoginController::class, 'logout']);
 Route::get('register', [RegisterController::class, 'index']);
 Route::post('register', [RegisterController::class, 'store']);
-Route::get('daerahasal',[FilterController::class, 'daerahasal']);
+Route::get('daerahasal', [FilterController::class, 'daerahasal']);
+Route::get('olehbydaerah/{kota}', [FilterController::class, 'olehbydaerah']);

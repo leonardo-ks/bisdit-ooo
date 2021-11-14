@@ -59,10 +59,16 @@
 
                         </div>
                         <div class="col d-flex justify-content-end">
-                            <div class="align-items-center">
-                                <button type="button" class="btn btn-light btn-lg">64 K <i
-                                        class="bi bi-heart"></i></button>
-                            </div>
+                            @auth
+                                <div class="align-items-center">
+                                    <button type="button" class="btn btn-light btn-lg bi bi-heart rtl" href=""> 64 K</button>
+                                </div>
+                            @endauth
+                            @guest
+                                <div class="align-items-center">
+                                    <button type="button" class="btn btn-light btn-lg bi bi-heart rtl" href=""> 64 K</button>
+                                </div>
+                            @endguest
                         </div>
                     </div>
 
@@ -105,44 +111,44 @@
                                     <table class="table table-borderless mt-2">
                                         <tbody>
                                             <tr>
-                                                <td>Varian Jenis</td>
-                                                <td>:</td>
-                                                <td>{{ $v->namavarian }}</td>
+                                                <td class="col-1">Varian Jenis</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->namavarian }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Rasa</td>
-                                                <td>:</td>
-                                                <td>{{ $v->namarasa }}</td>
+                                                <td class="col-1">Rasa</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->namarasa }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Tekstur</td>
-                                                <td>:</td>
-                                                <td>{{ $v->namatekstur }}</td>
+                                                <td class="col-1">Tekstur</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->namatekstur }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Bahan Dasar</td>
-                                                <td>:</td>
-                                                <td>{{ $v->namabahan }}</td>
+                                                <td class="col-1">Bahan Dasar</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->namabahan }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Komposisi</td>
-                                                <td>:</td>
-                                                <td>{{ $v->komposisi }}</td>
+                                                <td class="col-1">Komposisi</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->komposisi }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Cara Masak</td>
-                                                <td>:</td>
-                                                <td>{{ $v->namamasak }}</td>
+                                                <td class="col-1">Cara Masak</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->namamasak }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Harga</td>
-                                                <td>:</td>
-                                                <td>{{ $v->harga }}</td>
+                                                <td class="col-1">Harga</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->harga }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Daerah Asal</td>
-                                                <td>:</td>
-                                                <td>{{ $v->kota }}, {{ $v->provinsi }}</td>
+                                                <td class="col-1">Daerah Asal</td>
+                                                <td class="col-1 text-center">:</td>
+                                                <td class="col-6">{{ $v->kota }}, {{ $v->provinsi }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -202,7 +208,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">
+                        <div class="tab-pane fade mb-3" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">
                             @foreach ($tempatbeli as $t)
 
                                 <div class="card mt-2" style="width: 18rem;">
@@ -262,8 +268,14 @@
                                                                 <img class="img-fluid" alt="100%x280"
                                                                     src={{ $rek->gambarutama }}>
                                                                 <div class="card-body">
-                                                                    <h4 class="card-title">{{ $rek->namaoleh }}</h4>
-                                                                    <p class="card-text">{{ $rek->kota }}</p>
+                                                                    <h5 class="card-title">{{ $rek->namaoleh }}</h5>
+                                                                    <div style='z-index: 2; position: relative;'>
+                                                                        <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                            href="/olehbydaerah/{{ $rek->kota }}"
+                                                                            style='color: inherit;'>
+                                                                            {{ $rek->kota }}
+                                                                        </a>
+                                                                    </div>
                                                                     <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                         class="stretched-link"></a>
                                                                 </div>
@@ -285,10 +297,15 @@
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
-                                                                        <h4 class="card-title">{{ $rek->namaoleh }}
-                                                                        </h4>
-                                                                        <p class="card-text">{{ $rek->kota }}
-                                                                        </p>
+                                                                        <h5 class="card-title">{{ $rek->namaoleh }}
+                                                                        </h5>
+                                                                        <div style='z-index: 2; position: relative;'>
+                                                                            <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                href="/olehbydaerah/{{ $rek->kota }}"
+                                                                                style='color: inherit;'>
+                                                                                {{ $rek->kota }}
+                                                                            </a>
+                                                                        </div>
                                                                         <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                             class="stretched-link"></a>
                                                                     </div>
@@ -311,10 +328,15 @@
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
-                                                                        <h4 class="card-title">
-                                                                            {{ $rek->namaoleh }}</h4>
-                                                                        <p class="card-text">{{ $rek->kota }}
-                                                                        </p>
+                                                                        <h5 class="card-title">
+                                                                            {{ $rek->namaoleh }}</h5>
+                                                                        <div style='z-index: 2; position: relative;'>
+                                                                            <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                href="/olehbydaerah/{{ $rek->kota }}"
+                                                                                style='color: inherit;'>
+                                                                                {{ $rek->kota }}
+                                                                            </a>
+                                                                        </div>
                                                                         <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                             class="stretched-link"></a>
                                                                     </div>
@@ -368,8 +390,14 @@
                                                                 <img class="img-fluid" alt="100%x280"
                                                                     src={{ $rek->gambarutama }}>
                                                                 <div class="card-body">
-                                                                    <h4 class="card-title">{{ $rek->namaoleh }}</h4>
-                                                                    <p class="card-text">{{ $rek->kota }}</p>
+                                                                    <h5 class="card-title">{{ $rek->namaoleh }}</h5>
+                                                                    <div style='z-index: 2; position: relative;'>
+                                                                        <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                            href="/olehbydaerah/{{ $rek->kota }}"
+                                                                            style='color: inherit;'>
+                                                                            {{ $rek->kota }}
+                                                                        </a>
+                                                                    </div>
                                                                     <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                         class="stretched-link"></a>
                                                                 </div>
@@ -391,10 +419,15 @@
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
-                                                                        <h4 class="card-title">{{ $rek->namaoleh }}
-                                                                        </h4>
-                                                                        <p class="card-text">{{ $rek->kota }}
-                                                                        </p>
+                                                                        <h5 class="card-title">{{ $rek->namaoleh }}
+                                                                        </h5>
+                                                                        <div style='z-index: 2; position: relative;'>
+                                                                            <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                href="/olehbydaerah/{{ $rek->kota }}"
+                                                                                style='color: inherit;'>
+                                                                                {{ $rek->kota }}
+                                                                            </a>
+                                                                        </div>
                                                                         <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                             class="stretched-link"></a>
                                                                     </div>
@@ -417,10 +450,15 @@
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
-                                                                        <h4 class="card-title">
-                                                                            {{ $rek->namaoleh }}</h4>
-                                                                        <p class="card-text">{{ $rek->kota }}
-                                                                        </p>
+                                                                        <h5 class="card-title">
+                                                                            {{ $rek->namaoleh }}</h5>
+                                                                        <div style='z-index: 2; position: relative;'>
+                                                                            <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                href="/olehbydaerah/{{ $rek->kota }}"
+                                                                                style='color: inherit;'>
+                                                                                {{ $rek->kota }}
+                                                                            </a>
+                                                                        </div>
                                                                         <a href="/varianoleh/{{ $rek->idoleh }}"
                                                                             class="stretched-link"></a>
                                                                     </div>

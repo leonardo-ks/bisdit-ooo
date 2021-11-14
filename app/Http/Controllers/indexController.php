@@ -26,22 +26,21 @@ class indexController extends Controller
         $olehKolega = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Kolega%')
-            ->limit(9)
+            ->limit(12)
             ->get();
 
         $olehKeluarga = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Keluarga%')
-            ->limit(9)
+            ->limit(12)
             ->get();
 
         $olehPopuler = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('kota', '=', $address['city'])
-            ->limit(9)
+            ->limit(12)
             ->get();
 
         return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler'));
     }
-
 }
