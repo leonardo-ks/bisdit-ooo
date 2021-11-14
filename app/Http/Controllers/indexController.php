@@ -26,16 +26,19 @@ class indexController extends Controller
         $olehKolega = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Kolega%')
+            ->limit(9)
             ->get();
 
         $olehKeluarga = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Keluarga%')
+            ->limit(9)
             ->get();
 
         $olehPopuler = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('kota', '=', $address['city'])
+            ->limit(9)
             ->get();
 
         return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler'));
@@ -60,28 +63,34 @@ class indexController extends Controller
             ->where('tempatbeli.idoleh', $idoleh)
             ->get();
 
-        $provinsi='';
-        foreach($varianoleh as $v){
-            $provinsi= $v->provinsi;
+        $provinsi = '';
+        foreach ($varianoleh as $v) {
+            $provinsi = $v->provinsi;
         }
-        $rekomlokasi= DB::table('varianoleh')
-        ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-        ->select('gambarutama','namaoleh','kota','provinsi')
-        ->where('provinsi',$provinsi)
-        ->get();
+        $rekomlokasi = DB::table('varianoleh')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where([
+                ['provinsi', '=', $provinsi],
+                ['idoleh', '!=', $idoleh],
+            ])
+            ->limit(9)
+            ->get();
 
-        $namavarian='';
-        foreach($varianoleh as $v){
+        $namavarian = '';
+        foreach ($varianoleh as $v) {
             $namavarian = $v->namavarian;
         }
 
-        $rekomvarianjenis= DB::table('varianoleh')
-        ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-        ->leftjoin('varianjenis','varianjenis.id_varian','=','varianoleh.id_varian')
-        ->select('gambarutama','namaoleh','kota','provinsi')
-        ->where('namavarian',$namavarian)
-        ->get();
+        $rekomvarianjenis = DB::table('varianoleh')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->leftjoin('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
+            ->where([
+                ['namavarian', '=', $namavarian],
+                ['idoleh', '!=', $idoleh],
+            ])
+            ->limit(9)
+            ->get();
 
-        return view('varianoleh', compact('varianoleh', 'tempatbeli','rekomlokasi','rekomvarianjenis'));
+        return view('varianoleh', compact('varianoleh', 'tempatbeli', 'rekomlokasi', 'rekomvarianjenis'));
     }
 }

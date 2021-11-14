@@ -240,11 +240,11 @@
                                 </div>
                                 <div class="col-4 text-end">
 
-                                    <a class="btn btn-primary mb-3 mr-1" data-bs-target="#carouselExampleIndicators2"
-                                        role="button" data-bs-slide="prev">
+                                    <a class="btn btn-secondary mb-3 mr-1 btn-sm"
+                                        data-bs-target="#carouselExampleIndicators2" role="button" data-bs-slide="prev">
                                         <i class="bi bi-arrow-left"></i>
                                     </a>
-                                    <a class="btn btn-primary mb-3 " data-bs-target="#carouselExampleIndicators2"
+                                    <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#carouselExampleIndicators2"
                                         role="button" data-bs-slide="next">
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -264,7 +264,8 @@
                                                                 <div class="card-body">
                                                                     <h4 class="card-title">{{ $rek->namaoleh }}</h4>
                                                                     <p class="card-text">{{ $rek->kota }}</p>
-
+                                                                    <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                        class="stretched-link"></a>
                                                                 </div>
 
                                                             </div>
@@ -279,20 +280,21 @@
                                                     <div class="row">
 
                                                         @foreach ($rekomlokasi->slice(3, 3) as $rek)
-                                                                <div class="col-md-4 mb-3">
-                                                                    <div class="card">
-                                                                        <img class="img-fluid" alt="100%x280"
-                                                                            src={{ $rek->gambarutama }}>
-                                                                        <div class="card-body">
-                                                                            <h4 class="card-title">{{ $rek->namaoleh }}
-                                                                            </h4>
-                                                                            <p class="card-text">{{ $rek->kota }}
-                                                                            </p>
-
-                                                                        </div>
-
+                                                            <div class="col-md-4 mb-3">
+                                                                <div class="card">
+                                                                    <img class="img-fluid" alt="100%x280"
+                                                                        src={{ $rek->gambarutama }}>
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                        </h4>
+                                                                        <p class="card-text">{{ $rek->kota }}
+                                                                        </p>
+                                                                        <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                            class="stretched-link"></a>
                                                                     </div>
+
                                                                 </div>
+                                                            </div>
                                                         @endforeach
 
                                                     </div>
@@ -304,20 +306,21 @@
                                                     <div class="row">
 
                                                         @foreach ($rekomlokasi->slice(6, 3) as $rek)
-                                                                <div class="col-md-4 mb-3">
-                                                                    <div class="card">
-                                                                        <img class="img-fluid" alt="100%x280"
-                                                                            src={{ $rek->gambarutama }}>
-                                                                        <div class="card-body">
-                                                                            <h4 class="card-title">
-                                                                                {{ $rek->namaoleh }}</h4>
-                                                                            <p class="card-text">{{ $rek->kota }}
-                                                                            </p>
-
-                                                                        </div>
-
+                                                            <div class="col-md-4 mb-3">
+                                                                <div class="card">
+                                                                    <img class="img-fluid" alt="100%x280"
+                                                                        src={{ $rek->gambarutama }}>
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">
+                                                                            {{ $rek->namaoleh }}</h4>
+                                                                        <p class="card-text">{{ $rek->kota }}
+                                                                        </p>
+                                                                        <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                            class="stretched-link"></a>
                                                                     </div>
+
                                                                 </div>
+                                                            </div>
                                                         @endforeach
 
                                                     </div>
@@ -339,15 +342,15 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-8">
-                                    <h5>Rekomendasi {{$v->namavarian}} lain yang dapat kamu temukan</h5>
+                                    <h5>Rekomendasi {{ $v->namavarian }} lain yang dapat kamu temukan</h5>
                                 </div>
                                 <div class="col-4 text-end">
 
-                                    <a class="btn btn-primary mb-3 mr-1" data-bs-target="#carouselExampleIndicators2"
-                                        role="button" data-bs-slide="prev">
+                                    <a class="btn btn-secondary mb-3 mr-1 btn-sm"
+                                        data-bs-target="#carouselExampleIndicators2" role="button" data-bs-slide="prev">
                                         <i class="bi bi-arrow-left"></i>
                                     </a>
-                                    <a class="btn btn-primary mb-3 " data-bs-target="#carouselExampleIndicators2"
+                                    <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#carouselExampleIndicators2"
                                         role="button" data-bs-slide="next">
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -367,7 +370,8 @@
                                                                 <div class="card-body">
                                                                     <h4 class="card-title">{{ $rek->namaoleh }}</h4>
                                                                     <p class="card-text">{{ $rek->kota }}</p>
-
+                                                                    <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                        class="stretched-link"></a>
                                                                 </div>
 
                                                             </div>
@@ -382,20 +386,21 @@
                                                     <div class="row">
 
                                                         @foreach ($rekomvarianjenis->slice(3, 3) as $rek)
-                                                                <div class="col-md-4 mb-3">
-                                                                    <div class="card">
-                                                                        <img class="img-fluid" alt="100%x280"
-                                                                            src={{ $rek->gambarutama }}>
-                                                                        <div class="card-body">
-                                                                            <h4 class="card-title">{{ $rek->namaoleh }}
-                                                                            </h4>
-                                                                            <p class="card-text">{{ $rek->kota }}
-                                                                            </p>
-
-                                                                        </div>
-
+                                                            <div class="col-md-4 mb-3">
+                                                                <div class="card">
+                                                                    <img class="img-fluid" alt="100%x280"
+                                                                        src={{ $rek->gambarutama }}>
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                        </h4>
+                                                                        <p class="card-text">{{ $rek->kota }}
+                                                                        </p>
+                                                                        <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                            class="stretched-link"></a>
                                                                     </div>
+
                                                                 </div>
+                                                            </div>
                                                         @endforeach
 
                                                     </div>
@@ -407,20 +412,21 @@
                                                     <div class="row">
 
                                                         @foreach ($rekomvarianjenis->slice(6, 3) as $rek)
-                                                                <div class="col-md-4 mb-3">
-                                                                    <div class="card">
-                                                                        <img class="img-fluid" alt="100%x280"
-                                                                            src={{ $rek->gambarutama }}>
-                                                                        <div class="card-body">
-                                                                            <h4 class="card-title">
-                                                                                {{ $rek->namaoleh }}</h4>
-                                                                            <p class="card-text">{{ $rek->kota }}
-                                                                            </p>
-
-                                                                        </div>
-
+                                                            <div class="col-md-4 mb-3">
+                                                                <div class="card">
+                                                                    <img class="img-fluid" alt="100%x280"
+                                                                        src={{ $rek->gambarutama }}>
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">
+                                                                            {{ $rek->namaoleh }}</h4>
+                                                                        <p class="card-text">{{ $rek->kota }}
+                                                                        </p>
+                                                                        <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                            class="stretched-link"></a>
                                                                     </div>
+
                                                                 </div>
+                                                            </div>
                                                         @endforeach
 
                                                     </div>

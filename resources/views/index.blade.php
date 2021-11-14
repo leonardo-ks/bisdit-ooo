@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <div class="p-5 bg-image rounded-3"
+    <div class="p-5 bg-image rounded-3 mb-4"
         style="background-image: url('https://awol.junkee.com/wp-content/uploads/2015/07/Huacachina2.jpg');height: 400px; background-repeat: no-repeat; background-size: 100%;">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="d-flex h-100">
@@ -12,66 +12,286 @@
             </div>
         </div>
     </div>
-    <div class="container for-about">
-        <div class="row mt-3">
-            <h5 class="bi bi-geo-alt">{{ $address['city'] }}, {{ $address['state'] }}</h5>
+    @if (count($olehPopuler) > 0)
+        <div class="container mb-3">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5>Oleh - oleh terpopuler di sekitarmu</h5>
+                        </div>
+                        <div class="col-4 text-end">
+
+                            <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehPopuler" role="button"
+                                data-bs-slide="prev">
+                                <i class="bi bi-arrow-left"></i>
+                            </a>
+                            <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehPopuler" role="button"
+                                data-bs-slide="next">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div id="olehPopuler" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            @foreach ($olehPopuler->slice(0, 3) as $rek)
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src={{ $rek->gambarutama }}>
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ $rek->namaoleh }}</h4>
+                                                            <p class="card-text bi bi-geo-alt">{{ $rek->kota }}</p>
+                                                            <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                class="stretched-link"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @if (count($olehPopuler) > 3)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehPopuler->slice(3, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                </h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if (count($olehPopuler) > 6)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehPopuler->slice(6, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">
+                                                                    {{ $rek->namaoleh }}</h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                    </div>
+                </div>
+            </section>
         </div>
-        @if (count($olehPopuler) > 0)
-            <div class="row mt-3">
-                <h5>Oleh - Oleh Terpopuler</h5>
-                <div class="row row-cols-4 align-items-center">
-                    @foreach ($olehPopuler->slice(0, 4) as $p)
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src={{ $p->gambarutama }} class="card-img-top" alt={{ $p->namaoleh }}>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $p->namaoleh }}</h5>
-                                    <p class="mt-2 bi bi-geo-alt">{{ $p->kota }}</p>
-                                    <a href="/varianoleh/{{ $p->idoleh }}" class="stretched-link"></a>
+    @endif
+    @if (count($olehKolega) > 0)
+        <div class="container mb-3">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5>Rekomendasi oleh - oleh yang cocok untuk kolega</h5>
+                        </div>
+                        <div class="col-4 text-end">
+
+                            <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKolega" role="button"
+                                data-bs-slide="prev">
+                                <i class="bi bi-arrow-left"></i>
+                            </a>
+                            <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehKolega" role="button"
+                                data-bs-slide="next">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div id="olehKolega" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            @foreach ($olehKolega->slice(0, 3) as $rek)
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src={{ $rek->gambarutama }}>
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ $rek->namaoleh }}</h4>
+                                                            <p class="card-text bi bi-geo-alt">{{ $rek->kota }}</p>
+                                                            <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                class="stretched-link"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @if (count($olehKolega) > 3)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehKolega->slice(3, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                </h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if (count($olehKolega) > 6)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehKolega->slice(6, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">
+                                                                    {{ $rek->namaoleh }}</h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                    </div>
                 </div>
-            </div>
-        @endif
-        @if (count($olehKolega) > 0)
-            <div class="row mt-3">
-                <h5>Produk yang cocok untuk kolega</h5>
-                <div class="row row-cols-4 align-items-center">
-                    @foreach ($olehKolega->slice(0, 4) as $kol)
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src={{ $kol->gambarutama }} class="card-img-top" alt={{ $kol->namaoleh }}>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $kol->namaoleh }}</h5>
-                                    <p class="mt-2 bi bi-geo-alt">{{ $kol->kota }}</p>
-                                    <a href="/varianoleh/{{ $kol->idoleh }}" class="stretched-link"></a>
+            </section>
+        </div>
+    @endif
+    @if (count($olehKeluarga) > 0)
+        <div class="container mb-3">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5>Rekomendasi oleh - oleh yang cocok untuk keluarga</h5>
+                        </div>
+                        <div class="col-4 text-end">
+
+                            <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                                data-bs-slide="prev">
+                                <i class="bi bi-arrow-left"></i>
+                            </a>
+                            <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                                data-bs-slide="next">
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div id="olehKeluarga" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            @foreach ($olehKeluarga->slice(0, 3) as $rek)
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card">
+                                                        <img class="img-fluid" alt="100%x280"
+                                                            src={{ $rek->gambarutama }}>
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">{{ $rek->namaoleh }}</h4>
+                                                            <p class="card-text bi bi-geo-alt">{{ $rek->kota }}</p>
+                                                            <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                class="stretched-link"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @if (count($olehKeluarga) > 3)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehKeluarga->slice(3, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">{{ $rek->namaoleh }}
+                                                                </h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if (count($olehKeluarga) > 6)
+                                        <div class="carousel-item">
+                                            <div class="row">
+                                                @foreach ($olehKeluarga->slice(6, 3) as $rek)
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="card">
+                                                            <img class="img-fluid" alt="100%x280"
+                                                                src={{ $rek->gambarutama }}>
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">
+                                                                    {{ $rek->namaoleh }}</h4>
+                                                                <p class="card-text bi bi-geo-alt">{{ $rek->kota }}
+                                                                </p>
+                                                                <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                    class="stretched-link"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                    </div>
                 </div>
-            </div>
-        @endif
-        @if (count($olehKeluarga) > 0)
-            <div class="row mt-3">
-                <h5>Produk yang cocok untuk keluarga</h5>
-                <div class="row row-cols-4 align-items-center">
-                    @foreach ($olehKeluarga->slice(0, 4) as $kel)
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src={{ $kel->gambarutama }} class="card-img-top" alt={{ $kel->namaoleh }}>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $kel->namaoleh }}</h5>
-                                    <p class="mt-2 bi bi-geo-alt">{{ $kel->kota }}</p>
-                                    <a href="/varianoleh/{{ $kel->idoleh }}" class="stretched-link"></a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @endif
-    </div>
+            </section>
+        </div>
+    @endif
 @endsection
