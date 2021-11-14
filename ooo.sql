@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2021 at 06:00 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Nov 14, 2021 at 04:46 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,33 +46,6 @@ INSERT INTO `bahandasar` (`idbahan`, `namabahan`, `gambarbahan`, `pantangan`, `c
 (3, 'Tepung', 'https://cdn.discordapp.com/attachments/906163180328325130/906354901368590447/Tepung.jpg', 'Apabila mengkonsumsi makanan dari tepung yang mengandung karbohidrat rafinasi, beberapa resiko kesehatan yang dapat terjadi adalah obesitas, diabetes tipe 2 dan penyakit jantung', NULL, NULL),
 (4, 'Talas', 'https://cdn.discordapp.com/attachments/906163180328325130/906354859547177040/Talas.jpg', 'Dalam 100 gram talas terkandung 112 kalori sehingga bisa menjadi masalah buat mereka yang ingin menurunkan berat badan. Kadar karbohidrat talas juga lebih tinggi dari kentang. Jadi terlalu banyak makan talas bisa membuat gemuk. Makanlah talas dalam jumlah wajar untuk mendapatkan manfaatnya bagi kesehatan tanpa menambah berat badan.', NULL, NULL),
 (5, 'Talas', 'https://cdn.discordapp.com/attachments/906163180328325130/906354859547177040/Talas.jpg', 'Dalam 100 gram talas terkandung 112 kalori sehingga bisa menjadi masalah buat mereka yang ingin menurunkan berat badan. Kadar karbohidrat talas juga lebih tinggi dari kentang. Jadi terlalu banyak makan talas bisa membuat gemuk. Makanlah talas dalam jumlah wajar untuk mendapatkan manfaatnya bagi kesehatan tanpa menambah berat badan.', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jenisoleh`
---
-
-CREATE TABLE `jenisoleh` (
-  `idjenis` bigint(20) UNSIGNED NOT NULL,
-  `namajenis` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deskripsijenis` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambarjenis` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `jenisoleh`
---
-
-INSERT INTO `jenisoleh` (`idjenis`, `namajenis`, `deskripsijenis`, `gambarjenis`, `created_at`, `updated_at`) VALUES
-(1, 'Kacang-kacangan', 'Kacang adalah salah satu bahan makanan yang kaya nutrisi. Memiliki cita rasa yang gurih, kacang kerap diolah menjadi camilan nikmat untuk teman bersantai. ', 'https://cdn.discordapp.com/attachments/906163180328325130/906354771626176602/Kacang.jpg', NULL, NULL),
-(2, 'Keripik', 'Keripik atau kripik adalah sejenis makanan ringan berupa irisan tipis dari umbi-umbian, buah-buahan, atau sayuran yang digoreng di dalam minyak nabati. Untuk menghasilkan rasa yang gurih dan renyah biasanya dicampur dengan adonan tepung yang diberi bumbu rempah tertentu.', 'https://cdn.discordapp.com/attachments/906163180328325130/906197474551672892/Renyah.jpg', NULL, NULL),
-(3, 'Kue kering', 'Kue kering adalah kue dengan kadar air yang minimal, sehingga dapat tahan disimpan lebih lama daripada kue basah. Kue kering biasanya bertekstur keras tetapi renyah karena dibuat dengan cara dipanggang memakai oven. Kue kering memiliki daya tahan yang cukup lama. Bahan yang umum digunakan untuk pembuatan kue kering di antaranya tepung beras, tepung ketan, terigu, ataupun sagu. Kue kering lebih dikategorikan sebagai kue yang dipanggang mirip seperti kukis.', 'https://cdn.discordapp.com/attachments/906163180328325130/906197653568774174/Kering.jpg', NULL, NULL),
-(4, 'Kue Basah', 'Kue basah merupakan makanan kecil yang bisa dijadikan alternatif camilan. Biasa disantap di pagi atau sore hari. Kue basah umumnya empuk, lembut, dan tidak bertahan lama (hanya bertahan beberapa hari). Biasanya terbuat dari tepung terigu, sagu, gula, bahkan ada yang berbahan santan atau ketan. Kue basah umumnya empuk, bertekstur lembut, dan tidak dapat bertahan lama (hanya bertahan beberapa hari atau kurang). Hal ini karena umumnya kue tradisional terbuat dari tepung beras, gula, dan santan, sehingga lekas basi. Kue basah biasanya dimasak dengan cara dikukus, direbus, atau digoreng. Kebanyakan kue tradisional Nusantara adalah kue basah, dan umumnya dapat ditemui di pasar tradisional di Indonesia.', 'https://cdn.discordapp.com/attachments/906163180328325130/906197896968429618/Basah.jpg', NULL, NULL),
-(5, 'Manisan', 'Manisan adalah buah-buahan yang direndam dalam larutan gula selama beberapa waktu. Manisan biasanya dimakan sebagai hidangan pelengkap untuk merangsang nafsu makan. Teknologi membuat manisan merupakan salah satu cara pengawetan makanan yang sudah diterapkan sejak dahulu kala. Perendamanan manisan akan membuat kadar gula dalam buah meningkat dan kadar airnya berkurang.', 'https://cdn.discordapp.com/attachments/906163180328325130/906458761324036126/Manisan.jpg', NULL, NULL),
-(6, 'Sambal', '\"adalah istilah besar yang dalam kuliner Indonesia merujuk pada saus maupun kondimen pedas. Secara garis besar, sambal berbahan utama cabai yang dilumatkan sehingga keluar kandungan sari cabai dan ditambah bahan-bahan lain seperti garam dan terasi. \r\n\r\nSambal merupakan salah satu unsur khas hidangan Indonesia. Ada bermacam-macam variasi sambal yang berasal dari berbagai daerah.\"', 'https://cdn.discordapp.com/attachments/906163180328325130/906457965161234442/Sambal.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,7 +209,6 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(11, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (12, '2021_11_01_050540_create_tipeoleh_table', 1),
 (13, '2021_11_01_050653_create_lokasi_table', 1),
 (14, '2021_11_01_050712_create_bahandasar_table', 1),
@@ -251,7 +223,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2021_11_10_142339_penambahan_foreignkey', 4),
 (24, '2021_11_10_144052_perbaikan_foreign_kedua', 5),
 (25, '2021_11_10_145109_anu_anu_foreinkey', 6),
-(26, '2021_11_10_164207_nambah_kolom_tempatbeli', 7);
+(26, '2021_11_10_164207_nambah_kolom_tempatbeli', 7),
+(28, '2014_10_12_200000_add_two_factor_columns_to_users_table', 8),
+(29, '2021_11_13_140257_create_sessions_table', 8),
+(30, '2014_10_12_100000_create_password_resets_table', 9),
+(31, '2019_08_19_000000_create_failed_jobs_table', 9),
+(32, '2014_10_12_000000_create_users_table', 10),
+(33, '2019_12_14_000001_create_personal_access_tokens_table', 11);
 
 -- --------------------------------------------------------
 
@@ -375,32 +353,6 @@ INSERT INTO `tempatbeli` (`idtempatbeli`, `merk`, `gambarproduk`, `varianjual`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `varianjenis`
---
-
-CREATE TABLE `varianjenis` (
-  `id_varian` bigint(20) UNSIGNED NOT NULL,
-  `namavarian` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deskripsivarian` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gambarvarian` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `idjenis` bigint(20) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `varianjenis`
---
-
-INSERT INTO `varianjenis` (`id_varian`, `namavarian`, `deskripsivarian`, `gambarvarian`, `idjenis`, `created_at`, `updated_at`) VALUES
-(1, 'Bolu', 'Merupakan kue berbahan dasar tepung (umumnya tepung terigu), gula, dan telur. Kue bolu dan cake umumnya dimatangkan dengan cara dipanggang di dalam oven, walaupun ada juga bolu yang dikukus, misalnya: bolu kukus atau brownies kukus. Cake yang dihias dengan lapisan (icing) dari krim mentega (buttercream), fondant, atau marzipan disebut kue tart (kue tarcis).', 'https://cdn.discordapp.com/attachments/906163180328325130/906357941228146719/Bolu_Meranti_4.jpg', 4, NULL, NULL),
-(2, 'Lapis', 'Lapis ini biasanya terdiri dari dua warna yang berlapis-lapis, ini yang memberi nama kue ini. Kue ini dibuat dari tepung beras, tepung kanji, santan, gula pasir, garam dan pewarna. Kue ini dikukus setiap lapisannya sebelum kemudian lapisan di atasnya ditambahkan. Kue ini banyak ditemui di daerah-daerah di Indonesia.', 'https://cdn.discordapp.com/attachments/906163180328325130/906172268223270912/LapisTalasBogor_1.jpg', 4, NULL, NULL),
-(3, 'Pie', 'makanan yang terdiri dari kulit kue kering dan isi yang beraneka ragam. Isi pastei dapat berupa buah, daging, ikan, sayur, keju, coklat, kustar, kacang, dan lain-lain. Pastei yang berisi buah biasanya berupa cairan kental yang dimaniskan mirip selai atau dipotong-potong dadu lalu dipanggang bersamaan dengan kulit pasteinya.', 'https://cdn.discordapp.com/attachments/906163180328325130/906171879868473364/PieSusu_1.jpg', 4, NULL, NULL),
-(4, 'Kopi', 'Kopi adalah minuman hasil seduhan biji kopi yang telah disangrai dan dihaluskan menjadi bubuk.Kopi merupakan salah satu komoditas di dunia yang dibudidayakan lebih dari 50 negara. Dua spesies pohon kopi yang dikenal secara umum yaitu Kopi Robusta (Coffea canephora) dan Kopi Arabika (Coffea arabica).', 'https://cdn.discordapp.com/attachments/906163180328325130/906354818346536960/Kopi.jpg', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `varianoleh`
 --
 
@@ -451,12 +403,6 @@ INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gamb
 --
 ALTER TABLE `bahandasar`
   ADD PRIMARY KEY (`idbahan`);
-
---
--- Indexes for table `jenisoleh`
---
-ALTER TABLE `jenisoleh`
-  ADD PRIMARY KEY (`idjenis`);
 
 --
 -- Indexes for table `lokasi`
@@ -513,13 +459,6 @@ ALTER TABLE `tempatbeli`
   ADD KEY `tempatbeli_idmitra_foreign` (`idmitra`);
 
 --
--- Indexes for table `varianjenis`
---
-ALTER TABLE `varianjenis`
-  ADD PRIMARY KEY (`id_varian`),
-  ADD KEY `varian_jenis_idjenis_foreign` (`idjenis`);
-
---
 -- Indexes for table `varianoleh`
 --
 ALTER TABLE `varianoleh`
@@ -543,12 +482,6 @@ ALTER TABLE `bahandasar`
   MODIFY `idbahan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `jenisoleh`
---
-ALTER TABLE `jenisoleh`
-  MODIFY `idjenis` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `lokasi`
 --
 ALTER TABLE `lokasi`
@@ -564,7 +497,7 @@ ALTER TABLE `masak`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `mitra`
@@ -597,12 +530,6 @@ ALTER TABLE `tempatbeli`
   MODIFY `idtempatbeli` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `varianjenis`
---
-ALTER TABLE `varianjenis`
-  MODIFY `id_varian` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `varianoleh`
 --
 ALTER TABLE `varianoleh`
@@ -625,12 +552,6 @@ ALTER TABLE `tempatbeli`
   ADD CONSTRAINT `tempatbeli_idlokasi_foreign` FOREIGN KEY (`idlokasi`) REFERENCES `lokasi` (`idlokasi`),
   ADD CONSTRAINT `tempatbeli_idmitra_foreign` FOREIGN KEY (`idmitra`) REFERENCES `mitra` (`idmitra`),
   ADD CONSTRAINT `tempatbeli_idoleh_foreign` FOREIGN KEY (`idoleh`) REFERENCES `varianoleh` (`idoleh`);
-
---
--- Constraints for table `varianjenis`
---
-ALTER TABLE `varianjenis`
-  ADD CONSTRAINT `varian_jenis_idjenis_foreign` FOREIGN KEY (`idjenis`) REFERENCES `jenisoleh` (`idjenis`);
 
 --
 -- Constraints for table `varianoleh`
