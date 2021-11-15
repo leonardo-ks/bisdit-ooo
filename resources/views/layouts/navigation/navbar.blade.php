@@ -9,39 +9,165 @@
                 <li><a href="/daerahasal" class="nav-link px-2 link-secondary">Daerah asal</a></li>
                 <a class="nav-link px-2 link-secondary" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Kategori</a>
-                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas offcanvas-top h-75" tabindex="-1" id="offcanvasTop"
+                    aria-labelledby="offcanvasTopLabel">
                     <div class="offcanvas-header">
                         <h4 id="offcanvasTopLabel">Kategori oleh-oleh</h4>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
-                    <nav class="mx-3">
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-jenis-oleh-oleh-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-jenis-oleh-oleh" type="button" role="tab"
-                                aria-controls="nav-jenis-oleh-oleh" aria-selected="true">Jenis oleh-oleh</button>
-                            <button class="nav-link" id="nav-bahan-dasar-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-bahan-dasar" type="button" role="tab"
-                                aria-controls="nav-bahan-dasar" aria-selected="false">Bahan dasar</button>
-                            <button class="nav-link" id="nav-rasa-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-rasa" type="button" role="tab" aria-controls="nav-rasa"
-                                aria-selected="false">Rasa</button>
-                            <button class="nav-link" id="nav-tekstur-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-tekstur" type="button" role="tab" aria-controls="nav-tekstur"
-                                aria-selected="false">Tekstur</button>
+                    <div class="offcanvas-body">
+
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-jenis-oleh-oleh-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-jenis-oleh-oleh" type="button" role="tab"
+                                    aria-controls="nav-jenis-oleh-oleh" aria-selected="true">Jenis oleh-oleh</button>
+                                <button class="nav-link" id="nav-bahan-dasar-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-bahan-dasar" type="button" role="tab"
+                                    aria-controls="nav-bahan-dasar" aria-selected="false">Bahan dasar</button>
+                                <button class="nav-link" id="nav-rasa-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-rasa" type="button" role="tab" aria-controls="nav-rasa"
+                                    aria-selected="false">Rasa</button>
+                                <button class="nav-link" id="nav-tekstur-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-tekstur" type="button" role="tab" aria-controls="nav-tekstur"
+                                    aria-selected="false">Tekstur</button>
+                                <button class="nav-link" id="nav-caramasak-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-caramasak" type="button" role="tab"
+                                    aria-controls="nav-caramasak" aria-selected="false">Cara masak</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content mx-1" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-jenis-oleh-oleh" role="tabpanel"
+                                aria-labelledby="nav-jenis-oleh-oleh-tab">
+
+                                <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                    @foreach ($jenisoleh as $j)
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="{{ $j->gambarjenis }}"
+                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                    style="object-fit: cover">
+                                                <div class="card-body">
+                                                    <h6 class="card-text">{{ $j->namajenis }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                                {{-- <div class="d-flex align-items-start">
+                                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                        aria-orientation="vertical">
+                                        @foreach ($jenisoleh as $j)
+                                            <button class="nav-link {{ $loop->first ? 'active' : '' }}"
+                                                id="v-pills-{{ $j->namajenis }}-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-{{ $j->namajenis }}" type="button" role="tab"
+                                                aria-controls="v-pills-{{ $j->namajenis }}"
+                                                aria-selected="true">{{ $j->namajenis }}</button>
+                                        @endforeach
+
+                                    </div>
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        @foreach ($jenisoleh as $j)
+                                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}"
+                                                id="v-pills-{{ $j->namajenis }}" role="tabpanel"
+                                                aria-labelledby="v-pills-{{ $j->namajenis }}-tab">
+                                                <div class="row row-cols-1 row-cols-md-5 g-4">
+                                                    @foreach ($varianjenis as $v)
+                                                        <div class="col">
+                                                            <div class="card h-100">
+                                                                <img src="{{ $v->gambarvarian }}"
+                                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                                    style="object-fit: cover">
+                                                                <div class="card-body">
+                                                                    <h6 class="card-text">{{ $v->namavarian }}
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        @endforeach
+
+                                    </div>
+
+                                </div> --}}
+                            </div>
+                            <div class="tab-pane fade" id="nav-bahan-dasar" role="tabpanel"
+                                aria-labelledby="nav-bahan-dasar-tab">
+
+                                <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                    @foreach ($bahandasar as $b)
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="{{ $b->gambarbahan }}"
+                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                    style="object-fit: cover">
+                                                <div class="card-body">
+                                                    <h6 class="card-text">{{ $b->namabahan }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-rasa" role="tabpanel" aria-labelledby="nav-rasa-tab">
+                                <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                    @foreach ($rasa as $r)
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="{{ $r->gambarasa }}"
+                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                    style="object-fit: cover">
+                                                <div class="card-body">
+                                                    <h6 class="card-text">{{ $r->namarasa }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tekstur" role="tabpanel"
+                                aria-labelledby="nav-tekstur-tab">
+                                <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                    @foreach ($tekstur as $t)
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="{{ $t->gambartekstur }}"
+                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                    style="object-fit: cover">
+                                                <div class="card-body">
+                                                    <h6 class="card-text">{{ $t->namatekstur }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-caramasak" role="tabpanel"
+                                aria-labelledby="nav-caramasak-tab">
+                                <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                    @foreach ($caramasak as $m)
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <img src="{{ $m->gambarmasak }}"
+                                                    class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                    style="object-fit: cover">
+                                                <div class="card-body">
+                                                    <h6 class="card-text">{{ $m->namamasak }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
-                    </nav>
-                    <div class="tab-content mx-4" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-jenis-oleh-oleh" role="tabpanel"
-                            aria-labelledby="nav-jenis-oleh-oleh-tab">Jenis</div>
-                        <div class="tab-pane fade" id="nav-bahan-dasar" role="tabpanel"
-                            aria-labelledby="nav-bahan-dasar-tab">
-                            Bahan</div>
-                        <div class="tab-pane fade" id="nav-rasa" role="tabpanel" aria-labelledby="nav-rasa-tab">
-                            Rasa</div>
-                        <div class="tab-pane fade" id="nav-tekstur" role="tabpanel" aria-labelledby="nav-tekstur-tab">
-                            Tekstur</div>
+
                     </div>
+
                 </div>
                 {{-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle px-2 link-secondary" role="button"

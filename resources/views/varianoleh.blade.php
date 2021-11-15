@@ -107,48 +107,48 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <table class="table table-borderless mt-2">
                                         <tbody>
                                             <tr>
-                                                <td class="col-1">Varian Jenis</td>
+                                                <td class="col-2">Varian Jenis</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->namavarian }}</td>
+                                                <td class="col-9">{{ $v->namavarian }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Rasa</td>
+                                                <td class="col-2">Rasa</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->namarasa }}</td>
+                                                <td class="col-9">{{ $v->namarasa }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Tekstur</td>
+                                                <td class="col-2">Tekstur</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->namatekstur }}</td>
+                                                <td class="col-9">{{ $v->namatekstur }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Bahan Dasar</td>
+                                                <td class="col-2">Bahan Dasar</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->namabahan }}</td>
+                                                <td class="col-9">{{ $v->namabahan }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Komposisi</td>
+                                                <td class="col-2">Komposisi</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->komposisi }}</td>
+                                                <td class="col-9">{{ $v->komposisi }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Cara Masak</td>
+                                                <td class="col-2">Cara Masak</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->namamasak }}</td>
+                                                <td class="col-9">{{ $v->namamasak }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Harga</td>
+                                                <td class="col-2">Harga</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->harga }}</td>
+                                                <td class="col-9">{{ $v->harga }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-1">Daerah Asal</td>
+                                                <td class="col-2">Daerah Asal</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-6">{{ $v->kota }}, {{ $v->provinsi }}</td>
+                                                <td class="col-9">{{ $v->kota }}, {{ $v->provinsi }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
