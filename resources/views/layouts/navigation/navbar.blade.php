@@ -6,7 +6,7 @@
                     class="bi me-2" height="32">
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/daerahasal" class="nav-link px-2 link-secondary">Daerah asal</a></li>
+                <li><a href="/daerah" class="nav-link px-2 link-secondary">Daerah asal</a></li>
                 <a class="nav-link px-2 link-secondary" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Kategori</a>
                 <div class="offcanvas offcanvas-top h-75" tabindex="-1" id="offcanvasTop"
@@ -50,6 +50,7 @@
                                                     style="object-fit: cover">
                                                 <div class="card-body">
                                                     <h6 class="card-text">{{ $j->namajenis }}</h6>
+                                                    <a href="/jenis/{{ $j->namajenis }}" class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,6 +108,8 @@
                                                     style="object-fit: cover">
                                                 <div class="card-body">
                                                     <h6 class="card-text">{{ $b->namabahan }}</h6>
+                                                    <a href="/filter/bahandasar/{{ $b->namabahan }}"
+                                                        class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -124,6 +127,8 @@
                                                     style="object-fit: cover">
                                                 <div class="card-body">
                                                     <h6 class="card-text">{{ $r->namarasa }}</h6>
+                                                    <a href="/filter/rasa/{{ $r->namarasa }}"
+                                                        class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -141,6 +146,8 @@
                                                     style="object-fit: cover">
                                                 <div class="card-body">
                                                     <h6 class="card-text">{{ $t->namatekstur }}</h6>
+                                                    <a href="/filter/tekstur/{{ $t->namatekstur }}"
+                                                        class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -158,6 +165,8 @@
                                                     style="object-fit: cover">
                                                 <div class="card-body">
                                                     <h6 class="card-text">{{ $m->namamasak }}</h6>
+                                                    <a href="/filter/caramasak/{{ $m->namamasak }}"
+                                                        class="stretched-link"></a>
                                                 </div>
                                             </div>
                                         </div>

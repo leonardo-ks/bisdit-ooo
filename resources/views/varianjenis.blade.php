@@ -1,0 +1,30 @@
+@extends('layouts.master')
+@section('content')
+
+    <div class="container">
+        @foreach ($jenisoleh as $j)
+            <h3>{{ $j->namajenis }}</h3>
+            <p>{{ $j->deskripsijenis }}</p>
+            <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
+                @foreach ($varianjenis as $v)
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ $v->gambarvarian }}"
+                                class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                style="object-fit: cover">
+                            <div class="card-body">
+                                <h6 class="card-text">{{ $v->namavarian }}</h6>
+                            </div>
+                            <a href="/filter/varian/{{ $v->namavarian }}" class="stretched-link"></a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="d-flex pagination justify-content-center mt-3">
+                {{ $varianjenis->links() }}
+            </div>
+        @endforeach
+    </div>
+
+
+@endsection

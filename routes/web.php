@@ -25,5 +25,6 @@ Route::post('login', [LoginController::class, 'auth']);
 Route::post('logout', [LoginController::class, 'logout']);
 Route::get('register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store']);
-Route::get('daerahasal', [FilterController::class, 'daerahasal']);
-Route::get('olehbydaerah/{kota}', [FilterController::class, 'olehbydaerah']);
+Route::get('daerah', [FilterController::class, 'daerahasal']);
+Route::get('filter/{kategori}/{by}', [FilterController::class, 'filterby']);
+Route::get('jenis/{jenis}', [FilterController::class, 'varianjenis']);

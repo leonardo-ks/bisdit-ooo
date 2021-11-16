@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <h6 class="card-text bi bi-geo-alt">{{ $d->kota }}</h6>
                         </div>
-                        <a href="/olehbydaerah/{{ $d->kota }}" class="stretched-link"></a>
+                        <a href="/filter/daerah/{{ $d->kota }}" class="stretched-link"></a>
                     </div>
                 </div>
             @endforeach

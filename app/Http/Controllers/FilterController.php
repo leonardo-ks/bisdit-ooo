@@ -17,20 +17,8 @@ class FilterController extends Controller
             ->distinct()
             ->orderBy('kota')
             ->paginate(8);
-        return view('daerahasal', ['daerahasal' => $daerahasal]);
+        return view('daerahasal', compact('daerahasal'));
     }
-
-    public function olehbydaerah($kota)
-    {
-        $olehbydaerah = DB::table('varianoleh')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->leftjoin('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
-            ->where('kota', $kota)
-            ->orderBy('namaoleh')
-            ->paginate(8);
-        return view('filterbydaerah', compact('olehbydaerah', 'kota'));
-    }
-
 
     public function compose(View $view)
     {
@@ -85,4 +73,68 @@ class FilterController extends Controller
         $view->with(compact('jenisoleh', 'bahandasar', 'rasa', 'tekstur', 'caramasak'));
     }
 
+    public function varianjenis($jenis)
+    {
+        $jenisoleh = DB::table('jenisoleh')
+            ->where('namajenis', $jenis)
+            ->get();
+
+        $idjenis = '';
+        foreach ($jenisoleh as $j) {
+            $idjenis = $j->idjenis;
+        }
+
+        $varianjenis = DB::table('varianjenis')
+            ->where('idjenis', $idjenis)
+            ->paginate(8);
+
+        return view('varianjenis', compact('jenisoleh', 'varianjenis'));
+    }
+
+    public function filterby($kategori, $by)
+    {
+        $olehbydaerah = DB::table('varianoleh')
+            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->leftjoin('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
+            ->where('kota', $by)
+            ->orderBy('namaoleh')
+            ->paginate(8);
+
+        $olehbybahan = DB::table('varianoleh')
+            ->join('bahandasar', 'bahandasar.idbahan', '=', 'varianoleh.idbahan')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('namabahan', $by)
+            ->orderBy('namabahan')
+            ->paginate(8);
+
+        $olehbyrasa = DB::table('varianoleh')
+            ->join('rasa', 'rasa.idrasa', '=', 'varianoleh.idrasa')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('namarasa', $by)
+            ->orderBy('namarasa')
+            ->paginate(8);
+
+        $olehbytekstur = DB::table('varianoleh')
+            ->join('tekstur', 'tekstur.idtekstur', '=', 'varianoleh.idtekstur')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('namatekstur', $by)
+            ->orderBy('namatekstur')
+            ->paginate(8);
+
+        $olehbymasak = DB::table('varianoleh')
+            ->join('masak', 'masak.idmasak', '=', 'varianoleh.idmasak')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('namamasak', $by)
+            ->orderBy('namamasak')
+            ->paginate(8);
+
+        $olehbyvarian = DB::table('varianoleh')
+            ->join('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
+            ->leftjoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('namavarian', $by)
+            ->orderBy('namavarian')
+            ->paginate(8);
+
+        return view('filter', compact('olehbydaerah', 'olehbybahan', 'olehbyrasa', 'olehbytekstur', 'olehbymasak', 'olehbyvarian', 'kategori', 'by'));
+    }
 }
