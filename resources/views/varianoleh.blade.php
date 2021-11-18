@@ -61,12 +61,13 @@
                         <div class="col d-flex justify-content-end">
                             @auth
                                 <div class="align-items-center">
-                                    <button type="button" class="btn btn-light btn-lg bi bi-heart rtl" href=""> 64 K</button>
+                                    <a type="button" class="btn btn-light btn-lg bi bi-heart rtl"
+                                        href="/varianoleh/favorite/{{ $v->idoleh }}"> {{$v-> favorit_count}}</a>
                                 </div>
                             @endauth
                             @guest
                                 <div class="align-items-center">
-                                    <button type="button" class="btn btn-light btn-lg bi bi-heart rtl" href=""> 64 K</button>
+                                    <a type="button" class="btn btn-light btn-lg bi bi-heart rtl" href="/login">{{$v-> favorit_count}}</a>
                                 </div>
                             @endguest
                         </div>
@@ -82,6 +83,18 @@
                         </p>
                     @endforeach
                 </div>
+                @if (Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{Session::get('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endif
+                @if (Session::has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{Session::get('error')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endif
 
                 <div class="container">
 

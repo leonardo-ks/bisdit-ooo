@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\OlehController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('daerah', [FilterController::class, 'daerahasal']);
 Route::get('filter/{kategori}/{by}', [FilterController::class, 'filterby']);
 Route::get('jenis/{jenis}', [FilterController::class, 'varianjenis']);
+Route::get('/varianoleh/favorite/{idoleh}', [FavoriteController::class,'favorite']);
+
