@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
 
-class indexController extends Controller
+class IndexController extends Controller
 {
     //untuk function tembatbeli jangan lupa dimitra di left join
     public function index(Request $request)
@@ -26,18 +26,21 @@ class indexController extends Controller
         $olehKolega = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Kolega%')
+            ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 
         $olehKeluarga = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('namacocok', 'like', '%Keluarga%')
+            ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 
         $olehPopuler = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where('kota', '=', $address['city'])
+            ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 

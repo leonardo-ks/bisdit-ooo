@@ -9,17 +9,6 @@ use Illuminate\View\View;
 
 class FilterController extends Controller
 {
-    public function daerahasal()
-    {
-        $daerahasal = DB::table('varianoleh')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->select('lokasi.idlokasi', 'kota', 'provinsi', 'gambarlokasi')
-            ->distinct()
-            ->orderBy('kota')
-            ->paginate(8);
-        return view('daerahasal', compact('daerahasal'));
-    }
-
     public function compose(View $view)
     {
         $jenisoleh = DB::table('varianoleh')
@@ -57,6 +46,13 @@ class FilterController extends Controller
             ->orderBy('namamasak')
             ->get();
 
+        $daerahasal = DB::table('varianoleh')
+            ->leftJoin('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->select('lokasi.idlokasi', 'kota', 'provinsi', 'gambarlokasi')
+            ->distinct()
+            ->orderBy('kota')
+            ->get();
+
         $idjenis = '';
         foreach ($jenisoleh as $j) {
             $idjenis = $j->idjenis;
@@ -70,7 +66,7 @@ class FilterController extends Controller
         //     ->orderBy('namavarian')
         //     ->get();
 
-        $view->with(compact('jenisoleh', 'bahandasar', 'rasa', 'tekstur', 'caramasak'));
+        $view->with(compact('jenisoleh', 'bahandasar', 'rasa', 'tekstur', 'caramasak', 'daerahasal'));
     }
 
     public function varianjenis($jenis)
