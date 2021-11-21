@@ -23,7 +23,7 @@ class RegisterController extends Controller
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-        $validatedData = array_merge($validatedData, array('photo' => 'https://ui-avatars.com/api/?name=' . urlencode($validatedData['name']) . 'background=7F9CF5&color=EBF4FF'));
+        $validatedData = array_merge($validatedData, array('photo' => 'https://ui-avatars.com/api/?name=' . urlencode($validatedData['name']) . '&background=7F9CF5&color=EBF4FF'));
 
         User::create($validatedData);
 
