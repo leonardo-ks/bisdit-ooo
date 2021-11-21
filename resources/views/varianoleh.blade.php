@@ -53,23 +53,10 @@
                                             style="width:64px;height:auto;">
                                     </div>
                                 @endif
-
-
                             </div>
-
                         </div>
                         <div class="col d-flex justify-content-end">
-                            @auth
-                                <div class="align-items-center">
-                                    <a type="button" class="btn btn-light btn-lg bi bi-heart rtl"
-                                        href="/varianoleh/favorite/{{ $v->idoleh }}"> {{$v-> favorit_count}}</a>
-                                </div>
-                            @endauth
-                            @guest
-                                <div class="align-items-center">
-                                    <a type="button" class="btn btn-light btn-lg bi bi-heart rtl" href="/login">{{$v-> favorit_count}}</a>
-                                </div>
-                            @endguest
+                            <livewire:favorite-index :idoleh="$v->idoleh"></livewire:favorite-index>
                         </div>
                     </div>
 
@@ -84,16 +71,16 @@
                     @endforeach
                 </div>
                 @if (Session::has('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{Session::get('success')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ Session::get('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
                 @if (Session::has('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{Session::get('error')}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ Session::get('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 @endif
 
                 <div class="container">

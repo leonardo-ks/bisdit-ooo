@@ -29,5 +29,4 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('daerah', [FilterController::class, 'daerahasal']);
 Route::get('filter/{kategori}/{by}', [FilterController::class, 'filterby']);
 Route::get('jenis/{jenis}', [FilterController::class, 'varianjenis']);
-Route::get('/varianoleh/favorite/{idoleh}', [FavoriteController::class,'favorite']);
-
+Route::get('varianoleh/favorite/{idoleh}', [FavoriteController::class, 'favorite']);
