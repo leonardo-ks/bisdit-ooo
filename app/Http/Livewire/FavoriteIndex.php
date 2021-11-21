@@ -17,11 +17,6 @@ class FavoriteIndex extends Component
 
     public function render()
     {
-        if (favorite::where(['idoleh' => $this->idoleh, 'id' => auth()->user()->id])->exists()) {
-            $heart = 'bi-heart-fill';
-        } else {
-            $heart = 'bi-heart';
-        }
         return view('livewire.favorite-index', [
             'favorites' => favorite::get(),
             'idoleh',
