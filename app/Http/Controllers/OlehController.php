@@ -55,6 +55,6 @@ class OlehController extends Controller
             ->limit(9)
             ->get();
 
-        return view('varianoleh', compact('varianoleh', 'tempatbeli', 'rekomlokasi', 'rekomvarianjenis'));
+        return view('varianoleh', compact('varianoleh', 'tempatbeli', 'rekomlokasi', 'rekomvarianjenis', 'idoleh'));
     }
 }

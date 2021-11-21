@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col d-flex justify-content-end">
-                            <livewire:favorite-index :idoleh="$v->idoleh"></livewire:favorite-index>
+                            <livewire:favorite-index :idoleh="$idoleh"></livewire:favorite-index>
                         </div>
                     </div>
 

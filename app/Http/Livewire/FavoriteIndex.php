@@ -18,7 +18,7 @@ class FavoriteIndex extends Component
     public function render()
     {
         return view('livewire.favorite-index', [
-            'favorites' => favorite::get(),
+            'favorites' => favorite::where(['idoleh' => $this->idoleh])->get(),
             'idoleh',
             'heart',
         ]);
