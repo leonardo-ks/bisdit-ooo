@@ -70,18 +70,6 @@
                         </p>
                     @endforeach
                 </div>
-                @if (Session::has('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ Session::get('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-                @if (Session::has('error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ Session::get('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
 
                 <div class="container">
 
@@ -211,7 +199,101 @@
                         <div class="tab-pane fade mb-3" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">
                             @foreach ($tempatbeli as $t)
 
-                                <div class="card mt-2" style="width: 18rem;">
+                                <div class="card mt-3" style="width: 18rem;">
+                                    <img src="{{ $t->gambarproduk }}" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $t->merk }}</h5>
+                                        <h6><i class="bi bi-geo-alt-fill"></i>{{ $t->kota }}, {{ $t->provinsi }}
+                                        </h6>
+                                        <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#myModal">Detail</a>
+                                    </div>
+                                </div>
+                                <!-- The Modal -->
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-lg modal-fullscreen-md-down ">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">{{ $t->merk }}</h4>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal"></button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="p-3">
+                                                    <img class="d-block ratio ratio-16x9 rounded"
+                                                        src="{{ $t->gambarproduk }}" style="object-fit: cover;">
+
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <table class="table table-borderless">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Varian Yang Dijual</td>
+                                                                        <td>:</td>
+                                                                        @php
+                                                                            $varjul = preg_split('/---/', $t->varianjual);
+                                                                        @endphp
+                                                                        <td>
+                                                                            @foreach ($varjul as $var)
+                                                                                {{ $var }}<br>
+                                                                            @endforeach
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Bundle Yang Dijual</td>
+                                                                        <td>:</td>
+                                                                        @php
+                                                                            $bundel = preg_split('/---/', $t->bundle);
+                                                                        @endphp
+                                                                        <td>
+                                                                            @foreach ($bundel as $bun)
+                                                                                {{ $bun }}<br>
+                                                                            @endforeach
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Kemasan Tersedia</td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $t->kemasan }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Alamat</td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $t->alamat }}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>jam Buka</td>
+                                                                        <td>:</td>
+                                                                        <td>{{ $t->jambuka }}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        @php
+                                                            $embed = $t->google_map;
+                                                            $peta = stripslashes($embed);
+                                                            echo ($embed);
+                                                        @endphp
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <a type="button" class="btn btn-outline-info" href="{{$t->link}}" target="_blank" >Kunjungi
+                                                    Website</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- <div class="card mt-2" style="width: 18rem;">
                                     <img src="{{ $t->gambarproduk }}"
                                         class="card-img-top d-block ratio ratio-16x9 rounded"
                                         style="width: object-fit: cover">
@@ -230,7 +312,7 @@
                                     <div class="card-body">
                                         <h6><i class="bi bi-geo-alt-fill"></i>{{ $t->kota }}</h6>
                                     </div>
-                                </div>
+                                </div> --}}
                             @endforeach
                         </div>
                     </div>
