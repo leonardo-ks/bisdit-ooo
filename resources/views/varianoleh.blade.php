@@ -266,7 +266,7 @@
                                                                         <td>{{ $t->alamat }}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>jam Buka</td>
+                                                                        <td>Jam Buka</td>
                                                                         <td>:</td>
                                                                         <td>{{ $t->jambuka }}</td>
                                                                     </tr>
@@ -276,7 +276,7 @@
                                                         @php
                                                             $embed = $t->google_map;
                                                             $peta = stripslashes($embed);
-                                                            echo ($embed);
+                                                            echo $embed;
                                                         @endphp
 
 
@@ -286,7 +286,8 @@
 
                                             <!-- Modal footer -->
                                             <div class="modal-footer">
-                                                <a type="button" class="btn btn-outline-info" href="{{$t->link}}" target="_blank" >Kunjungi
+                                                <a type="button" class="btn btn-outline-info" href="{{ $t->link }}"
+                                                    target="_blank">Kunjungi
                                                     Website</a>
                                             </div>
                                         </div>

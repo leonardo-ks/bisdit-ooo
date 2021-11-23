@@ -45,7 +45,7 @@
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
                                                                 <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                    href="/olehbydaerah/{{ $rek->kota }}"
+                                                                    href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
                                                                 </a>
@@ -71,7 +71,7 @@
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>
@@ -99,7 +99,7 @@
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>
@@ -155,7 +155,7 @@
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
                                                                 <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                    href="/olehbydaerah/{{ $rek->kota }}"
+                                                                    href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
                                                                 </a>
@@ -181,7 +181,7 @@
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>
@@ -209,7 +209,7 @@
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>
@@ -265,7 +265,7 @@
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
                                                                 <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                    href="/olehbydaerah/{{ $rek->kota }}"
+                                                                    href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
                                                                 </a>
@@ -291,7 +291,7 @@
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>
@@ -319,7 +319,7 @@
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
                                                                     <a class="card-text bi bi-geo-alt text-decoration-none"
-                                                                        href="/olehbydaerah/{{ $rek->kota }}"
+                                                                        href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
                                                                     </a>

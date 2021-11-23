@@ -34,8 +34,14 @@
                                 class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
                                 style="object-fit: cover">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $d->namaoleh }}</h5>
-                                <p class="card-text">{{ $d->kota }}</p>
+                                <h5 class="card-title">
+                                    {{ $d->namaoleh }}</h5>
+                                <div style='z-index: 2; position: relative;'>
+                                    <a class="card-text bi bi-geo-alt text-decoration-none"
+                                        href="/filter/daerah/{{ $d->kota }}" style='color: inherit;'>
+                                        {{ $d->kota }}
+                                    </a>
+                                </div>
                             </div>
                             <a href="/varianoleh/{{ $d->idoleh }}" class="stretched-link"></a>
                         </div>
@@ -56,8 +62,14 @@
                                 class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
                                 style="object-fit: cover">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $d->namaoleh }}</h5>
-                                <p class="card-text">{{ $d->kota }}</p>
+                                <h5 class="card-title">
+                                    {{ $d->namaoleh }}</h5>
+                                <div style='z-index: 2; position: relative;'>
+                                    <a class="card-text bi bi-geo-alt text-decoration-none"
+                                        href="/filter/daerah/{{ $d->kota }}" style='color: inherit;'>
+                                        {{ $d->kota }}
+                                    </a>
+                                </div>
                             </div>
                             <a href="/varianoleh/{{ $d->idoleh }}" class="stretched-link"></a>
                         </div>
@@ -78,8 +90,14 @@
                                 class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
                                 style="object-fit: cover">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $d->namaoleh }}</h5>
-                                <p class="card-text">{{ $d->kota }}</p>
+                                <h5 class="card-title">
+                                    {{ $d->namaoleh }}</h5>
+                                <div style='z-index: 2; position: relative;'>
+                                    <a class="card-text bi bi-geo-alt text-decoration-none"
+                                        href="/filter/daerah/{{ $d->kota }}" style='color: inherit;'>
+                                        {{ $d->kota }}
+                                    </a>
+                                </div>
                             </div>
                             <a href="/varianoleh/{{ $d->idoleh }}" class="stretched-link"></a>
                         </div>
@@ -100,8 +118,14 @@
                                 class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
                                 style="object-fit: cover">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $d->namaoleh }}</h5>
-                                <p class="card-text">{{ $d->kota }}</p>
+                                <h5 class="card-title">
+                                    {{ $d->namaoleh }}</h5>
+                                <div style='z-index: 2; position: relative;'>
+                                    <a class="card-text bi bi-geo-alt text-decoration-none"
+                                        href="/filter/daerah/{{ $d->kota }}" style='color: inherit;'>
+                                        {{ $d->kota }}
+                                    </a>
+                                </div>
                             </div>
                             <a href="/varianoleh/{{ $d->idoleh }}" class="stretched-link"></a>
                         </div>
@@ -125,8 +149,14 @@
                                 class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
                                 style="object-fit: cover">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $d->namaoleh }}</h5>
-                                <p class="card-text">{{ $d->kota }}</p>
+                                <h5 class="card-title">
+                                    {{ $d->namaoleh }}</h5>
+                                <div style='z-index: 2; position: relative;'>
+                                    <a class="card-text bi bi-geo-alt text-decoration-none"
+                                        href="/filter/daerah/{{ $d->kota }}" style='color: inherit;'>
+                                        {{ $d->kota }}
+                                    </a>
+                                </div>
                             </div>
                             <a href="/varianoleh/{{ $d->idoleh }}" class="stretched-link"></a>
                         </div>
