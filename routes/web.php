@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\OlehController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\MitraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,4 @@ Route::get('daerah', [FilterController::class, 'daerahasal']);
 Route::get('filter/{kategori}/{by}', [FilterController::class, 'filterby']);
 Route::get('jenis/{jenis}', [FilterController::class, 'varianjenis']);
 Route::get('varianoleh/favorite/{idoleh}', [FavoriteController::class, 'favorite']);
+Route::get('/mitra',[MitraController::class,'mitra']);

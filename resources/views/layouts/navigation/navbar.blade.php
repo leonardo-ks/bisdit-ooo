@@ -172,7 +172,7 @@
                     </form>
                 </li>
                 <li>
-                    <a class="nav-link" href="#">Mitra</a>
+                    <a class="nav-link" href="/mitra">Mitra</a>
                 </li>
             </ul>
         </div>

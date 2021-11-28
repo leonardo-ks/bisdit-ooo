@@ -587,6 +587,7 @@ class ComposerStaticInitf652ca7f737fafc952c5096923a38919
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\FilterController' => __DIR__ . '/../..' . '/app/Http/Controllers/FilterController.php',
         'App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoginController.php',
+        'App\\Http\\Controllers\\MitraController' => __DIR__ . '/../..' . '/app/Http/Controllers/MitraController.php',
         'App\\Http\\Controllers\\OlehController' => __DIR__ . '/../..' . '/app/Http/Controllers/OlehController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
