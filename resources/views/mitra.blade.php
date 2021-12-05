@@ -42,30 +42,34 @@
                                             <div class="col">
                                                 <h6>Tentang {{ $m->namamitra }}</h6>
                                                 <p>{{ $m->deskripsimitra }}</p>
-                                                <table class="table table-borderless">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Kontak</td>
-                                                            <td>:</td>
-                                                            <td>{{ $m->kontak }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Alamat</td>
-                                                            <td>:</td>
-                                                            <td>{{ $m->alamat_mitra }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Jam Buka</td>
-                                                            <td>:</td>
-                                                            <td>{{ $m->jam_buka_mitra }}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Sampel Cicip</td>
-                                                            <td>:</td>
-                                                            <td>{{ $m->cicip }}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="col-4 bi bi-dot">Kontak</td>
+                                                                    <td class="col-1 text-center">:</td>
+                                                                    <td class="col-7">{{ $m->kontak }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="col-4 bi bi-dot">Alamat</td>
+                                                                    <td class="col-1 text-center">:</td>
+                                                                    <td class="col-7">{{ $m->alamat_mitra }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="col-4 bi bi-dot">Jam Buka</td>
+                                                                    <td class="col-1 text-center">:</td>
+                                                                    <td class="col-7">{{ $m->jam_buka_mitra }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="col-4 bi bi-dot">Sampel Cicip</td>
+                                                                    <td class="col-1 text-center">:</td>
+                                                                    <td class="col-7">{{ $m->cicip }}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <h5>Produk {{ $m->namamitra }}</h5>

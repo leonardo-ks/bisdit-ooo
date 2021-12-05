@@ -39,23 +39,41 @@
                 <div class="card-body">
 
                     <div class="row mb-2">
-                        <div class="col">
+                        <div class="col-10">
                             <div class="row">
-                                <div class="col">
+                                <div class="col-4">
                                     <h3 class="card-title">{{ $v->namaoleh }}</h3>
                                     @if ($v->namalain != null)
                                         <p class="fs-5 fw-light fst-italic lh-1">({{ $v->namalain }}) </p>
                                     @endif
                                 </div>
                                 @if ($v->statushalal = 1)
-                                    <div class="col">
+                                    <div class="col-1">
                                         <img src="https://cdn.discordapp.com/attachments/906163180328325130/906801367820165140/logohalal.png"
+                                            style="width:64px;height:auto;">
+                                    </div>
+                                @endif
+                                @if ($v->gluten_free = 1)
+                                    <div class="col-1">
+                                        <img src="https://cdn.discordapp.com/attachments/906163180328325130/917087399748702248/pngfind.com-bakery-icon-png-4155726.png"
+                                            style="width:64px;height:auto;">
+                                    </div>
+                                @endif
+                                @if ($v->vegetarian = 1)
+                                    <div class="col-1">
+                                        <img src="https://cdn.discordapp.com/attachments/906163180328325130/917087465695748096/vegetarianism-vegan-friendly-veganism-logo-brand-vegetarian-logo-3c9e4e12543f37bd7903e99215502861.png"
+                                            style="width:64px;height:auto;">
+                                    </div>
+                                @endif
+                                @if ($v->vegan = 1)
+                                    <div class="col-1">
+                                        <img src="https://cdn.discordapp.com/attachments/906163180328325130/917087437480689744/Daco_4443108.png"
                                             style="width:64px;height:auto;">
                                     </div>
                                 @endif
                             </div>
                         </div>
-                        <div class="col d-flex justify-content-end">
+                        <div class="col-2 d-flex justify-content-end">
                             <livewire:favorite-index :idoleh="$idoleh"></livewire:favorite-index>
                         </div>
                     </div>
@@ -107,44 +125,57 @@
                                     <table class="table table-borderless mt-2">
                                         <tbody>
                                             <tr>
-                                                <td class="col-2">Varian Jenis</td>
+                                                <td class="col-2 bi bi-dot">Varian Jenis</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/varian/{{ $v->namavarian }}">{{ $v->namavarian }}</a></td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/varian/{{ $v->namavarian }}">{{ $v->namavarian }}</a>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Rasa</td>
+                                                <td class="col-2 bi bi-dot">Rasa</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/rasa/{{ $v->namarasa }}">{{ $v->namarasa }}</a></td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/rasa/{{ $v->namarasa }}">{{ $v->namarasa }}</a>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Tekstur</td>
+                                                <td class="col-2 bi bi-dot">Tekstur</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/tekstur/{{ $v->namatekstur }}">{{ $v->namatekstur }}</a></td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/tekstur/{{ $v->namatekstur }}">{{ $v->namatekstur }}</a>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Bahan Dasar</td>
+                                                <td class="col-2 bi bi-dot">Bahan Dasar</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/bahandasar/{{ $v->namabahan }}">{{ $v->namabahan }}</a></td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/bahandasar/{{ $v->namabahan }}">{{ $v->namabahan }}</a>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Komposisi</td>
+                                                <td class="col-2 bi bi-dot">Komposisi</td>
                                                 <td class="col-1 text-center">:</td>
                                                 <td class="col-9">{{ $v->komposisi }}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Cara Masak</td>
+                                                <td class="col-2 bi bi-dot">Cara Masak</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/caramasak/{{ $v->namamasak }}">{{ $v->namamasak }}</a></td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/caramasak/{{ $v->namamasak }}">{{ $v->namamasak }}</a>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Rentang Harga</td>
+                                                <td class="col-2 bi bi-dot">Rentang Harga</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9">{{ $v->harga }}</td>
+                                                <td class="col-9">
+                                                    Rp.{{$v->hargamin}}-Rp.{{$v->hargamax}} per {{$v->satuan}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="col-2">Daerah Asal</td>
+                                                <td class="col-2 bi bi-dot">Daerah Asal</td>
                                                 <td class="col-1 text-center">:</td>
-                                                <td class="col-9"><a class="text-dark" href="/filter/daerah/{{ $v->kota }}">{{ $v->kota }}</a>, {{ $v->provinsi }}</td>
+                                                <td class="col-9"><a class="text-dark"
+                                                        href="/filter/daerah/{{ $v->kota }}">{{ $v->kota }},
+                                                    {{ $v->provinsi }}</a></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -158,7 +189,7 @@
                                     <table class="table table-borderless">
                                         <tbody>
                                             <tr>
-                                                <td><i class="bi bi-clock"></i></td>
+                                                <td><i class="bi bi-clock-fill"></i></td>
                                                 <td>Kadaluwarsa</td>
                                                 <td>:</td>
                                                 @php
@@ -177,13 +208,27 @@
                                                 <td>{{ $v->carapenyimpanan }}</td>
                                             </tr>
                                             <tr>
-                                                <td><i class="bi bi-cup"></i></td>
+                                                <td><i class="bi bi-cup-fill"></i></td>
                                                 <td>Cara Penyajian</td>
                                                 <td>:</td>
                                                 <td>{{ $v->carapenyajian }}</td>
                                             </tr>
                                             <tr>
-                                                <td><i class="bi bi-exclamation-diamond-fill"></i></td>
+                                                <td><i class="bi bi-emoji-smile-fill"></i></td>
+                                                <td>Manfaat</td>
+                                                <td>:</td>
+                                                <td>
+                                                    @php
+                                                        $manfaat = preg_split('/---/', $v->manfaat);
+                                                    @endphp
+
+                                                    @foreach ($manfaat as $mm)
+                                                        <p>{{ $mm }}<br></p>
+                                                    @endforeach
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><i class="bi bi-emoji-frown-fill"></i></td>
                                                 <td>Pantangan</td>
                                                 <td>:</td>
                                                 <td>
@@ -191,10 +236,9 @@
                                                         $pantangan = preg_split('/---/', $v->pantangan);
                                                     @endphp
 
-                                                        @foreach ($pantangan as $pp)
-                                                            <p>{{ $pp }}<br></p>
-                                                        @endforeach
-
+                                                    @foreach ($pantangan as $pp)
+                                                        <p>{{ $pp }}<br></p>
+                                                    @endforeach
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -221,9 +265,9 @@
                                             <img src="{{ $t->gambarproduk }}" class="card-img-top">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $t->merk }}</h5>
-                                                <h6><i class="bi bi-geo-alt-fill"></i>{{ $t->kota }},
+                                                <p class="bi bi-geo-alt">{{ $t->kota }},
                                                     {{ $t->provinsi }}
-                                                </h6>
+                                                </p>
                                                 <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                     data-bs-target="#myModal">Detail</a>
                                             </div>
@@ -252,19 +296,32 @@
                                                                     <table class="table table-borderless">
                                                                         <tbody>
                                                                             <tr>
-                                                                                <td>Varian Yang Dijual</td>
+                                                                                <td class="bi bi-dot">Varian Yang Dijual</td>
                                                                                 <td>:</td>
                                                                                 @php
                                                                                     $varjul = preg_split('/---/', $t->varianjual);
                                                                                 @endphp
+                                                                                @php
+                                                                                $beseler = preg_split('/---/', $t->best_seller);
+                                                                                @endphp
                                                                                 <td>
+                                                                                    @foreach ($beseler as $bs)
+                                                                                        {{ $bs }} <i type="button" class="bi bi-hand-thumbs-up-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="Best Seller"></i><br>
+                                                                                    @endforeach
                                                                                     @foreach ($varjul as $var)
                                                                                         {{ $var }}<br>
                                                                                     @endforeach
                                                                                 </td>
+                                                                                <script>
+                                                                                    // Initialize tooltips
+                                                                                    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                                                                                    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                                                                      return new bootstrap.Tooltip(tooltipTriggerEl)
+                                                                                    })
+                                                                                </script>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>Bundle Yang Dijual</td>
+                                                                                <td class="bi bi-dot">Bundle Yang Dijual</td>
                                                                                 <td>:</td>
                                                                                 @php
                                                                                     $bundel = preg_split('/---/', $t->bundle);
@@ -276,20 +333,52 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>Kemasan Tersedia</td>
+                                                                                <td class="bi bi-dot">Rentang Harga</td>
+                                                                                <td>:</td>
+                                                                                <td>
+                                                                                    @php
+                                                                                        $renhar = preg_split('/---/', $t->harga);
+                                                                                    @endphp
+                                                                                    Rp.{{ $renhar[0] }} -
+                                                                                    Rp.{{ $renhar[1] }}
+                                                                                    per {{ $t->satuan }}
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="bi bi-dot">Kemasan Tersedia</td>
                                                                                 <td>:</td>
                                                                                 <td>{{ $t->kemasan }}</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>Alamat</td>
+                                                                                <td class="bi bi-dot">Alamat</td>
                                                                                 <td>:</td>
                                                                                 <td>{{ $t->alamat }},
                                                                                     {{ $t->kota }}</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td>Jam Buka</td>
+                                                                                <td class="bi bi-dot">Jam Buka</td>
                                                                                 <td>:</td>
                                                                                 <td>{{ $t->jambuka }}</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="bi bi-dot">Sosial Media</td>
+                                                                                <td>:</td>
+                                                                                    @php
+                                                                                        $sos = preg_split('/---/', $t->sosmed);
+                                                                                    @endphp
+                                                                                <td>
+                                                                                    @if ($sos[0] = 'instagram')
+                                                                                    <i class="bi bi-instagram"></i>
+                                                                                    <a href="https://www.instagram.com/{{$sos[1]}}" target="_blank" class="text-dark">{{$sos[1]}}</a>
+                                                                                    @elseif ($sos[0] = 'whatsapp')
+                                                                                    <i class="bi bi-whatsapp"></i>
+                                                                                    <a href="https://www.wa.me/{{$sos[1]}}" target="_blank" class="text-dark">{{$sos[1]}}</a>
+                                                                                    @else
+                                                                                    <i class="bi bi-facebook"></i>
+                                                                                    <a href="https://www.facebook.com/{{$sos[1]}}" target="_blank" class="text-dark">{{$sos[1]}}</a>
+                                                                                    @endif
+
+                                                                                </td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>

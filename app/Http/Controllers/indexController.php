@@ -25,25 +25,44 @@ class IndexController extends Controller
 
         $olehKolega = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('namacocok', 'like', '%Kolega%')
+            ->where([
+                // ['kota', '=', $address['city']],
+                ['namacocok', 'like', '%Kolega%'],
+                ['favorit_count', '>', 0]
+            ])
             ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 
         $olehKeluarga = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('namacocok', 'like', '%Keluarga%')
+            ->where([
+                ['kota', '=', $address['city']],
+                ['namacocok', 'like', '%Keluarga%'],
+                ['favorit_count', '>', 0]
+            ])
             ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 
         $olehPopuler = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('kota', '=', $address['city'])
+            ->where([
+                ['kota', '=', $address['city']],
+                ['favorit_count', '>', 0]
+            ])
             ->orderBy('favorit_count', 'desc')
             ->limit(12)
             ->get();
 
-        return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler'));
+        $harga = DB::table('varianoleh')
+        ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+        ->where([
+            ['kota', '=', $address['city']],
+            ['hargamin', '<=', 40000]
+        ])
+        ->get();
+
+        return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler','harga'));
     }
 }
