@@ -44,7 +44,7 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
-                                                                <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                     href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
@@ -54,7 +54,8 @@
                                                                 class="stretched-link"></a>
                                                         </div>
                                                         <div class="card-footer bg-transparent">
-                                                            <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                            <p class="card-text bi bi-heart-fill"> {{ $rek->favorit_count }}
+                                                                Orang Menyukai ini</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -73,7 +74,7 @@
                                                                 <h5 class="card-title">{{ $rek->namaoleh }}
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -83,7 +84,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
 
                                                         </div>
@@ -104,7 +106,7 @@
                                                                 <h5 class="card-title">
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -114,7 +116,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -163,7 +166,7 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
-                                                                <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                     href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
@@ -173,7 +176,8 @@
                                                                 class="stretched-link"></a>
                                                         </div>
                                                         <div class="card-footer bg-transparent">
-                                                            <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                            <p class="card-text bi bi-heart-fill">
+                                                                {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -192,7 +196,7 @@
                                                                 <h5 class="card-title">{{ $rek->namaoleh }}
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -202,7 +206,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -222,7 +227,7 @@
                                                                 <h5 class="card-title">
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -232,7 +237,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -281,7 +287,7 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
-                                                                <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                     href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
@@ -291,7 +297,8 @@
                                                                 class="stretched-link"></a>
                                                         </div>
                                                         <div class="card-footer bg-transparent">
-                                                            <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                            <p class="card-text bi bi-heart-fill">
+                                                                {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -310,7 +317,7 @@
                                                                 <h5 class="card-title">{{ $rek->namaoleh }}
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -320,7 +327,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -340,7 +348,7 @@
                                                                 <h5 class="card-title">
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -350,7 +358,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text bi bi-heart-fill"> {{$rek->favorit_count}} Orang Menyukai ini</p>
+                                                                <p class="card-text bi bi-heart-fill">
+                                                                    {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -400,7 +409,7 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title">{{ $rek->namaoleh }}</h5>
                                                             <div style='z-index: 2; position: relative;'>
-                                                                <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                     href="/filter/daerah/{{ $rek->kota }}"
                                                                     style='color: inherit;'>
                                                                     {{ $rek->kota }}
@@ -410,7 +419,8 @@
                                                                 class="stretched-link"></a>
                                                         </div>
                                                         <div class="card-footer bg-transparent">
-                                                            <p class="card-text">Mulai dari Rp.{{$rek->hargamin}}</p>
+                                                            <p class="card-text">Mulai dari Rp.{{ $rek->hargamin }}
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -429,7 +439,7 @@
                                                                 <h5 class="card-title">{{ $rek->namaoleh }}
                                                                 </h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -439,7 +449,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text">Mulai dari Rp.{{$rek->hargamin}}</p>
+                                                                <p class="card-text">Mulai dari
+                                                                    Rp.{{ $rek->hargamin }}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -459,7 +470,7 @@
                                                                 <h5 class="card-title">
                                                                     {{ $rek->namaoleh }}</h5>
                                                                 <div style='z-index: 2; position: relative;'>
-                                                                    <a class="card-text bi bi-geo-alt-fill text-decoration-none"
+                                                                    <a class="card-text bi bi-geo-alt text-decoration-none"
                                                                         href="/filter/daerah/{{ $rek->kota }}"
                                                                         style='color: inherit;'>
                                                                         {{ $rek->kota }}
@@ -469,7 +480,8 @@
                                                                     class="stretched-link"></a>
                                                             </div>
                                                             <div class="card-footer bg-transparent">
-                                                                <p class="card-text">Mulai dari Rp.{{$rek->hargamin}}</p>
+                                                                <p class="card-text">Mulai dari
+                                                                    Rp.{{ $rek->hargamin }}</p>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-light">
         <a href="/" class="navbar-brand">
             <img src="https://rerollcdn.com/BlueArchive/Schools/White/Trinity.png" class="bi me-2" height="32"
@@ -17,8 +17,9 @@
                             aria-expanded="false">
                             Kategori
                         </a>
-                        <div class="dropdown-menu" style="width: 100%;" aria-labelledby="navbarDropdownMenuLink">
-                            <div class="container">
+                        <div class="dropdown-menu" style="margin-top: -1px; left: 0; right: 0;"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <div class="container-fluid">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="pane-A" data-bs-toggle="tab"
@@ -176,33 +177,36 @@
                 </li>
             </ul>
         </div>
-        <form class="d-flex">
-            <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search">
-        </form>
-        @guest
-            <ul class="nav">
-                <li><a href="/login" class="nav-link px-2 link-secondary">Login</a></li>
-                <li><a href="/register" class="nav-link px-2 link-secondary">Register</a></li>
-            </ul>
-        @endguest
-        @auth
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ auth()->user()->photo }}" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="#">Profil</a></li>
-                    <li><a class="dropdown-item" href="#">Favorit</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <form action="/logout" method="post">
-                        @csrf
-                        <button class="dropdown-item" type="submit">Logout</button>
-                    </form>
+        <div class="collapse navbar-collapse justify-content-end" id=" toggleMenu">
+            <form class="d-flex">
+                <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search">
+            </form>
+            @guest
+                <ul class="nav">
+                    <li><a href="/login" class="nav-link px-2 link-secondary">Login</a></li>
+                    <li><a href="/register" class="nav-link px-2 link-secondary">Register</a></li>
                 </ul>
-            </div>
-        @endauth
+            @endguest
+            @auth
+                <div class="dropdown  text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ auth()->user()->photo }}" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small"
+                        aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Favorit</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Logout</button>
+                        </form>
+                    </ul>
+                </div>
+            @endauth
+        </div>
     </nav>
 </div>
