@@ -10,7 +10,7 @@
                         <img src="{{ $m->foto_mitra }}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{ $m->namamitra }}</h5>
-                            <p class="card-text"><i class="bi bi-geo-alt-fill"></i>{{ $m->alamat_mitra }}</p>
+                            <p class="card-text"><i class="bi bi-geo-alt"></i>{{ $m->alamat_mitra }}</p>
                             <h6 class="card-text">{{ $m->kota }}-{{ $m->provinsi }}</h6>
                             <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">Lihat Detail</a>
@@ -54,12 +54,14 @@
                                                                 <tr>
                                                                     <td class="col-4 bi bi-dot">Alamat</td>
                                                                     <td class="col-1 text-center">:</td>
-                                                                    <td class="col-7">{{ $m->alamat_mitra }}</td>
+                                                                    <td class="col-7">{{ $m->alamat_mitra }}
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="col-4 bi bi-dot">Jam Buka</td>
                                                                     <td class="col-1 text-center">:</td>
-                                                                    <td class="col-7">{{ $m->jam_buka_mitra }}</td>
+                                                                    <td class="col-7">{{ $m->jam_buka_mitra }}
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="col-4 bi bi-dot">Sampel Cicip</td>
@@ -76,25 +78,26 @@
 
                                         <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
                                             @foreach ($produkmitra as $pm)
-                                            @if ($pm->idmitra = $m->idmitra)
-                                                <div class="col">
-                                                    <div class="card h-100">
-                                                        <img class="d-block ratio ratio-16x9 rounded"
-                                                            src="{{ $pm->gambar_produk_mitra }}"
-                                                            style="object-fit: cover;">
-                                                        <div class="card-body">
-                                                            <h5 class="card-title">{{ $pm->nama_produk_mitra }}</h5>
-                                                            <p class="card-text">Harga Produk :
-                                                                {{ $pm->harga_produk_mitra }} <br>
-                                                                @if ($pm->statusprodukmitra = 1)
-                                                                    Produk Asli Dapur {{ $pm->namamitra }}
-                                                                @else
-                                                                    Produk Partner {{ $pm->namamitra }}
-                                                                @endif
-                                                            </p>
+                                                @if ($pm->idmitra = $m->idmitra)
+                                                    <div class="col">
+                                                        <div class="card h-100">
+                                                            <img class="d-block ratio ratio-16x9 rounded"
+                                                                src="{{ $pm->gambar_produk_mitra }}"
+                                                                style="object-fit: cover;">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">{{ $pm->nama_produk_mitra }}
+                                                                </h5>
+                                                                <p class="card-text">Harga Produk :
+                                                                    {{ $pm->harga_produk_mitra }} <br>
+                                                                    @if ($pm->statusprodukmitra = 1)
+                                                                        Produk Asli Dapur {{ $pm->namamitra }}
+                                                                    @else
+                                                                        Produk Partner {{ $pm->namamitra }}
+                                                                    @endif
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 @endif
                                             @endforeach
                                         </div>

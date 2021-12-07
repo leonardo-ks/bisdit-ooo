@@ -5,6 +5,11 @@
         <div class="card px-5 mx-5">
             <div class="card-body">
                 @if ($kategori = 'daerah' && count($olehbydaerah->items()) > 0)
+                    @foreach ($olehbydaerah->slice(0, 1) as $d)
+                        <div class="p-5 bg-image rounded-3 mb-4 mt-4"
+                            style="background-image: url('{{ $d->gambarlokasi }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
+                        </div>
+                    @endforeach
                     <h3>Oleh Oleh dari {{ $by }}</h3>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbydaerah as $d)
@@ -27,6 +32,11 @@
                     </div>
                 @endif
                 @if ($kategori = 'rasa' && count($olehbyrasa->items()) > 0)
+                    @foreach ($olehbyrasa->slice(0, 1) as $d)
+                        <div class="p-5 bg-image rounded-3 mb-4 mt-4"
+                            style="background-image: url('{{ $d->gambarasa }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
+                        </div>
+                    @endforeach
                     <h3>Oleh Oleh dengan rasa {{ $by }}</h3>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbyrasa as $d)
@@ -55,6 +65,11 @@
                     </div>
                 @endif
                 @if ($kategori = 'bahandasar' && count($olehbybahan->items()) > 0)
+                    @foreach ($olehbybahan->slice(0, 1) as $d)
+                        <div class="p-5 bg-image rounded-3 mb-4 mt-4"
+                            style="background-image: url('{{ $d->gambarbahan }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
+                        </div>
+                    @endforeach
                     <h3>Oleh Oleh berbahan dasar {{ $by }}</h3>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbybahan as $d)
@@ -83,6 +98,11 @@
                     </div>
                 @endif
                 @if ($kategori = 'tekstur' && count($olehbytekstur->items()) > 0)
+                    @foreach ($olehbytekstur->slice(0, 1) as $d)
+                        <div class="p-5 bg-image rounded-3 mb-4 mt-4"
+                            style="background-image: url('{{ $d->gambartekstur }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
+                        </div>
+                    @endforeach
                     <h3>Oleh Oleh yang memiliki tekstur {{ $by }}</h3>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbytekstur as $d)
@@ -111,6 +131,11 @@
                     </div>
                 @endif
                 @if ($kategori = 'caramasak' && count($olehbymasak->items()) > 0)
+                    @foreach ($olehbymasak->slice(0, 1) as $d)
+                        <div class="p-5 bg-image rounded-3 mb-4 mt-4"
+                            style="background-image: url('{{ $d->gambarmasak }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
+                        </div>
+                    @endforeach
                     <h3>Oleh Oleh dengan cara masak {{ $by }}</h3>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbymasak as $d)
@@ -143,9 +168,9 @@
                         <div class="p-5 bg-image rounded-3 mb-4 mt-4"
                             style="background-image: url('{{ $d->gambarvarian }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">
                         </div>
-                        <h3>{{ $by }}</h3>
-                        <p>{{ $d->deskripsivarian }}</p>
                     @endforeach
+                    <h3>{{ $by }}</h3>
+                    <p>{{ $d->deskripsivarian }}</p>
                     <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                         @foreach ($olehbyvarian as $d)
                             <div class="col">

@@ -6,7 +6,7 @@
             <div class="d-flex h-100">
                 <div class="text-white">
                     <h1 class="m-3">Oasis Oleh - Oleh</h1>
-                    <h4 class="m-3" style="max-width: 50%">Oasis oleh - oleh merupakan website utama untuk
+                    <h4 class="m-3" style="max-width: 60%">Oasis oleh - oleh merupakan website utama untuk
                         membantu umat manusia memenuhi kebutuhannya dalam mencari oleh - oleh khas daerah Indonesia.</h4>
                 </div>
             </div>
@@ -18,10 +18,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-8">
-                            <h5>Oleh - oleh terpopuler di sekitarmu</h5>
+                            <div class="row">
+                                <h5>Oleh - oleh terpopuler di sekitarmu <a class="text-secondary" href="#"
+                                        style="font-size: 14px"> Lebih</a>
+                                </h5>
+                            </div>
                         </div>
                         <div class="col-4 text-end">
-
                             <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehPopuler" role="button"
                                 data-bs-slide="prev">
                                 <i class="bi bi-arrow-left"></i>
@@ -54,7 +57,8 @@
                                                                 class="stretched-link"></a>
                                                         </div>
                                                         <div class="card-footer bg-transparent">
-                                                            <p class="card-text bi bi-heart-fill"> {{ $rek->favorit_count }}
+                                                            <p class="card-text bi bi-heart-fill">
+                                                                {{ $rek->favorit_count }}
                                                                 Orang Menyukai ini</p>
                                                         </div>
                                                     </div>
@@ -87,7 +91,6 @@
                                                                 <p class="card-text bi bi-heart-fill">
                                                                     {{ $rek->favorit_count }} Orang Menyukai ini</p>
                                                             </div>
-
                                                         </div>
                                                     </div>
                                                 @endforeach
@@ -128,7 +131,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
                     </div>
                 </div>
             </section>
@@ -140,7 +142,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-8">
-                            <h5>Rekomendasi oleh - oleh yang cocok untuk kolega</h5>
+                            <h5>Rekomendasi oleh - oleh yang cocok untuk kolega <a class="text-secondary" href="#"
+                                    style="font-size: 14px"> Lebih</a></h5>
                         </div>
                         <div class="col-4 text-end">
 
@@ -249,7 +252,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
                     </div>
                 </div>
             </section>
@@ -261,7 +263,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-8">
-                            <h5>Rekomendasi oleh - oleh yang cocok untuk keluarga</h5>
+                            <h5>Rekomendasi oleh - oleh yang cocok untuk keluarga <a class="text-secondary" href="#"
+                                    style="font-size: 14px"> Lebih</a></h5>
                         </div>
                         <div class="col-4 text-end">
 
@@ -370,7 +373,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
                     </div>
                 </div>
             </section>
@@ -382,11 +384,11 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-8">
-                            <h5>Rekomendasi oleh - oleh dibawah Rp.40000</h5>
+                        <div class="col-7">
+                            <h4>Rekomendasi oleh - oleh dibawah Rp.40000 <a class="text-secondary" href="#"
+                                    style="font-size: 14px;"> Lebih</a></h4>
                         </div>
                         <div class="col-4 text-end">
-
                             <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga" role="button"
                                 data-bs-slide="prev">
                                 <i class="bi bi-arrow-left"></i>
@@ -492,7 +494,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
                     </div>
                 </div>
             </section>

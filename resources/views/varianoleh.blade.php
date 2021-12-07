@@ -83,7 +83,6 @@
                 </div>
 
                 <div class="container">
-
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
@@ -109,7 +108,6 @@
                                     type="button" role="tab" aria-controls="mitra" aria-selected="false">Mitra</button>
                             </li>
                         @endif
-
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -304,7 +302,7 @@
                                                                                     @foreach ($beseler as $bs)
                                                                                         {{ $bs }} <i
                                                                                             type="button"
-                                                                                            class="bi bi-hand-thumbs-up-fill"
+                                                                                            class="bi bi-hand-thumbs-up"
                                                                                             data-bs-toggle="tooltip"
                                                                                             data-bs-placement="right"
                                                                                             title="Best Seller"></i><br>

@@ -1,6 +1,5 @@
-<div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-light">
-        <a href="/" class="navbar-brand">
+        <a href="/" class="navbar-brand" style="margin-left: 10px">
             <img src="https://rerollcdn.com/BlueArchive/Schools/White/Trinity.png" class="bi me-2" height="32"
                 style="filter: invert(55%) sepia(91%) saturate(399%) hue-rotate(193deg) brightness(96%) contrast(100%);">
         </a>
@@ -182,7 +181,7 @@
                 <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search">
             </form>
             @guest
-                <ul class="nav">
+                <ul class="nav" style="margin-right: 10px">
                     <li><a href="/login" class="nav-link px-2 link-secondary">Login</a></li>
                     <li><a href="/register" class="nav-link px-2 link-secondary">Register</a></li>
                 </ul>
@@ -193,8 +192,8 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ auth()->user()->photo }}" width="32" height="32" class="rounded-circle">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small"
-                        aria-labelledby="dropdownUser1">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small" style="margin-right: 10px
+                            aria-labelledby=" dropdownUser1">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
                         <li><a class="dropdown-item" href="#">Favorit</a></li>
                         <li>
@@ -209,4 +208,3 @@
             @endauth
         </div>
     </nav>
-</div>
