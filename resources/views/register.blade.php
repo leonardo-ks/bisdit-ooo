@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="{{ url('css/jquery.flexdatalist.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -50,10 +51,35 @@
                                 </div>
                             @enderror
                         </div>
+                        <label class="mt-1 form-control" for="pernah_wisata">Kota yang pernah kamu kunjungi :</label>
+                        <div class="mt-1 form-floating">
+
+                            <input id="pernah_wisata" type="text" placeholder="Ketik Nama Kota" class="flexdatalist form-control"
+                                data-min-length="1" data-searchContain="true" multiple="multiple" list="lokasi"
+                                name="pernah_wisata">
+                            <datalist id="lokasi">
+                                @foreach ($provinsi as $p)
+                                <option value="Apples">{{$p->kota}}</option>
+                                @endforeach
+                            </datalist>
+                            <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+                            <script src="{{ url('js/jquery.flexdatalist.min.js') }}"></script>
+                            <script>
+                                $('.flexdatalist-json').flexdatalist({
+                                    searchContain: false,
+                                    valueProperty: 'iso2',
+                                    minLength: 1,
+                                    focusFirstResult: true,
+                                    selectionRequired: true,
+                                });
+                            </script>
+                        </div>
+
                         <button class="mt-2 w-100 btn btn-lg btn-primary" type="submit">Daftar</button>
                     </form>
                     <small class="d-block text-center mt-2">Sudah memiliki akun? <a href="/login">Login</a></small>
                 </main>
+
             </div>
         </div>
     </div>

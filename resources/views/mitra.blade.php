@@ -89,7 +89,7 @@
                                                                 </h5>
                                                                 <p class="card-text">Harga Produk :
                                                                     {{ $pm->harga_produk_mitra }} <br>
-                                                                    @if ($pm->statusprodukmitra = 1)
+                                                                    @if ($pm->status_produkmitra == 1)
                                                                         Produk Asli Dapur {{ $pm->namamitra }}
                                                                     @else
                                                                         Produk Partner {{ $pm->namamitra }}

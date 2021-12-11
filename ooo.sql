@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 05:34 PM
+-- Generation Time: Dec 11, 2021 at 07:25 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -42,11 +42,27 @@ CREATE TABLE `bahandasar` (
 --
 
 INSERT INTO `bahandasar` (`idbahan`, `namabahan`, `gambarbahan`, `pantangan`, `created_at`, `updated_at`, `manfaat`) VALUES
-(1, 'Kacang', 'https://cdn.discordapp.com/attachments/906163180328325130/906354771626176602/Kacang.jpg', 'Bagi penderita asma konsumsi---kacang awalnya bisa menyebabkan sesak nafas, rasa panas di perut, mual dan muntah. Dalam waktu singkat racun dari kacang yang memicu alergi bisa membuat penderita asma tidak bisa bernafas.', NULL, NULL, NULL),
-(2, 'Kopi', 'https://cdn.discordapp.com/attachments/906163180328325130/906354818346536960/Kopi.jpg', 'Bagi penderita asam lambung---kopi dapat meningkatkan asam lambung dan memicu maag kronis, refluks asam dan iritasi lambung', NULL, NULL, NULL),
-(3, 'Tepung', 'https://cdn.discordapp.com/attachments/906163180328325130/906354901368590447/Tepung.jpg', 'Bagi Penderita diabetes tipe 2---Apabila mengkonsumsi makanan dari tepung yang mengandung karbohidrat rafinasi, beberapa resiko kesehatan lain yang dapat terjadi adalah obesitas,  dan penyakit jantung', NULL, NULL, 'Olahan yang terbuat dari tepung dapat memberikan Anda asupan kalori, lemak, serat, dankarbohidrat. Selain itu, tepung juga mengandung berbagai vitamin, mineral, dan antioksidan.'),
-(4, 'Talas', 'https://cdn.discordapp.com/attachments/906163180328325130/906354859547177040/Talas.jpg', 'Bagi penderita obesitas---Dalam 100 gram talas terkandung 112 kalori sehingga bisa menjadi masalah buat mereka yang ingin menurunkan berat badan. Kadar karbohidrat talas juga lebih tinggi dari kentang. Jadi terlalu banyak makan talas bisa membuat gemuk. Makanlah talas dalam jumlah wajar untuk mendapatkan manfaatnya bagi kesehatan tanpa menambah berat badan.', NULL, NULL, NULL),
-(5, 'Talas', 'https://cdn.discordapp.com/attachments/906163180328325130/906354859547177040/Talas.jpg', 'Bagi penderita obesitas---Dalam 100 gram talas terkandung 112 kalori sehingga bisa menjadi masalah buat mereka yang ingin menurunkan berat badan. Kadar karbohidrat talas juga lebih tinggi dari kentang. Jadi terlalu banyak makan talas bisa membuat gemuk. Makanlah talas dalam jumlah wajar untuk mendapatkan manfaatnya bagi kesehatan tanpa menambah berat badan.', NULL, NULL, NULL);
+(1, 'Kacang', 'https://cdn.discordapp.com/attachments/906163180328325130/906354771626176602/Kacang.jpg', 'penderita asma---Konsumsi kacang awalnya bisa menyebabkan sesak nafas, rasa panas di perut, mual dan muntah. Dalam waktu singkat racun dari kacang yang memicu alergi bisa membuat penderita asma tidak bisa bernafas.', NULL, NULL, '1. Membangun dan memperbaiki sel-sel tubuh---2. Mencegah kolesterol tinggi---3. Melancarkan pencernaan---4. Menurunkan berat badan---5. Mengelola kadar gula darah---6. Menjaga kesehatan jantung---7. Pencegahan batu empedu---8. Mencegah bayi lahir cacat---9. Mencegah anemia---10. Menjaga kesehatan kulit\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(2, 'Kopi', 'https://cdn.discordapp.com/attachments/906163180328325130/906354818346536960/Kopi.jpg', 'penderita asam lambung---Kopi dapat meningkatkan asam lambung dan memicu maag kronis, refluks asam dan iritasi lambung', NULL, NULL, '1. Menurunkan risiko kanker---2. Menurunkan berat badan---3. Murunkan risiko diabetes tipe 2---4. Mengurangi risiko terjangkit alzheimer---5. Melindungi organ hati---6. Meningkatkan energi dan fungsi otak---7. Meningkatkan suasana hati(mood)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(3, 'Tepung', 'https://cdn.discordapp.com/attachments/906163180328325130/906354901368590447/Tepung.jpg', 'Bagi Penderita diabetes tipe 2---Apabila mengkonsumsi makanan dari tepung yang mengandung karbohidrat rafinasi, beberapa resiko kesehatan lain yang dapat terjadi adalah obesitas,  dan penyakit jantung', NULL, NULL, '1. membantu pembentukan gluten dan mempercepan pematangan---2. Membantu pembentukan energi dari karbohidrat dan lemak---3. Meningkatkan protein dan menghasilkan gluten dengan kualitas istimewa---4. Menaikkan level gula darah'),
+(4, 'Talas', 'https://cdn.discordapp.com/attachments/906163180328325130/906354859547177040/Talas.jpg', 'Penderita obesitas---Dalam 100 gram talas terkandung 112 kalori sehingga bisa menjadi masalah buat mereka yang ingin menurunkan berat badan. Kadar karbohidrat talas juga lebih tinggi dari kentang. Jadi terlalu banyak makan talas bisa membuat gemuk.', NULL, NULL, '1. Menjaga kesehatan pencernaan---2. Membantu menurunkan berat badan---3. Meningkatkan kesehatan jantung---4. Mengendalikan tekanan darah---5. Mengontrol kadar gula darah---6. Kaya akan antioksidan---7. Membantu memenuhi kebutuhan seng'),
+(5, 'Cabai', 'https://cdn.discordapp.com/attachments/906163180328325130/919055589697552404/Cabai.jpg', 'Penderita asam lambung---Konsumsi caba sebaiknya dilakukan setelah makan. Konsumsi cabai yang berlebihan dapat mengakibatkan maag dan peradangan pada usus.', NULL, NULL, '1. Meringankan rasa sakit---2. Menurunkan berat badan---3. Memelihara kesehatan pencernaan---4. Menjaga kadar gula darah---5. Mengurangi risiko penyakit jantung dan pembuluh darah---6. Menurunkan risiko kanker---7. Melancarkan pernapasan---8. Menjaga kesehatan mata'),
+(6, 'Jahe', 'https://cdn.discordapp.com/attachments/906163180328325130/918198110935715921/Jahe.jpg', 'Ibu hami---Dosis yang aman mengonsumsi jahe bagi ibu hamil sebanyak 1500 mg dalam sehari. Jika dikonsumsi lebih dari itu, ahli kandungan memperingatkan bahwa jahe bisa menimbulkan risiko terjadinya pendarahan hingga keguguran\r\n', NULL, NULL, '1. Anti Penuaan dan Kanker---2. Meredakan Nyeri Haid---3. Menurunkan Glukosa Darah sampai Kolesterol---4. Memperkuat Sistem Imun---5. Menangkal Infeksi Bakteri dan Virus---6. Meredakan Sakit Otot---7. Meredakan Morning Sickness---8. Mengatasi Masalah Pencernaan'),
+(7, 'Buah-buahan', 'https://cdn.discordapp.com/attachments/906163180328325130/918540381967233054/Buah.jpeg', 'Penderita asam lambung---Memakan buah-buahan yang masam dengan berlebih dapat menyebabkan peningkatan asam lambung', NULL, NULL, '1. Mengurangi terkena risiko penyakit jantung, diabetes tipe 2, obesitas, stroke, kanker, dan sebagainya---2. Memenuhi Asupan Vitamin, Nutrisi dan Mineral---3. Memerangi Radikal Bebas---4. Menjaga Tubuh Tetap Bugar---5. Menjaga Kesehatan Tulang---6. Meningkatkan Kinerja Otak---7. Menghidrasi Tubuh---8. Menjaga Kesehatan Kulit---9. Memberikan Energi---10. Menjaga Kesehatan Sistem Pencernaan---11. Menurunkan Berat Badan'),
+(8, 'Jamur', 'https://cdns.klimg.com/merdeka.com/i/w/news/2020/12/06/1250450/670x335/15-jenis-jenis-jamur-yang-bisa-dikonsumsi-beserta-manfaatnya-bagi-kesehatan.jpeg', 'Penderita alergi jamur---Bagi orang-orng tertentu yng menderita lergi jamur, mengkonsumsi jamur dapat menyebabkan kelelahan, sakit perut, alergi kulit, sensasi kesemutan, sakit kepala dan perasaan cemas.', NULL, NULL, '1. Mencegah kanker---2. Menjaga kesehatan jantung---3. Meningkatkan kekebalan tubuh---4. Menurunkan kadar kolesterol dalam darah---5. Menjaga kesehatan otot dan saraf---6. Menjaga kesehatan tulang---7. Menurunkan risiko diabetes'),
+(9, 'Tahu', 'https://cdn.discordapp.com/attachments/906163180328325130/917472030117490698/Tahu.jpg', 'Penderita asam urat---Pengidap asam urat pantang untuk mengonsumsi makanan yang terbuat dari kedelai, seperti tahu dan tempe. Kandungan purin dalam tahu dan tempe dapat memicu kekambuhan asam urat pada sendi.', NULL, NULL, '1. Mencegah risiko serangan jantung---2. Mengurangi risiko kanker---3. Menurunkan berat badan---4. Melancarkan pencernaan---5. Mencegah risiko diabetes tipe 2---6. Mengurangi gejala menopause---7. Mencegah osteoporosis---8. Menjaga fungsi kognitif otak---9. Mengurangi penuaan kulit---10. Menurunkan kolesterol---11. Menjaga fungsi ginjal'),
+(10, 'Gandum', 'https://cdn.discordapp.com/attachments/906163180328325130/918198089418932224/Gandum.jpg', 'Penderita celiac---Memakan makanan yang mengandung gluten seperti gandum dengan berlebih dapat menyebabkan gangguan pada usus kecil serta gangguan pada otak seperti epilepsi', NULL, NULL, '1. Mencegah dan mengatasi sembelit---2. Mendukung fungsi sistem pencernaan yang sehat dengan membantu menghilangkan bakteri jahat di usus---3. Menurunkan risiko penyakit kronis, seperti jantung, stroke, obesitas, dan diabetes tipe 2---4. Mengurangi peradangan kronis---5. Mengurangi risiko terkena kanker usus besar---6. Mendukung program diet dan membuat tubuh merasa kenyang lebih lama'),
+(11, 'Beras', 'https://cdn.discordapp.com/attachments/906163180328325130/918198065335246908/Beras.jpg', 'Penderita diabetes melitus---Penentuan jenis beras harus disesuaikan dengan kandungan amilosa tinggi dan Indeks Glikemik (IG) rendah.', NULL, NULL, '1. Menyediakan energi---2. Mencegah obesitas---3. Mengontrol tekanan darah---4. Mencegah penyakit kanker---5. Perawatan kulit---6. Mencegah penyakit Alzheimer---7. Meningkatkan kualitas diuretik dan digestif---8. Meningkatkan metabolisme---9. Meningkatkan kesehatan kardiovaskular'),
+(12, 'Ubi', 'https://cdn.discordapp.com/attachments/906163180328325130/918205230171176970/Ubi.jpg', 'Penderita tipes---tekstur ubi yang berserat ini  akan berdampak buruk terhadap kelangsungan pemulihan kesehatan penyakit tipes. Jika penderita tipes tetap memaksa memakannya, dikhawatirkan penyakit bisa semakin parah.', NULL, NULL, '1. Mencegah penyakit jantung---2. Menjaga berat badan---3. Mencegah kanker---4. Menjaga kesehatan mata---5. Mengurangi risiko terjadinya peradangan'),
+(13, 'Kepiting', 'https://cdn.discordapp.com/attachments/906163180328325130/917471931521970236/Kepiting.jpg', 'penderita hipertensi---kepiting mengandung kadar natrium yang tinggi, sehingga disarankan untuk membatasi makan kepiting agar tidak berlebihan.', NULL, NULL, '1. Baik bagi kesehatan tulang---2. Meningkatkan kognisi dan fungsi keseluruhan sistem saraf---3. Menghilangkan peradangan---4. Menetralisir radikal bebas---6. Meningkatkan fungsi keseluruhan ginjal dan hati---7. Meningkatkan produksi sel darah merah'),
+(14, 'Ikan', 'https://cdn.discordapp.com/attachments/906163180328325130/918181325138178088/Ikan.jpg', 'Penderita asam urat---Ikan memiliki kandungan purin yang cukup tinggi sehingga tidak baik untuk dikonsumsi bagi penderta asam urat. ', NULL, NULL, '1. Baik untuk perkembangan mata dan otak---2. meningkatkan kesehatan otak---3. Mencegah sekaligus mengatasi depresi---4. Mengurangi risiko penyakit autoimun---5. Menurunkan risiko stroke dan serangan jantung---6. Mencegah asma pada anak---7. Meningkatkan kualitas tidur---8. Mengurangi risiko lahir prematur'),
+(15, 'Pisang', 'https://cdn.discordapp.com/attachments/906163180328325130/917471964355002398/Pisang.jpg', 'Penderita diabetes---Pisang mengandung gula dan karbohidrat yang tinggi. Hal ini dapat membuat kadar gula penderita melewati batas normal apabila dikonsumsi berlebihan.---Penderita maag---Pisang termasuk makanan yang mengandung kadar gas tinggi sehingga dapat memicu asam lambung naik dan menyebabkan gejala maag.', NULL, NULL, '1. Menjaga kesehatan jantung---2. Melancarkan sistem pencernaan---3. Menurunkan tekanan darah tinggi---4. Baik untuk anemia---5. Menyembuhkan luka bekas jerawat---6. membuat pikiran bahagia---8. Menstabilkan gula darah---10. Meningkatkan sensitivitas insulin---11. Menghindari penyakit ginjal---12. Meredakan mual dan muntah selama kehamilan---13. Mendukung perkembangan sistem saraf bayi'),
+(16, 'Singkong', 'https://cdn.discordapp.com/attachments/906163180328325130/918181308423884850/Singkong.jpg', 'Penderita penyakit ginjal---Kadar gula dan kadar protein yang tinggi dapat menimbulkan rasa haus setelah mengkonsumsinya.', NULL, NULL, '1. Meningkatkan kesehatan usus---2. Membuat tulang lebih kuat---3. Menurunkan tekanan darah---4. Mencegah diabetes---5. Sumber energi'),
+(17, 'Susu', 'https://cdn.discordapp.com/attachments/906163180328325130/918181282259812392/Susu.jpg', 'Penderita autoimun---produk susu tidak baik untuk dikonsumsi karena dapat merangsang respons imun', NULL, NULL, '1. Menguatkan tulang dan gigi---2. Mengoptimalkan pertumbuhan anak---3. Menetralisir racun di dalam tubuh---4. Mengurangi stress---5. Menjaga berat badan---6. Mengendalikan tekanan darah---7. Meningkatkan kesuburan---8. Menjaga dan membentuk otot---9. Menambah energi---10. Menjaga kesehatan kulit'),
+(18, 'Bawang', 'https://cdn.discordapp.com/attachments/906163180328325130/906805541655969822/bawang.jpg', 'Penderita asam lambung---Bawang mengandung asam sehingga dapat berdampak pada naiknya asam lambung', NULL, NULL, '1. Baik untuk jantung---2. Cegah kanker---3. Baik untuk tulang dan darah---4. Baik untuk sistem pencernaan'),
+(19, 'Daging Merah', 'https://cdn.discordapp.com/attachments/906163180328325130/918181260915011684/DagingSapi.jpg', 'Bagi penderita penyakit ginjal---Daging merah mengadung protein hewani yang sangat tinggi sehingga sulit untuk disaring oleh tubuh penderita penyakit ginjal---Bagi penderita asam lambung---Daging merah tergolong ke bahan makanan tinggi lemak yang tidak baik dikonsumsi karena dapat memicu naiknya asam lambung', NULL, NULL, '1. Mengobati anemia---2. Menaikkan kadar hemoglobin---3. Mengurangi kelelahan---4. Mendorong imunitas---5. Membuat individu bisa beristirahat lebih baik'),
+(20, 'Cokelat', 'https://cdn.discordapp.com/attachments/906163180328325130/917467933540773948/Cokelat.jpg', 'Penderita asam lambung---Cokelat dapat menyebabkan penderita asam lambung menjadi semakin rentan terhadap refluks asam karena mengandung banyak lemak dan kafein', NULL, NULL, '1. Meningkatkan mood---2. Mengendalikan nafsu makan---3. Menjaga kesehatan jantung dan pembuluh darah---4.Mengontrol kadar gula darah---5. Menurunkan kadar kolesterol---6. Memelihara fungsi dan kesehatan otak---7. Menghambat pertumbuhan sel kanker'),
+(21, 'Telur', 'https://cdn.discordapp.com/attachments/906163180328325130/918335371119591444/Telur.jpg', 'Penderita penyakit ginjal---Telur kaya akan protein sehingga membuat ginjal sulit untuk menyaringnya. Makanan berprotein yang tidak dapat disaring akan menumpuk menjadi racun bagi organ ginjal---Penderita autoimun---Telur dapat memicu peradangan dan memperparah gejala autoimun', NULL, NULL, '1. Membentuk jaringan tubuh dan membantu fungsinya---2. Menjaga kesehatan mata---3.Menjaga kesehatan otak---4.Menurunkan kadar kolesterol jahat---5. Membantu menurunkan risiko penyakit jantung---6. Membantu menjaga berat badan---7. Menguatkan sistem imun');
 
 -- --------------------------------------------------------
 
@@ -271,7 +287,10 @@ INSERT INTO `masak` (`idmasak`, `namamasak`, `gambarmasak`, `created_at`, `updat
 (5, 'Disangrai', 'https://cdn.discordapp.com/attachments/906163180328325130/906456515660115968/Disangrai.jpg', NULL, NULL),
 (6, 'Direduksi', 'https://cdn.discordapp.com/attachments/906163180328325130/906457320794497054/Direduksi.jpg', NULL, NULL),
 (7, 'Difermentasi', 'https://cdn.discordapp.com/attachments/906163180328325130/906200975033917450/Difermentasi.jpg', NULL, NULL),
-(8, 'Digiling', 'https://cdn.discordapp.com/attachments/906163180328325130/906803300832268318/mengulek.jpg', NULL, NULL);
+(8, 'Digiling', 'https://cdn.discordapp.com/attachments/906163180328325130/906803300832268318/mengulek.jpg', NULL, NULL),
+(9, 'Diperas', 'https://cdn.discordapp.com/attachments/906163180328325130/909673509507194910/diperas.jpg', NULL, NULL),
+(10, 'Dibekukan', 'https://cdn.discordapp.com/attachments/906163180328325130/915619505064009749/Dibekukan.jpg', NULL, NULL),
+(11, 'Dipresto', 'https://cdn.discordapp.com/attachments/906163180328325130/918385443261808680/Dipresto.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -320,7 +339,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (40, '2021_11_27_071427_nambah_kolom_mitra', 18),
 (41, '2021_11_28_071011_create_produk_mitra_table', 19),
 (42, '2021_12_05_074245_ubah_kolom_kolom', 20),
-(43, '2021_12_05_152409_nambah_kolomz', 21);
+(43, '2021_12_05_152409_nambah_kolomz', 21),
+(44, '2021_12_09_081623_nambah_kolom_lokasi', 22);
 
 -- --------------------------------------------------------
 
@@ -341,16 +361,15 @@ CREATE TABLE `mitra` (
   `gmap_mitra` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alamat_mitra` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jam_buka_mitra` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `best_seller` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `link` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `mitra`
 --
 
-INSERT INTO `mitra` (`idmitra`, `namamitra`, `kontak`, `idlokasi`, `foto_mitra`, `deskripsimitra`, `created_at`, `updated_at`, `cicip`, `gmap_mitra`, `alamat_mitra`, `jam_buka_mitra`, `link`, `best_seller`) VALUES
-(1, 'Sanjai Amak Haji', '(0752) 35480', 19, 'https://cdn.discordapp.com/attachments/906163180328325130/914050025682771978/lokasi_mitra.png', 'Sudah berdiri sejak 1984, usaha ini menjual produk oleh – oleh khas Sumatera Barat yaitu keripik sanjai beserta makanan khas lain seperti kue kering dan olahan manisan lainnya. Pembeli utama dari usaha ini adalah wisatawan yang datang ke toko fisik di kota Bukittinggi. ', NULL, NULL, 'Ada', '<div class=\"mapouter\"><div class=\"gmap_canvas\"><iframe width=\"640\" height=\"360\" id=\"gmap_canvas\" src=\"https://maps.google.com/maps?q=Jl.%20Mr.%20Asa\'at%20No.33,%20Manggis%20Ganting,%20Kec.%20Mandiangin%20Koto%20Selayan,%20Kota%20Bukittinggi,%20Sumatera%20Barat%2026117&t=&z=13&ie=UTF8&iwloc=&output=embed\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\"></iframe><a href=\"https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/\"></a><br><style>.mapouter{position:relative;text-align:right;height:360px;width:640px;}</style><a href=\"https://www.embedgooglemap.net\">google maps on your website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:360px;width:640px;}</style></div></div>', 'Jl. Mr. Asa\'at No.33, Manggis Ganting, Kec. Mandiangin Koto Selayan', '06.00–21.00 WIB Setiap Hari', NULL, NULL);
+INSERT INTO `mitra` (`idmitra`, `namamitra`, `kontak`, `idlokasi`, `foto_mitra`, `deskripsimitra`, `created_at`, `updated_at`, `cicip`, `gmap_mitra`, `alamat_mitra`, `jam_buka_mitra`, `link`) VALUES
+(1, 'Sanjai Amak Haji', '(0752) 35480', 19, 'https://cdn.discordapp.com/attachments/906163180328325130/914050025682771978/lokasi_mitra.png', 'Sudah berdiri sejak 1984, usaha ini menjual produk oleh – oleh khas Sumatera Barat yaitu keripik sanjai beserta makanan khas lain seperti kue kering dan olahan manisan lainnya. Pembeli utama dari usaha ini adalah wisatawan yang datang ke toko fisik di kota Bukittinggi. ', NULL, NULL, 'Ada', '<div class=\"mapouter\"><div class=\"gmap_canvas\"><iframe width=\"640\" height=\"360\" id=\"gmap_canvas\" src=\"https://maps.google.com/maps?q=Jl.%20Mr.%20Asa\'at%20No.33,%20Manggis%20Ganting,%20Kec.%20Mandiangin%20Koto%20Selayan,%20Kota%20Bukittinggi,%20Sumatera%20Barat%2026117&t=&z=13&ie=UTF8&iwloc=&output=embed\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\"></iframe><a href=\"https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/\"></a><br><style>.mapouter{position:relative;text-align:right;height:360px;width:640px;}</style><a href=\"https://www.embedgooglemap.net\">google maps on your website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:360px;width:640px;}</style></div></div>', 'Jl. Mr. Asa\'at No.33, Manggis Ganting, Kec. Mandiangin Koto Selayan', '06.00–21.00 WIB Setiap Hari', NULL);
 
 -- --------------------------------------------------------
 
@@ -395,16 +414,20 @@ CREATE TABLE `produk_mitra` (
   `harga_produk_mitra` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status_produkmitra` bigint(20) NOT NULL,
   `idoleh` bigint(20) UNSIGNED DEFAULT NULL,
-  `idmitra` bigint(20) UNSIGNED NOT NULL
+  `idmitra` bigint(20) UNSIGNED NOT NULL,
+  `best_seller` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `produk_mitra`
 --
 
-INSERT INTO `produk_mitra` (`id_produk_mitra`, `nama_produk_mitra`, `gambar_produk_mitra`, `harga_produk_mitra`, `status_produkmitra`, `idoleh`, `idmitra`) VALUES
-(1, 'Sanjai Balado Merah', 'https://cdn.discordapp.com/attachments/906163180328325130/914381869657780234/Sanjai_Balado_merah.jpg', 'RP 12.000', 1, NULL, 1),
-(2, 'Sanjai Balado Hijau', 'https://cdn.discordapp.com/attachments/906163180328325130/914381976214061116/Sanjai_Balado_Hijau.jpg', 'RP 12.000', 1, NULL, 1);
+INSERT INTO `produk_mitra` (`id_produk_mitra`, `nama_produk_mitra`, `gambar_produk_mitra`, `harga_produk_mitra`, `status_produkmitra`, `idoleh`, `idmitra`, `best_seller`) VALUES
+(1, 'Sanjai Balado Merah', 'https://cdn.discordapp.com/attachments/906163180328325130/914381869657780234/Sanjai_Balado_merah.jpg', 'Rp 12.000', 1, NULL, 1, 1),
+(2, 'Sanjai Balado Hijau', 'https://cdn.discordapp.com/attachments/906163180328325130/914381976214061116/Sanjai_Balado_Hijau.jpg', 'Rp 12.000', 1, NULL, 1, 1),
+(5, 'Kipang Kacang', 'https://cdn.discordapp.com/attachments/906163180328325130/914381510876987402/Kipang_Kacang.jpg', 'Rp 10.000', 0, NULL, 1, NULL),
+(6, 'Rakik Maco (Persegi)', 'https://cdn.discordapp.com/attachments/906163180328325130/914381675004297246/Rakik_Macho.jpg', 'Rp 10.000', 0, NULL, 1, NULL),
+(7, 'Sanjai Balado Panjang', 'https://cdn.discordapp.com/attachments/906163180328325130/914382100357074944/Sanjai_Balado_Panjang.jpg', 'Rp 12.000', 1, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -515,15 +538,19 @@ CREATE TABLE `users` (
   `photo` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `pernah_wisata` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `photo`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'test', 'test@testing.com', NULL, '$2y$10$6wsjpsExTE/Ah9BUC/JFS.eeHLwgVyJp2M8BwYfWUXxWFf7hsjeG.', 'https://ui-avatars.com/api/?name=test&background=7F9CF5&color=EBF4FF', NULL, '2021-11-14 06:38:15', '2021-11-14 06:38:15');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `photo`, `remember_token`, `created_at`, `updated_at`, `pernah_wisata`) VALUES
+(2, 'test', 'test@testing.com', NULL, '$2y$10$6wsjpsExTE/Ah9BUC/JFS.eeHLwgVyJp2M8BwYfWUXxWFf7hsjeG.', 'https://ui-avatars.com/api/?name=test&background=7F9CF5&color=EBF4FF', NULL, '2021-11-14 06:38:15', '2021-11-14 06:38:15', NULL),
+(3, 'Farhan Septiadi', 'septiadifarhan26@gmail.com', NULL, '$2y$10$2qS4C5TOeQU/EuBG2bpAXO5xM0u87.4H9ObYB55Doq2jyDUne2NuS', 'https://ui-avatars.com/api/?name=Farhan+Septiadi&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 04:20:44', '2021-12-10 04:20:44', NULL),
+(4, 'Eula Lawrance', 'eulawangy@genshin.impact.com', NULL, '$2y$10$q7VMO3cCM9VTSLYuEIvwWOmFCKp6pmHsn9xy/SUdfkmPFUEYpdnRy', 'https://ui-avatars.com/api/?name=Eula+Lawrance&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 04:23:21', '2021-12-10 04:23:21', 'Jakarta,Padang,Surabaya'),
+(5, 'Keqing', 'keqing@wangy.com', NULL, '$2y$10$NPLz/Cdx1NbSO90QjeQiSey8InHxV5G49Bm80nVQnEfkSkUUSJM1q', 'https://ui-avatars.com/api/?name=Keqing&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 05:10:29', '2021-12-10 05:10:29', 'Bukittingi,Jakarta,Bogor');
 
 -- --------------------------------------------------------
 
@@ -588,7 +615,7 @@ CREATE TABLE `varianoleh` (
   `hargamin` int(11) DEFAULT NULL,
   `hargamax` int(11) DEFAULT NULL,
   `vegan` tinyint(1) DEFAULT NULL,
-  `vegatarian` tinyint(1) DEFAULT NULL,
+  `vegetarian` tinyint(1) DEFAULT NULL,
   `gluten_free` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -596,7 +623,7 @@ CREATE TABLE `varianoleh` (
 -- Dumping data for table `varianoleh`
 --
 
-INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gambaroleh`, `deskripsioleh`, `idrasa`, `idtekstur`, `idbahan`, `komposisi`, `idmasak`, `idlokasi`, `harga`, `statushalal`, `kadarluarsa`, `carapenyimpanan`, `carapenyajian`, `trivia`, `namacocok`, `idmitra`, `created_at`, `updated_at`, `id_varian`, `idjenis`, `favorit_count`, `satuan`, `hargamin`, `hargamax`, `vegan`, `vegatarian`, `gluten_free`) VALUES
+INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gambaroleh`, `deskripsioleh`, `idrasa`, `idtekstur`, `idbahan`, `komposisi`, `idmasak`, `idlokasi`, `harga`, `statushalal`, `kadarluarsa`, `carapenyimpanan`, `carapenyajian`, `trivia`, `namacocok`, `idmitra`, `created_at`, `updated_at`, `id_varian`, `idjenis`, `favorit_count`, `satuan`, `hargamin`, `hargamax`, `vegan`, `vegetarian`, `gluten_free`) VALUES
 (1, 'Bolu Medan', 'Bolu gulung', 'https://cdn.discordapp.com/attachments/906163180328325130/906167937151430656/BoluMeranti_1.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906167937151430656/BoluMeranti_1.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906357833220653076/BoluMeranti_2.jpg --- https://cdn.discordapp.com/attachments/906163180328325130/906357879282475029/BoluMeranti_3.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906357941228146719/Bolu_Meranti_4.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906358000825008138/BoluMeranti_5.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906358046261915698/BoluMeranti_6.jpg ', 'Bolu Meranti merupakan oleh - oleh kue yang khas dari kota Melayu Deli.---Bolu Meranti kerap menjadi kudapan saat arisan, hajatan dan acara kantor sehingga oleh - oleh ini cocok untuk diberikan kepada kolega.---Oleh - oleh ini hadir dengan berbagai varian rasa yang dapat diminati oleh orang dari berbagai kalangan umur sehingga cocok menjadi oleh - oleh keluarga.', 1, 3, 3, 'Tepung, Gula, Telur, Mentega, Topping Pilihan', 1, 6, '80000---115000', 1, '3 hari (suhu ruang)---10 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Potong menjadi beberapa bagian, sajikan di atas piring kecil', 'Asal Usul---Bolu Meranti merupakan oleh - oleh yang khas dari Medan. Oleh - oleh ini bermula dari hobi Nyonya Ai Ling, pendiri Bolu Meranti yang memiliki hobi membuat kue yang dijual ke teman dan tetangganya sejak muda dan saat berumah tangga.', 'Kolega---Keluarga', NULL, NULL, NULL, 1, 4, 1, 'Roll', 80000, 115000, 0, 0, 0),
 (2, 'Medan Napoleon', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906359442705108992/MedanNapoleon_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906359442705108992/MedanNapoleon_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906169302720344095/MedanNapoleon_1.jpg', 'Kue Napoleon merupakan makanan manis sejenis Bolu Gulung (roll cake) tipis panjang yang didalamnya berisi kue pastri. Pada bagian atasnya dihiasi taburan coklat atau remah-remahan agar terlihat menarik dan unik.---Kue Napoleon cocok untuk menjadi oleh - oleh keluarga karena memiliki varian rasa bermacam yang dapat disesuaikan dengan preferensi keluarga, daya tahan yang singkat dan ukuran yang cukup besar sehingga dapat dibagi bersama dengan anggota keluarga.', 1, 3, 3, 'Tepung, Gula, Telur, Mentega, Topping Pilihan', 1, 6, '52000---55000', 1, '3 hari (suhu ruang)---10 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Potong menjadi beberapa bagian, sajikan di atas piring kecil', 'Asal Usul---Hari ini sudah lebih dari 100 tahun hengkangnya pasukan Napoleon dari bumi Rusia, ia pergi meninggalkan kota bersama cerita-cerita simpang siur di sudut kotanya. Salah satunya adalah makanan khas turunan dari keluarga bangsawannya di Perancis, Ia adalah anak ke dua dari keluarga bangsawan terhormat di seluruh daratan Perancis hingga ke Swiss, Ibunya yang bernama Maria Letizia Ramolino selalu menghadirkan roti berisikan pastry sebagai makanan pembuka di pagi hari untuk mereka, yang selalu akan di dampingi coklat hangat ataupun kopi kental panas.Sedangkan, kala itu hampir lebih dari ribuan masyarakat miskin mati kelaparan sebab kedinginan dan penindasan.Jendral Mikhail Kutuzov adalah pahlawan yang sanggup mengusir Napoleon bersama sekutunya, dan bertekuk lutut untuk tidak menginvensi Rusia dari sisi ekonomi maupun kebijakan liberalisasi yang di bawa olehnya.Hengkangnya Napoleon di dengar hingga ujung rusia dan pesta di rayakan dari berbagai lapisan masyarakat, seorang mantan juru masak keluarga Bonaparte yang berwarga negara Rusia pun menyalurkan bahagianya dengan membuat Roti Pastry keluarga Napoleon sebagai bentuk terimakasihnya dan di bagi-bagi pada masyarakat miskin dan kelaparan.', 'Keluarga', NULL, NULL, NULL, 1, 4, 0, NULL, 52000, 55000, NULL, NULL, NULL),
 (3, 'Mantau', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906356985228832768/Mantau_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906356985228832768/Mantau_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906463876990787604/Mantau_3.jpeg---https://cdn.discordapp.com/attachments/906163180328325130/906169613123993600/Mantau_1.jpg', 'Mantau merupakan makanan yang sering disantap oleh warga kota Minyak saat sarapan di pagi hari ditemani dengan kopi susu ataupun di sore hari dengan lauk lainnya.---Oleh  - oleh ini cocok menjadi oleh - oleh untuk keluarga karena dapat disantap oleh seluruh kalangan umur dan dapat disesuaikan ingin disajikan sendiri atau dengan makanan tambahan.', 1, 3, 3, 'Tepung Terigu, Fermipan, Gula, Garam, Air, Susu, Ragi, Mentega Putih', 3, 39, '3000---5000', 1, '7 hari (suhu ruang)---14 hari (suhu kulkas)', 'Harus disimpan di kulkas', 'Goreng atau kukus mantau lalu sajikan di atas piring. Untuk mantau yang digoreng, potong mantau menjadi 3 bagian kemudian sajikan dengan daging sapi lada hitam di atas piring', 'Asal Usul---Mantau atau roti sepan sebenarnya adalah makanan khas Tiongkok yang telah mengalami proses akulturasi sehingga menjadi makanan khas Balikpapan. Mantau memiliki bentuk seperti bakpao, bedanya roti ini tidak diisi daging, cokelat atau apapun seperti bakpao. Mantau hanya roti murni biasa yang terbuat dari tepung terigu pilihan yang diolah sedemikian rupa sehingga menciptakan tekstur rasa yang lembut. Selain itu, penyajian roti mantau digoreng, tidak dikukus seperti bakpao.', 'Keluarga', NULL, NULL, NULL, NULL, 4, 0, NULL, 3000, 5000, 0, 1, 0),
@@ -740,7 +767,7 @@ ALTER TABLE `varianoleh`
 -- AUTO_INCREMENT for table `bahandasar`
 --
 ALTER TABLE `bahandasar`
-  MODIFY `idbahan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idbahan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -770,13 +797,13 @@ ALTER TABLE `lokasi`
 -- AUTO_INCREMENT for table `masak`
 --
 ALTER TABLE `masak`
-  MODIFY `idmasak` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idmasak` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `mitra`
@@ -794,7 +821,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `produk_mitra`
 --
 ALTER TABLE `produk_mitra`
-  MODIFY `id_produk_mitra` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_produk_mitra` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `rasa`
@@ -818,7 +845,7 @@ ALTER TABLE `tempatbeli`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `varianjenis`

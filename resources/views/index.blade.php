@@ -385,8 +385,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-7">
-                            <h4>Rekomendasi oleh - oleh dibawah Rp.40000 <a class="text-secondary" href="#"
-                                    style="font-size: 14px;"> Lebih</a></h4>
+                            <h5>Rekomendasi oleh - oleh dibawah Rp.40000 <a class="text-secondary" href="#"
+                                    style="font-size: 14px;"> Lebih</a></h5>
                         </div>
                         <div class="col-4 text-end">
                             <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga" role="button"
@@ -499,4 +499,131 @@
             </section>
         </div>
     @endif
+    @auth
+        @foreach ($pernahwisata as $pw)
+            @if ($pw->pernah_wisata != null)
+                @if (count($lokasilalu) > 0)
+                    <div class="container mb-3">
+                        <section>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h5>Rekomendasi oleh - oleh dari lokasi yang pernah kamu kunjungi <a
+                                                class="text-secondary" href="#" style="font-size: 14px;"> Lebih</a></h5>
+                                    </div>
+                                    <div class="col-4 text-end">
+                                        <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga"
+                                            role="button" data-bs-slide="prev">
+                                            <i class="bi bi-arrow-left"></i>
+                                        </a>
+                                        <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                                            data-bs-slide="next">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="olehKeluarga" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <div class="row">
+                                                        @foreach ($lokasilalu->slice(0, 4) as $rek)
+                                                            <div class="col-md-3 mb-3">
+                                                                <div class="card">
+                                                                    <img class="img-fluid" alt="100%x280"
+                                                                        src={{ $rek->gambarutama }}>
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title">{{ $rek->namaoleh }}</h5>
+                                                                        <div style='z-index: 2; position: relative;'>
+                                                                            <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                href="/filter/daerah/{{ $rek->kota }}"
+                                                                                style='color: inherit;'>
+                                                                                {{ $rek->kota }}
+                                                                            </a>
+                                                                        </div>
+                                                                        <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                            class="stretched-link"></a>
+                                                                    </div>
+                                                                    <div class="card-footer bg-transparent">
+                                                                        <p class="card-text">Mulai dari
+                                                                            Rp.{{ $rek->hargamin }}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                                @if (count($lokasilalu) > 4)
+                                                    <div class="carousel-item">
+                                                        <div class="row">
+                                                            @foreach ($lokasilalu->slice(4, 4) as $rek)
+                                                                <div class="col-md-3 mb-3">
+                                                                    <div class="card">
+                                                                        <img class="img-fluid" alt="100%x280"
+                                                                            src={{ $rek->gambarutama }}>
+                                                                        <div class="card-body">
+                                                                            <h5 class="card-title">{{ $rek->namaoleh }}
+                                                                            </h5>
+                                                                            <div style='z-index: 2; position: relative;'>
+                                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                    href="/filter/daerah/{{ $rek->kota }}"
+                                                                                    style='color: inherit;'>
+                                                                                    {{ $rek->kota }}
+                                                                                </a>
+                                                                            </div>
+                                                                            <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                                class="stretched-link"></a>
+                                                                        </div>
+                                                                        <div class="card-footer bg-transparent">
+                                                                            <p class="card-text">Mulai dari
+                                                                                Rp.{{ $rek->hargamin }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                @if (count($lokasilalu) > 8)
+                                                    <div class="carousel-item">
+                                                        <div class="row">
+                                                            @foreach ($lokasilalu->slice(8, 4) as $rek)
+                                                                <div class="col-md-3 mb-3">
+                                                                    <div class="card">
+                                                                        <img class="img-fluid" alt="100%x280"
+                                                                            src={{ $rek->gambarutama }}>
+                                                                        <div class="card-body">
+                                                                            <h5 class="card-title">
+                                                                                {{ $rek->namaoleh }}</h5>
+                                                                            <div style='z-index: 2; position: relative;'>
+                                                                                <a class="card-text bi bi-geo-alt text-decoration-none"
+                                                                                    href="/filter/daerah/{{ $rek->kota }}"
+                                                                                    style='color: inherit;'>
+                                                                                    {{ $rek->kota }}
+                                                                                </a>
+                                                                            </div>
+                                                                            <a href="/varianoleh/{{ $rek->idoleh }}"
+                                                                                class="stretched-link"></a>
+                                                                        </div>
+                                                                        <div class="card-footer bg-transparent">
+                                                                            <p class="card-text">Mulai dari
+                                                                                Rp.{{ $rek->hargamin }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                @endif
+            @endif
+        @endforeach
+    @endauth
 @endsection

@@ -63,6 +63,48 @@ class IndexController extends Controller
         ])
         ->get();
 
-        return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler','harga'));
+        $pernahwisata='';
+        $lokasilalu='';
+
+        if(auth()->user() != null){
+        $pernahwisata = DB::table('users')
+        ->where('id','=',auth()->user()->id)
+        ->get();
+
+        $lokasipernah='';
+        foreach($pernahwisata as $pw){
+            $lokasipernah = preg_split('/,/', $pw->pernah_wisata);
+        }
+
+        for($i=0; $i<count($lokasipernah);$i++){
+
+        }
+        if(count($lokasipernah)==3){
+            $lokasilalu = DB::table('varianoleh')
+            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('kota','=',$lokasipernah[0])
+            ->orWhere('kota','=',$lokasipernah[1])
+            ->orWhere('kota','=',$lokasipernah[2])
+            ->get();
+        }elseif(count($lokasipernah)==2){
+            $lokasilalu = DB::table('varianoleh')
+            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('kota','=',$lokasipernah[0])
+            ->orWhere('kota','=',$lokasipernah[1])
+            ->get();
+
+        }elseif(count($lokasipernah)==1){
+            $lokasilalu = DB::table('varianoleh')
+            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+            ->where('kota','=',$lokasipernah[0])
+            ->get();
+        }
+
+
+        }
+
+
+
+        return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler','harga','pernahwisata','lokasilalu'));
     }
 }
