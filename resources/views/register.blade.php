@@ -51,28 +51,30 @@
                                 </div>
                             @enderror
                         </div>
-                        <label class="mt-1 form-control" for="pernah_wisata">Kota yang pernah kamu kunjungi :</label>
+                        <label class="mt-2" for="pernah_wisata">Kota yang pernah kamu kunjungi
+                            (optional)</label>
                         <div class="mt-1 form-floating">
-
-                            <input id="pernah_wisata" type="text" placeholder="Ketik Nama Kota" class="flexdatalist form-control"
-                                data-min-length="1" data-searchContain="true" multiple="multiple" list="lokasi"
-                                name="pernah_wisata">
+                            <input id="pernah_wisata" type="text" placeholder="Kota" class="flexdatalist form-control"
+                                data-min-length="0" data-searchContain="true" multiple="multiple" list="lokasi"
+                                data-limit-of-values='3' name="pernah_wisata">
                             <datalist id="lokasi">
                                 @foreach ($provinsi as $p)
-                                <option value="Apples">{{$p->kota}}</option>
+                                    <option value="Apples">{{ $p->kota }}</option>
                                 @endforeach
                             </datalist>
                             <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
                             <script src="{{ url('js/jquery.flexdatalist.min.js') }}"></script>
                             <script>
                                 $('.flexdatalist-json').flexdatalist({
+                                    limitOfValues: 3,
                                     searchContain: false,
                                     valueProperty: 'iso2',
-                                    minLength: 1,
+                                    minLength: 0,
                                     focusFirstResult: true,
                                     selectionRequired: true,
                                 });
                             </script>
+                            <label for="pernah_wisata"></label>
                         </div>
 
                         <button class="mt-2 w-100 btn btn-lg btn-primary" type="submit">Daftar</button>

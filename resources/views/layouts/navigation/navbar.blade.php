@@ -1,7 +1,7 @@
     <nav class="navbar navbar-expand-md navbar-light">
         <a href="/" class="navbar-brand" style="margin-left: 10px">
-            <img src="https://rerollcdn.com/BlueArchive/Schools/White/Trinity.png" class="bi me-2" height="32"
-                style="filter: invert(55%) sepia(91%) saturate(399%) hue-rotate(193deg) brightness(96%) contrast(100%);">
+            <img src="https://cdn.discordapp.com/attachments/906163180328325130/919144472237977640/Trinity.png"
+                class="bi me-2" height="32">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMenu"
             aria-controls="toggleMenu" aria-expanded="false" aria-label="Toogle Navigation">
@@ -177,8 +177,9 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id=" toggleMenu">
-            <form class="d-flex">
-                <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search">
+            <form class="d-flex" action="/search" method="GET" role="search">
+                @csrf
+                <input type="search" class="form-control me-2" placeholder="Search..." aria-label="Search" name="param">
             </form>
             @guest
                 <ul class="nav" style="margin-right: 10px">
@@ -187,13 +188,13 @@
                 </ul>
             @endguest
             @auth
-                <div class="dropdown  text-end">
+                <div class="dropdown text-end">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ auth()->user()->photo }}" width="32" height="32" class="rounded-circle">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small" style="margin-right: 10px
-                            aria-labelledby=" dropdownUser1">
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small" style="margin-right: 10px;"
+                        aria-labelledby=" dropdownUser1">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
                         <li><a class="dropdown-item" href="#">Favorit</a></li>
                         <li>

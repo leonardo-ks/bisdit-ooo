@@ -14,7 +14,7 @@ class IndexController extends Controller
     {
         $ip = request()->ip();
         $ip = request()->header('X-Forwarded-For');
-        $location = Location::get($ip);
+        $location = Location::get("'" . $ip . "'");
         $key = 'pk.025798fb95072c0fb2b76c1ad03e9da6';
         $lat = $location->latitude;
         $lon = $location->longitude;
@@ -23,88 +23,117 @@ class IndexController extends Controller
         $decoded = json_decode($response, true);
         $address = $decoded['address'];
 
+        if ($address['city'] == 'Daerah Khusus Ibukota Jakarta') {
+            $kota = 'Jakarta';
+        } elseif ($address['city'] == 'Daerah Istimewa Yogyakarta') {
+            $kota = 'Yogyakarta';
+        } else {
+            $kota = $address['city'];
+        }
+
+        if (array_key_exists('state', $address)) {
+            $provinsi = $address['state'];
+        } else {
+            if ($kota == 'Jakarta') {
+                $provinsi = 'DKI Jakarta';
+            } else {
+                $provinsi = $kota;
+            }
+        }
+
+        $varianoleh = DB::table('varianoleh')->get();
+
         $olehKolega = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where([
-                // ['kota', '=', $address['city']],
+                ['kota', '=', $kota],
                 ['namacocok', 'like', '%Kolega%'],
                 ['favorit_count', '>', 0]
             ])
             ->orderBy('favorit_count', 'desc')
+            ->orWhere([
+                ['provinsi', '=', $provinsi],
+                ['namacocok', 'like', '%Kolega%'],
+                ['favorit_count', '>', 0]
+            ])
             ->limit(12)
             ->get();
 
         $olehKeluarga = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where([
-                ['kota', '=', $address['city']],
+                ['kota', '=', $kota],
                 ['namacocok', 'like', '%Keluarga%'],
                 ['favorit_count', '>', 0]
             ])
             ->orderBy('favorit_count', 'desc')
+            ->orWhere([
+                ['provinsi', '=', $provinsi],
+                ['namacocok', 'like', '%Keluarga%'],
+                ['favorit_count', '>', 0]
+            ])
             ->limit(12)
             ->get();
 
         $olehPopuler = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where([
-                ['kota', '=', $address['city']],
+                ['kota', '=', $kota],
                 ['favorit_count', '>', 0]
             ])
             ->orderBy('favorit_count', 'desc')
+            ->orWhere([
+                ['provinsi', '=', $provinsi],
+                ['namacocok', 'like', '%Kolega%'],
+                ['favorit_count', '>', 0]
+            ])
             ->limit(12)
             ->get();
 
         $harga = DB::table('varianoleh')
-        ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-        ->where([
-            ['kota', '=', $address['city']],
-            ['hargamin', '<=', 40000]
-        ])
-        ->get();
-
-        $pernahwisata='';
-        $lokasilalu='';
-
-        if(auth()->user() != null){
-        $pernahwisata = DB::table('users')
-        ->where('id','=',auth()->user()->id)
-        ->get();
-
-        $lokasipernah='';
-        foreach($pernahwisata as $pw){
-            $lokasipernah = preg_split('/,/', $pw->pernah_wisata);
-        }
-
-        for($i=0; $i<count($lokasipernah);$i++){
-
-        }
-        if(count($lokasipernah)==3){
-            $lokasilalu = DB::table('varianoleh')
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('kota','=',$lokasipernah[0])
-            ->orWhere('kota','=',$lokasipernah[1])
-            ->orWhere('kota','=',$lokasipernah[2])
-            ->get();
-        }elseif(count($lokasipernah)==2){
-            $lokasilalu = DB::table('varianoleh')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('kota','=',$lokasipernah[0])
-            ->orWhere('kota','=',$lokasipernah[1])
+            ->where([
+                ['kota', '=', $kota],
+                ['hargamin', '<=', 40000]
+            ])
+            ->orWhere([
+                ['provinsi', '=', $provinsi],
+                ['hargamin', '<=', 40000]
+            ])
             ->get();
 
-        }elseif(count($lokasipernah)==1){
-            $lokasilalu = DB::table('varianoleh')
-            ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
-            ->where('kota','=',$lokasipernah[0])
-            ->get();
+        $pernahwisata = '';
+        $lokasilalu = '';
+
+        if (auth()->user() != null) {
+            $pernahwisata = DB::table('users')
+                ->where('id', '=', auth()->user()->id)
+                ->get();
+
+            $lokasipernah = '';
+            foreach ($pernahwisata as $pw) {
+                $lokasipernah = preg_split('/,/', $pw->pernah_wisata);
+            }
+            if (count($lokasipernah) == 3) {
+                $lokasilalu = DB::table('varianoleh')
+                    ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+                    ->where('kota', '=', $lokasipernah[0])
+                    ->orWhere('kota', '=', $lokasipernah[1])
+                    ->orWhere('kota', '=', $lokasipernah[2])
+                    ->get();
+            } elseif (count($lokasipernah) == 2) {
+                $lokasilalu = DB::table('varianoleh')
+                    ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+                    ->where('kota', '=', $lokasipernah[0])
+                    ->orWhere('kota', '=', $lokasipernah[1])
+                    ->get();
+            } elseif (count($lokasipernah) == 1) {
+                $lokasilalu = DB::table('varianoleh')
+                    ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
+                    ->where('kota', '=', $lokasipernah[0])
+                    ->get();
+            }
         }
-
-
-        }
-
-
-
-        return view('index', compact('address', 'olehKolega', 'olehKeluarga', 'olehPopuler','harga','pernahwisata','lokasilalu'));
+        return view('index', compact('kota', 'provinsi', 'olehKolega', 'olehKeluarga', 'olehPopuler', 'harga', 'pernahwisata', 'lokasilalu'));
     }
 }

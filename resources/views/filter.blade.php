@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-
     <div class="container">
         <div class="card px-5 mx-5">
             <div class="card-body">
@@ -200,6 +199,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
