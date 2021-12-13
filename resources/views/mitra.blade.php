@@ -49,7 +49,7 @@
                                                                 <tr>
                                                                     <td class="col-4 bi bi-dot">Kontak</td>
                                                                     <td class="col-1 text-center">:</td>
-                                                                    <td class="col-7">{{ $m->kontak }}</td>
+                                                                    <td class="col-7"><i class="bi bi-whatsapp"></i> {{ $m->kontak }}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="col-4 bi bi-dot">Alamat</td>
@@ -114,7 +114,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-primary">Hubungi</button>
+                                    <a type="button" class="btn btn-outline-primary" href="{{$m->link}}" target="blank">Hubungi</a>
                                 </div>
                             </div>
                         </div>

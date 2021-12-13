@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
     <div class="container">
-        <div class="card px-5 mx-5">
-            <div class="card-body">
+        <div class="border rounded px-5 mx-5">
+            <div >
                 @if ($kategori = 'daerah' && count($olehbydaerah->items()) > 0)
                     @foreach ($olehbydaerah->slice(0, 1) as $d)
                         <div class="p-5 bg-image rounded-3 mb-4 mt-4"

@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
     <div class="p-5 bg-image rounded-3 mb-4"
         style="background-image: url('https://awol.junkee.com/wp-content/uploads/2015/07/Huacachina2.jpg');height: 400px; background-repeat: no-repeat; background-size: 100%;">
         <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
@@ -13,7 +14,15 @@
         </div>
     </div>
     <div class="container mb-4">
+        @auth
+        @foreach ($pernahwisata as $pw)
+        <h5>Hai {{$pw->name}}, kamu sekarang berada di {{ $kota . ', ' . $provinsi }}</h5>
+        @endforeach
+        @endauth
+        @guest
         <h5>Lokasi Sekarang: {{ $kota . ', ' . $provinsi }}</h5>
+        @endguest
+
     </div>
     @if (count($olehPopuler) > 0)
         <section>
@@ -38,7 +47,7 @@
                     </div>
                     <div class="col-12">
                         <div id="olehPopuler" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach ($olehPopuler->slice(0, 4) as $rek)
@@ -158,7 +167,7 @@
                     </div>
                     <div class="col-12">
                         <div id="olehKolega" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach ($olehKolega->slice(0, 4) as $rek)
@@ -277,7 +286,7 @@
                     </div>
                     <div class="col-12">
                         <div id="olehKeluarga" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach ($olehKeluarga->slice(0, 4) as $rek)
@@ -395,7 +404,7 @@
                     </div>
                     <div class="col-12">
                         <div id="olehHarga" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
+                            <div class="carousel">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach ($harga->slice(0, 4) as $rek)
@@ -516,7 +525,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div id="olehPernah" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
+                                        <div class="carousel">
                                             <div class="carousel-item active">
                                                 <div class="row">
                                                     @foreach ($lokasilalu->slice(0, 4) as $rek)

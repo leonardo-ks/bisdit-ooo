@@ -196,7 +196,7 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start text-small" style="margin-right: 10px;"
                         aria-labelledby=" dropdownUser1">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
-                        <li><a class="dropdown-item" href="#">Favorit</a></li>
+                        <li><a class="dropdown-item" href="/favorit">Favorit</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

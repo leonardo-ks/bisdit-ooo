@@ -2,8 +2,8 @@
 @section('content')
 
     <div class="container">
-        <div class="card px-5 mx-5">
-            <div class="card-body">
+        <div class="border rounded px-5 mx-5">
+            <div >
                 @foreach ($jenisoleh as $j)
                     <div class="p-5 bg-image rounded-3 mb-4 mt-4"
                         style="background-image: url('{{ $j->gambarjenis }}');height: 400px; background-repeat: no-repeat; background-size: 100%;">

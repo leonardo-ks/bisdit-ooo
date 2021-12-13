@@ -1,9 +1,9 @@
 @extends('layouts.master')
 @section('content')
     <div class="container">
-        <div class="card px-5 mx-5">
-            <div class="card-body">
-                <h3>Hasil pencarian {{ $param }}</h3>
+        <div class="border rounded px-5 mx-5">
+            <div>
+                <h3 class="mt-3">Hasil pencarian {{ $param }}</h3>
                 <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
                     @foreach ($result as $r)
                         <div class="col">

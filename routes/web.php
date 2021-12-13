@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\OlehController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\favoriteController as ControllersFavoriteController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\SearchController;
 
@@ -31,7 +32,7 @@ Route::post('register', [RegisterController::class, 'store']);
 Route::get('daerah', [FilterController::class, 'daerahasal']);
 Route::get('filter/{kategori}/{by}', [FilterController::class, 'filterby']);
 Route::get('jenis/{jenis}', [FilterController::class, 'varianjenis']);
-Route::get('varianoleh/favorite/{idoleh}', [FavoriteController::class, 'favorite']);
+Route::get('favorit', [FavoriteController::class, 'favorit']);
 Route::get('mitra', [MitraController::class, 'mitra']);
 Route::get('search', [SearchController::class, 'search']);
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/favorit/hapus/{idbookmark}',[FavoriteController::class,'hapusfavorit']);
