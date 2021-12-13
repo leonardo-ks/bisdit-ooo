@@ -81,12 +81,12 @@ class IndexController extends Controller
                 ['kota', '=', $kota],
                 ['favorit_count', '>', 0]
             ])
-            ->orderBy('favorit_count', 'desc')
             ->orWhere([
                 ['provinsi', '=', $provinsi],
-                ['namacocok', 'like', '%Kolega%'],
                 ['favorit_count', '>', 0]
             ])
+            ->orderBy('favorit_count', 'desc')
+
             ->limit(12)
             ->get();
 

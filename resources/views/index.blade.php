@@ -43,7 +43,7 @@
                                     <div class="row">
                                         @foreach ($olehPopuler->slice(0, 4) as $rek)
                                             <div class="col-md-3 mb-3">
-                                                <div class="card">
+                                                <div class="card h-100">
                                                     <img class="img-fluid" alt="100%x280"
                                                         src={{ $rek->gambarutama }}>
                                                     <div class="card-body">
@@ -73,7 +73,7 @@
                                         <div class="row">
                                             @foreach ($olehPopuler->slice(4, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -104,7 +104,7 @@
                                         <div class="row">
                                             @foreach ($olehPopuler->slice(8, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -163,7 +163,7 @@
                                     <div class="row">
                                         @foreach ($olehKolega->slice(0, 4) as $rek)
                                             <div class="col-md-3 mb-3">
-                                                <div class="card">
+                                                <div class="card h-100">
                                                     <img class="img-fluid" alt="100%x280"
                                                         src={{ $rek->gambarutama }}>
                                                     <div class="card-body">
@@ -192,7 +192,7 @@
                                         <div class="row">
                                             @foreach ($olehKolega->slice(4, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -223,7 +223,7 @@
                                         <div class="row">
                                             @foreach ($olehKolega->slice(8, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -282,7 +282,7 @@
                                     <div class="row">
                                         @foreach ($olehKeluarga->slice(0, 4) as $rek)
                                             <div class="col-md-3 mb-3">
-                                                <div class="card">
+                                                <div class="card h-100">
                                                     <img class="img-fluid" alt="100%x280"
                                                         src={{ $rek->gambarutama }}>
                                                     <div class="card-body">
@@ -311,7 +311,7 @@
                                         <div class="row">
                                             @foreach ($olehKeluarga->slice(4, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -342,7 +342,7 @@
                                         <div class="row">
                                             @foreach ($olehKeluarga->slice(8, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -384,23 +384,23 @@
                                 style="font-size: 14px;"> Lebih</a></h5>
                     </div>
                     <div class="col-4 text-end">
-                        <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                        <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehHarga" role="button"
                             data-bs-slide="prev">
                             <i class="bi bi-arrow-left"></i>
                         </a>
-                        <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                        <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehHarga" role="button"
                             data-bs-slide="next">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                     <div class="col-12">
-                        <div id="olehKeluarga" class="carousel slide" data-ride="carousel">
+                        <div id="olehHarga" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="row">
                                         @foreach ($harga->slice(0, 4) as $rek)
                                             <div class="col-md-3 mb-3">
-                                                <div class="card">
+                                                <div class="card h-100">
                                                     <img class="img-fluid" alt="100%x280"
                                                         src={{ $rek->gambarutama }}>
                                                     <div class="card-body">
@@ -429,7 +429,7 @@
                                         <div class="row">
                                             @foreach ($harga->slice(4, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -460,7 +460,7 @@
                                         <div class="row">
                                             @foreach ($harga->slice(8, 4) as $rek)
                                                 <div class="col-md-3 mb-3">
-                                                    <div class="card">
+                                                    <div class="card h-100">
                                                         <img class="img-fluid" alt="100%x280"
                                                             src={{ $rek->gambarutama }}>
                                                         <div class="card-body">
@@ -505,23 +505,23 @@
                                             href="#" style="font-size: 14px;"> Lebih</a></h5>
                                 </div>
                                 <div class="col-4 text-end">
-                                    <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                                    <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehPernah" role="button"
                                         data-bs-slide="prev">
                                         <i class="bi bi-arrow-left"></i>
                                     </a>
-                                    <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehKeluarga" role="button"
+                                    <a class="btn btn-secondary mb-3 btn-sm" data-bs-target="#olehPernah" role="button"
                                         data-bs-slide="next">
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
                                 <div class="col-12">
-                                    <div id="olehKeluarga" class="carousel slide" data-ride="carousel">
+                                    <div id="olehPernah" class="carousel slide" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="row">
                                                     @foreach ($lokasilalu->slice(0, 4) as $rek)
                                                         <div class="col-md-3 mb-3">
-                                                            <div class="card">
+                                                            <div class="card h-100">
                                                                 <img class="img-fluid" alt="100%x280"
                                                                     src={{ $rek->gambarutama }}>
                                                                 <div class="card-body">
@@ -551,7 +551,7 @@
                                                     <div class="row">
                                                         @foreach ($lokasilalu->slice(4, 4) as $rek)
                                                             <div class="col-md-3 mb-3">
-                                                                <div class="card">
+                                                                <div class="card h-100">
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
@@ -582,7 +582,7 @@
                                                     <div class="row">
                                                         @foreach ($lokasilalu->slice(8, 4) as $rek)
                                                             <div class="col-md-3 mb-3">
-                                                                <div class="card">
+                                                                <div class="card h-100">
                                                                     <img class="img-fluid" alt="100%x280"
                                                                         src={{ $rek->gambarutama }}>
                                                                     <div class="card-body">
