@@ -54,15 +54,15 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="paneA" role="tabpanel"
                                         aria-labelledby="pane-A">
-                                        <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                        <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                             @foreach ($daerahasal as $d)
                                                 <div class="col">
                                                     <div class="card h-100">
                                                         <img src="{{ $d->gambarlokasi }}"
-                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                             style="object-fit: cover">
-                                                        <div class="card-body">
-                                                            <h6 class="card-text">{{ $d->kota }}</h6>
+                                                        <div >
+                                                            <h6 class="card-text m-2">{{ $d->kota }}</h6>
                                                             <a href="/filter/daerah/{{ $d->kota }}"
                                                                 class="stretched-link"></a>
                                                         </div>
@@ -72,15 +72,15 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="paneB" role="tabpanel" aria-labelledby="pane-B">
-                                        <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                        <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                             @foreach ($jenisoleh as $j)
                                                 <div class="col">
                                                     <div class="card h-100">
                                                         <img src="{{ $j->gambarjenis }}"
-                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                             style="object-fit: cover">
-                                                        <div class="card-body">
-                                                            <h6 class="card-text">{{ $j->namajenis }}</h6>
+                                                        <div >
+                                                            <h6 class="card-text m-2">{{ $j->namajenis }}</h6>
                                                             <a href="/jenis/{{ $j->namajenis }}"
                                                                 class="stretched-link"></a>
                                                         </div>
@@ -90,15 +90,15 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="paneC" role="tabpanel" aria-labelledby="pane-C">
-                                        <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                        <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                             @foreach ($bahandasar as $b)
                                                 <div class="col">
                                                     <div class="card h-100">
                                                         <img src="{{ $b->gambarbahan }}"
-                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                             style="object-fit: cover">
-                                                        <div class="card-body">
-                                                            <h6 class="card-text">{{ $b->namabahan }}
+                                                        <div >
+                                                            <h6 class="card-text m-2">{{ $b->namabahan }}
                                                             </h6>
                                                             <a href="/filter/bahandasar/{{ $b->namabahan }}"
                                                                 class="stretched-link"></a>
@@ -109,15 +109,15 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="paneD" role="tabpanel" aria-labelledby="pane-D">
-                                        <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                        <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                             @foreach ($rasa as $r)
                                                 <div class="col">
                                                     <div class="card h-100">
                                                         <img src="{{ $r->gambarasa }}"
-                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                             style="object-fit: cover">
-                                                        <div class="card-body">
-                                                            <h6 class="card-text">{{ $r->namarasa }}</h6>
+                                                        <div >
+                                                            <h6 class="card-text m-2">{{ $r->namarasa }}</h6>
                                                             <a href="/filter/rasa/{{ $r->namarasa }}"
                                                                 class="stretched-link"></a>
                                                         </div>
@@ -127,15 +127,15 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="paneE" role="tabpanel" aria-labelledby="pane-E">
-                                        <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                        <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                             @foreach ($tekstur as $t)
                                                 <div class="col">
                                                     <div class="card h-100">
                                                         <img src="{{ $t->gambartekstur }}"
-                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                            class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                             style="object-fit: cover">
-                                                        <div class="card-body">
-                                                            <h6 class="card-text">{{ $t->namatekstur }}
+                                                        <div >
+                                                            <h6 class="card-text m-2">{{ $t->namatekstur }}
                                                             </h6>
                                                             <a href="/filter/tekstur/{{ $t->namatekstur }}"
                                                                 class="stretched-link"></a>
@@ -147,15 +147,15 @@
                                     </div>
                                     <div class="tab-pane fade" id="paneF" role="tabpanel" aria-labelledby="pane-F">
                                         <div class="" id="">
-                                            <div class="row row-cols-1 row-cols-md-5 g-4 mt-1">
+                                            <div class="row row-cols-1 row-cols-md-6 g-4 mt-1 mb-2">
                                                 @foreach ($caramasak as $m)
                                                     <div class="col">
                                                         <div class="card h-100">
                                                             <img src="{{ $m->gambarmasak }}"
-                                                                class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded"
+                                                                class="card-img-top d-block embed-responsive embed-responsive-16by9 rounded-top"
                                                                 style="object-fit: cover">
-                                                            <div class="card-body">
-                                                                <h6 class="card-text">
+                                                            <div >
+                                                                <h6 class="card-text m-2">
                                                                     {{ $m->namamasak }}</h6>
                                                                 <a href="/filter/caramasak/{{ $m->namamasak }}"
                                                                     class="stretched-link"></a>

@@ -251,6 +251,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade mb-3" id="tempat" role="tabpanel" aria-labelledby="tempat-tab">
+
                             <div class="row row-cols-1 row-cols-md-3 g-3">
                                 @foreach ($tempatbeli as $t)
                                     <div class="col mb-3">
@@ -262,11 +263,11 @@
                                                     {{ $t->provinsi }}
                                                 </p>
                                                 <a href="#" type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#myModal">Detail</a>
+                                                    data-bs-target="#myModal{{ $t->idtempatbeli }}">Detail</a>
                                             </div>
                                         </div>
                                         <!-- The Modal -->
-                                        <div class="modal" id="myModal">
+                                        <div class="modal" id="myModal{{ $t->idtempatbeli }}">
                                             <div
                                                 class="modal-dialog modal-dialog-scrollable modal-lg modal-fullscreen-md-down">
                                                 <div class="modal-content">
@@ -295,18 +296,21 @@
                                                                                 @php
                                                                                     $varjul = preg_split('/---/', $t->varianjual);
                                                                                 @endphp
-                                                                                @php
-                                                                                    $beseler = preg_split('/---/', $t->best_seller);
-                                                                                @endphp
+
                                                                                 <td>
-                                                                                    @foreach ($beseler as $bs)
-                                                                                        {{ $bs }} <i
-                                                                                            type="button"
-                                                                                            class="bi bi-hand-thumbs-up"
-                                                                                            data-bs-toggle="tooltip"
-                                                                                            data-bs-placement="right"
-                                                                                            title="Best Seller"></i><br>
-                                                                                    @endforeach
+                                                                                    @if ($t->best_seller != null)
+                                                                                        @php
+                                                                                            $beseler = preg_split('/---/', $t->best_seller);
+                                                                                        @endphp
+                                                                                        @foreach ($beseler as $bs)
+                                                                                            {{ $bs }} <i
+                                                                                                type="button"
+                                                                                                class="bi bi-hand-thumbs-up"
+                                                                                                data-bs-toggle="tooltip"
+                                                                                                data-bs-placement="right"
+                                                                                                title="Best Seller"></i><br>
+                                                                                        @endforeach
+                                                                                    @endif
                                                                                     @foreach ($varjul as $var)
                                                                                         {{ $var }}<br>
                                                                                     @endforeach

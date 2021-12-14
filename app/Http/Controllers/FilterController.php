@@ -53,19 +53,6 @@ class FilterController extends Controller
             ->orderBy('kota')
             ->get();
 
-        $idjenis = '';
-        foreach ($jenisoleh as $j) {
-            $idjenis = $j->idjenis;
-        }
-
-        // $varianjenis = DB::table('varianoleh')
-        //     ->leftjoin('varianjenis', 'varianjenis.id_varian', '=', 'varianoleh.id_varian')
-        //     ->select('varianjenis.id_varian','varianjenis.idjenis', 'namavarian', 'gambarvarian')
-        //     ->distinct()
-        //     ->where('varianjenis.idjenis', '=', $idjenis)
-        //     ->orderBy('namavarian')
-        //     ->get();
-
         $view->with(compact('jenisoleh', 'bahandasar', 'rasa', 'tekstur', 'caramasak', 'daerahasal'));
     }
 
