@@ -151,7 +151,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h5>Rekomendasi oleh - oleh yang cocok untuk kolega <a class="text-secondary" href="#"
+                        <h5>Rekomendasi oleh - oleh yang cocok untuk perseorangan <a class="text-secondary" href="#"
                                 style="font-size: 14px"> Lebih</a></h5>
                     </div>
                     <div class="col-4 text-end">
@@ -270,7 +270,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h5>Rekomendasi oleh - oleh yang cocok untuk keluarga <a class="text-secondary" href="#"
+                        <h5>Rekomendasi oleh - oleh yang cocok untuk group <a class="text-secondary" href="#"
                                 style="font-size: 14px"> Lebih</a></h5>
                     </div>
                     <div class="col-4 text-end">

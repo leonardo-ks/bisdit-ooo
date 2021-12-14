@@ -286,19 +286,15 @@
                                                                 src="{{ $t->gambarproduk }}" style="object-fit: cover;">
                                                             <h5 class="mx-2 mt-2">Detail {{ $t->merk }}</h5>
                                                             <div class="row mt-2">
-                                                                <div class="col">
+                                                                <div class="col-12">
                                                                     <table class="table table-borderless">
                                                                         <tbody>
-                                                                            <tr>
-                                                                                <td class="bi bi-dot">Varian Yang
-                                                                                    Dijual</td>
-                                                                                <td>:</td>
-                                                                                @php
-                                                                                    $varjul = preg_split('/---/', $t->varianjual);
-                                                                                @endphp
-
-                                                                                <td>
-                                                                                    @if ($t->best_seller != null)
+                                                                            @if ($t->best_seller != null)
+                                                                                <tr>
+                                                                                    <td class="col-3 bi bi-dot">Varian Best
+                                                                                        Seller</td>
+                                                                                    <td class="col-1">:</td>
+                                                                                    <td class="col-8">
                                                                                         @php
                                                                                             $beseler = preg_split('/---/', $t->best_seller);
                                                                                         @endphp
@@ -310,39 +306,62 @@
                                                                                                 data-bs-placement="right"
                                                                                                 title="Best Seller"></i><br>
                                                                                         @endforeach
+                                                                                    </td>
+
+                                                                                    <script>
+                                                                                        // Initialize tooltips
+                                                                                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                                                                                        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                                                                                            return new bootstrap.Tooltip(tooltipTriggerEl)
+                                                                                        })
+                                                                                    </script>
+                                                                                </tr>
+                                                                            @endif
+                                                                            @if ($t->varianjual != null)
+                                                                                <tr>
+                                                                                    @if ($t->best_seller != null)
+                                                                                        <td class="col-3 bi bi-dot">Varian
+                                                                                            Lainnya</td>
+                                                                                    @else
+                                                                                        <td class=" col-3 bi bi-dot">Varian
+                                                                                            Yang Dijual</td>
                                                                                     @endif
-                                                                                    @foreach ($varjul as $var)
-                                                                                        {{ $var }}<br>
-                                                                                    @endforeach
-                                                                                </td>
-                                                                                <script>
-                                                                                    // Initialize tooltips
-                                                                                    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                                                                                    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-                                                                                        return new bootstrap.Tooltip(tooltipTriggerEl)
-                                                                                    })
-                                                                                </script>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="bi bi-dot">Bundle Yang
-                                                                                    Dijual</td>
-                                                                                <td>:</td>
-                                                                                @php
-                                                                                    $bundel = preg_split('/---/', $t->bundle);
-                                                                                @endphp
-                                                                                <td>
-                                                                                    @foreach ($bundel as $bun)
-                                                                                        {{ $bun }}<br>
-                                                                                    @endforeach
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="bi bi-dot">Rentang Harga
-                                                                                </td>
-                                                                                <td>:</td>
-                                                                                <td>
+                                                                                    <td class="col-1">:</td>
+                                                                                    <td class="col-8">
+                                                                                        @php
+                                                                                            $varjul = preg_split('/---/', $t->varianjual);
+                                                                                        @endphp
+                                                                                        @foreach ($varjul as $var)
+                                                                                            {{ $var }}<br>
+                                                                                        @endforeach
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @endif
+                                                                            @if ($t->bundle != null)
+                                                                                <tr>
+
+                                                                                    <td class="col-3 bi bi-dot">Bundle Yang
+                                                                                        Dijual</td>
+                                                                                    <td class="col-1">:</td>
                                                                                     @php
-                                                                                        $renhar = preg_split('/---/', $t->harga);
+                                                                                        $bundel = preg_split('/---/', $t->bundle);
+                                                                                    @endphp
+                                                                                    <td class="col-8">
+                                                                                        @foreach ($bundel as $bun)
+                                                                                            {{ $bun }}<br>
+                                                                                        @endforeach
+                                                                                    </td>
+
+
+                                                                                </tr>
+                                                                            @endif
+                                                                            <tr>
+                                                                                <td class="col-3 bi bi-dot">Rentang Harga
+                                                                                </td>
+                                                                                <td class="col-1">:</td>
+                                                                                <td class="col-8">
+                                                                                    @php
+                                                                                        $renhar = preg_split('/---/', $t->rentang_harga);
                                                                                     @endphp
                                                                                     Rp.{{ $renhar[0] }} -
                                                                                     Rp.{{ $renhar[1] }}
@@ -350,53 +369,69 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td class="bi bi-dot">Kemasan Tersedia
+                                                                                <td class="col-3 bi bi-dot">Kemasan
+                                                                                    Tersedia
                                                                                 </td>
-                                                                                <td>:</td>
-                                                                                <td>{{ $t->kemasan }}</td>
+                                                                                <td class="col-1">:</td>
+                                                                                <td class="col-8">
+                                                                                    {{ $t->kemasan }}</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td class="bi bi-dot">Alamat</td>
-                                                                                <td>:</td>
-                                                                                <td>{{ $t->alamat }},
+                                                                                <td class="col-3 bi bi-dot">Alamat</td>
+                                                                                <td class="col-1">:</td>
+                                                                                <td class="col-8">
+                                                                                    {{ $t->alamat }},
                                                                                     {{ $t->kota }}</td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td class="bi bi-dot">Jam Buka</td>
-                                                                                <td>:</td>
-                                                                                <td>{{ $t->jambuka }}</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="bi bi-dot">Sosial Media
-                                                                                </td>
-                                                                                <td>:</td>
-                                                                                @php
-                                                                                    $sos = preg_split('/---/', $t->sosmed);
-                                                                                @endphp
-                                                                                <td>
-                                                                                    @if ($sos[0] = 'instagram')
-                                                                                        <i class="bi bi-instagram"></i>
-                                                                                        <a href="https://www.instagram.com/{{ $sos[1] }}"
-                                                                                            target="_blank"
-                                                                                            class="text-dark">{{ $sos[1] }}</a>
-                                                                                    @elseif ($sos[0] = 'whatsapp')
-                                                                                        <i class="bi bi-whatsapp"></i>
-                                                                                        <a href="https://www.wa.me/{{ $sos[1] }}"
-                                                                                            target="_blank"
-                                                                                            class="text-dark">{{ $sos[1] }}</a>
-                                                                                    @else
-                                                                                        <i class="bi bi-facebook"></i>
-                                                                                        <a href="https://www.facebook.com/{{ $sos[1] }}"
-                                                                                            target="_blank"
-                                                                                            class="text-dark">{{ $sos[1] }}</a>
-                                                                                    @endif
+                                                                            @if ($t->jambuka != null)
+                                                                                <tr>
 
-                                                                                </td>
+                                                                                    <td class="col-3 bi bi-dot">Jam Buka
+                                                                                    </td>
+                                                                                    <td class="col-1">:</td>
+                                                                                    <td class="col-8">
+                                                                                        {{ $t->jambuka }}</td>
+
+
+                                                                                </tr>
+                                                                            @endif
+                                                                            <tr>
+                                                                                @if ($t->sosmed != null)
+                                                                                    <td class="col-3 bi bi-dot">Sosial
+                                                                                        Media
+                                                                                    </td>
+                                                                                    <td class="col-1">:</td>
+
+                                                                                    @php
+                                                                                        $sos = preg_split('/---/', $t->sosmed);
+                                                                                    @endphp
+                                                                                    <td class="col-8">
+                                                                                        @if ($sos[0] == 'instagram')
+                                                                                            <i class="bi bi-instagram"></i>
+                                                                                            <a href="https://www.instagram.com/{{ $sos[1] }}"
+                                                                                                target="_blank"
+                                                                                                class="text-dark">{{ $sos[1] }}</a>
+                                                                                        @elseif ($sos[0] == 'whatsapp')
+                                                                                            <i class="bi bi-whatsapp"></i>
+                                                                                            <a href="https://www.wa.me/{{ $sos[1] }}"
+                                                                                                target="_blank"
+                                                                                                class="text-dark">{{ $sos[1] }}</a>
+                                                                                        @elseif ($sos[0] == 'facebook')
+                                                                                            <i class="bi bi-facebook"></i>
+                                                                                            <a href="https://www.facebook.com/{{ $sos[1] }}"
+                                                                                                target="_blank"
+                                                                                                class="text-dark">{{ $sos[1] }}</a>
+                                                                                        @endif
+                                                                                    </td>
+                                                                                @endif
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
+
                                                                 </div>
-                                                                <h5 class="mx-2 mt-2">Lokasi {{ $t->merk }}</h5>
+
+                                                                <h5 class="mx-2 mt-2">Lokasi {{ $t->merk }}
+                                                                </h5>
                                                                 <div class="d-flex justify-content-center rounded">
                                                                     @php
                                                                         $embed = $t->google_map;

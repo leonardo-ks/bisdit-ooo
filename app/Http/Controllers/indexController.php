@@ -47,14 +47,14 @@ class IndexController extends Controller
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where([
                 ['kota', '=', $kota],
-                ['namacocok', 'like', '%Kolega%'],
-                ['favorit_count', '>', 0]
+                ['namacocok', 'like', '%Perseorangan%'],
+                // ['favorit_count', '>', 0]
             ])
             ->orderBy('favorit_count', 'desc')
             ->orWhere([
                 ['provinsi', '=', $provinsi],
-                ['namacocok', 'like', '%Kolega%'],
-                ['favorit_count', '>', 0]
+                ['namacocok', 'like', '%Perseorangan%'],
+                // ['favorit_count', '>', 0]
             ])
             ->limit(12)
             ->get();
@@ -63,14 +63,14 @@ class IndexController extends Controller
             ->join('lokasi', 'lokasi.idlokasi', '=', 'varianoleh.idlokasi')
             ->where([
                 ['kota', '=', $kota],
-                ['namacocok', 'like', '%Keluarga%'],
-                ['favorit_count', '>', 0]
+                ['namacocok', 'like', '%Group%'],
+                // ['favorit_count', '>', 0]
             ])
             ->orderBy('favorit_count', 'desc')
             ->orWhere([
                 ['provinsi', '=', $provinsi],
-                ['namacocok', 'like', '%Keluarga%'],
-                ['favorit_count', '>', 0]
+                ['namacocok', 'like', '%Group%'],
+                // ['favorit_count', '>', 0]
             ])
             ->limit(12)
             ->get();
