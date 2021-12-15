@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 11:31 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Waktu pembuatan: 15 Des 2021 pada 03.50
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bahandasar`
+-- Struktur dari tabel `bahandasar`
 --
 
 CREATE TABLE `bahandasar` (
@@ -38,7 +38,7 @@ CREATE TABLE `bahandasar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bahandasar`
+-- Dumping data untuk tabel `bahandasar`
 --
 
 INSERT INTO `bahandasar` (`idbahan`, `namabahan`, `gambarbahan`, `pantangan`, `created_at`, `updated_at`, `manfaat`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `bahandasar` (`idbahan`, `namabahan`, `gambarbahan`, `pantangan`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -83,7 +83,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favorit`
+-- Struktur dari tabel `favorit`
 --
 
 CREATE TABLE `favorit` (
@@ -93,7 +93,7 @@ CREATE TABLE `favorit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `favorit`
+-- Dumping data untuk tabel `favorit`
 --
 
 INSERT INTO `favorit` (`idfavorit`, `idoleh`, `id`) VALUES
@@ -102,10 +102,13 @@ INSERT INTO `favorit` (`idfavorit`, `idoleh`, `id`) VALUES
 (13, 1, 2),
 (14, 6, 2),
 (15, 4, 2),
-(17, 26, 5);
+(17, 26, 5),
+(18, 10, 6),
+(19, 7, 6),
+(20, 11, 6);
 
 --
--- Triggers `favorit`
+-- Trigger `favorit`
 --
 DELIMITER $$
 CREATE TRIGGER `hapusfavorit` BEFORE DELETE ON `favorit` FOR EACH ROW UPDATE `varianoleh` SET favorit_count=favorit_count-1
@@ -121,7 +124,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenisoleh`
+-- Struktur dari tabel `jenisoleh`
 --
 
 CREATE TABLE `jenisoleh` (
@@ -134,7 +137,7 @@ CREATE TABLE `jenisoleh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenisoleh`
+-- Dumping data untuk tabel `jenisoleh`
 --
 
 INSERT INTO `jenisoleh` (`idjenis`, `namajenis`, `deskripsijenis`, `gambarjenis`, `created_at`, `updated_at`) VALUES
@@ -150,7 +153,7 @@ INSERT INTO `jenisoleh` (`idjenis`, `namajenis`, `deskripsijenis`, `gambarjenis`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lokasi`
+-- Struktur dari tabel `lokasi`
 --
 
 CREATE TABLE `lokasi` (
@@ -163,7 +166,7 @@ CREATE TABLE `lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lokasi`
+-- Dumping data untuk tabel `lokasi`
 --
 
 INSERT INTO `lokasi` (`idlokasi`, `kota`, `provinsi`, `gambarlokasi`, `created_at`, `updated_at`) VALUES
@@ -267,7 +270,7 @@ INSERT INTO `lokasi` (`idlokasi`, `kota`, `provinsi`, `gambarlokasi`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `masak`
+-- Struktur dari tabel `masak`
 --
 
 CREATE TABLE `masak` (
@@ -279,7 +282,7 @@ CREATE TABLE `masak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `masak`
+-- Dumping data untuk tabel `masak`
 --
 
 INSERT INTO `masak` (`idmasak`, `namamasak`, `gambarmasak`, `created_at`, `updated_at`) VALUES
@@ -298,7 +301,7 @@ INSERT INTO `masak` (`idmasak`, `namamasak`, `gambarmasak`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -308,7 +311,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -349,7 +352,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mitra`
+-- Struktur dari tabel `mitra`
 --
 
 CREATE TABLE `mitra` (
@@ -369,7 +372,7 @@ CREATE TABLE `mitra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `mitra`
+-- Dumping data untuk tabel `mitra`
 --
 
 INSERT INTO `mitra` (`idmitra`, `namamitra`, `kontak`, `idlokasi`, `foto_mitra`, `deskripsimitra`, `created_at`, `updated_at`, `cicip`, `gmap_mitra`, `alamat_mitra`, `jam_buka_mitra`, `link`) VALUES
@@ -378,7 +381,7 @@ INSERT INTO `mitra` (`idmitra`, `namamitra`, `kontak`, `idlokasi`, `foto_mitra`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -390,7 +393,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -408,7 +411,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk_mitra`
+-- Struktur dari tabel `produk_mitra`
 --
 
 CREATE TABLE `produk_mitra` (
@@ -423,7 +426,7 @@ CREATE TABLE `produk_mitra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `produk_mitra`
+-- Dumping data untuk tabel `produk_mitra`
 --
 
 INSERT INTO `produk_mitra` (`id_produk_mitra`, `nama_produk_mitra`, `gambar_produk_mitra`, `harga_produk_mitra`, `status_produkmitra`, `idoleh`, `idmitra`, `best_seller`) VALUES
@@ -436,7 +439,7 @@ INSERT INTO `produk_mitra` (`id_produk_mitra`, `nama_produk_mitra`, `gambar_prod
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rasa`
+-- Struktur dari tabel `rasa`
 --
 
 CREATE TABLE `rasa` (
@@ -448,7 +451,7 @@ CREATE TABLE `rasa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `rasa`
+-- Dumping data untuk tabel `rasa`
 --
 
 INSERT INTO `rasa` (`idrasa`, `namarasa`, `gambarasa`, `created_at`, `updated_at`) VALUES
@@ -456,13 +459,13 @@ INSERT INTO `rasa` (`idrasa`, `namarasa`, `gambarasa`, `created_at`, `updated_at
 (2, 'Pedas', 'https://cdn.discordapp.com/attachments/906163180328325130/906204482491265054/Pedas.jpg', NULL, NULL),
 (3, 'Asin', 'https://cdn.discordapp.com/attachments/906163180328325130/906204762825965638/Asin.jpg', NULL, NULL),
 (4, 'Asam', 'https://cdn.discordapp.com/attachments/906163180328325130/906204674846261339/Asam.jpg', NULL, NULL),
-(5, 'Pahit', 'https://cdn.discordapp.com/attachments/906163180328325130/906204820904505404/Pahit.jpeg', NULL, NULL),
+(5, 'Pahit', 'https://cdn.discordapp.com/attachments/906163180328325130/906205196005290064/Pahit.jpeg', NULL, NULL),
 (6, 'Hambar', 'https://cdn.discordapp.com/attachments/906163180328325130/906205196005290064/Pahit.jpeg', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tekstur`
+-- Struktur dari tabel `tekstur`
 --
 
 CREATE TABLE `tekstur` (
@@ -474,7 +477,7 @@ CREATE TABLE `tekstur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tekstur`
+-- Dumping data untuk tabel `tekstur`
 --
 
 INSERT INTO `tekstur` (`idtekstur`, `namatekstur`, `gambartekstur`, `created_at`, `updated_at`) VALUES
@@ -493,7 +496,7 @@ INSERT INTO `tekstur` (`idtekstur`, `namatekstur`, `gambartekstur`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tempatbeli`
+-- Struktur dari tabel `tempatbeli`
 --
 
 CREATE TABLE `tempatbeli` (
@@ -521,7 +524,7 @@ CREATE TABLE `tempatbeli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tempatbeli`
+-- Dumping data untuk tabel `tempatbeli`
 --
 
 INSERT INTO `tempatbeli` (`idtempatbeli`, `merk`, `gambarproduk`, `varianjual`, `idoleh`, `idlokasi`, `idmitra`, `created_at`, `updated_at`, `bundle`, `kemasan`, `alamat`, `link`, `google_map`, `jambuka`, `rentang_harga`, `best_seller`, `satuan`, `bpom`, `cara_bayar`, `sosmed`) VALUES
@@ -566,7 +569,7 @@ INSERT INTO `tempatbeli` (`idtempatbeli`, `merk`, `gambarproduk`, `varianjual`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -583,19 +586,20 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `photo`, `remember_token`, `created_at`, `updated_at`, `pernah_wisata`) VALUES
 (2, 'test', 'test@testing.com', NULL, '$2y$10$6wsjpsExTE/Ah9BUC/JFS.eeHLwgVyJp2M8BwYfWUXxWFf7hsjeG.', 'https://ui-avatars.com/api/?name=test&background=7F9CF5&color=EBF4FF', NULL, '2021-11-14 06:38:15', '2021-11-14 06:38:15', NULL),
 (3, 'Farhan Septiadi', 'septiadifarhan26@gmail.com', NULL, '$2y$10$2qS4C5TOeQU/EuBG2bpAXO5xM0u87.4H9ObYB55Doq2jyDUne2NuS', 'https://ui-avatars.com/api/?name=Farhan+Septiadi&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 04:20:44', '2021-12-10 04:20:44', NULL),
 (4, 'Eula Lawrance', 'eulawangy@genshin.impact.com', NULL, '$2y$10$q7VMO3cCM9VTSLYuEIvwWOmFCKp6pmHsn9xy/SUdfkmPFUEYpdnRy', 'https://ui-avatars.com/api/?name=Eula+Lawrance&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 04:23:21', '2021-12-10 04:23:21', 'Jakarta,Padang,Surabaya'),
-(5, 'Keqing', 'keqing@wangy.com', NULL, '$2y$10$NPLz/Cdx1NbSO90QjeQiSey8InHxV5G49Bm80nVQnEfkSkUUSJM1q', 'https://ui-avatars.com/api/?name=Keqing&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 05:10:29', '2021-12-10 05:10:29', 'Bukittingi,Jakarta,Bogor');
+(5, 'Keqing', 'keqing@wangy.com', NULL, '$2y$10$NPLz/Cdx1NbSO90QjeQiSey8InHxV5G49Bm80nVQnEfkSkUUSJM1q', 'https://ui-avatars.com/api/?name=Keqing&background=7F9CF5&color=EBF4FF', NULL, '2021-12-10 05:10:29', '2021-12-10 05:10:29', 'Bukittingi,Jakarta,Bogor'),
+(6, 'Audrey', 'audreyaurelya811@gmail.com', NULL, '$2y$10$Yz1qSHiRId2S3mxa1jjFluI/6r47VZFpSQJiNguHMUrQ6z9jacdsG', 'https://ui-avatars.com/api/?name=Audrey&background=7F9CF5&color=EBF4FF', NULL, '2021-12-14 04:34:30', '2021-12-14 04:34:30', 'Bogor');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `varianjenis`
+-- Struktur dari tabel `varianjenis`
 --
 
 CREATE TABLE `varianjenis` (
@@ -609,7 +613,7 @@ CREATE TABLE `varianjenis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `varianjenis`
+-- Dumping data untuk tabel `varianjenis`
 --
 
 INSERT INTO `varianjenis` (`id_varian`, `namavarian`, `deskripsivarian`, `gambarvarian`, `idjenis`, `created_at`, `updated_at`) VALUES
@@ -629,12 +633,13 @@ INSERT INTO `varianjenis` (`id_varian`, `namavarian`, `deskripsivarian`, `gambar
 (14, 'Cokelat', 'Cokelat atau Coklat adalah sebutan untuk hasil olahan makanan atau minuman dari biji kakao', 'https://cdn.discordapp.com/attachments/906163180328325130/917467933540773948/Cokelat.jpg', 5, NULL, NULL),
 (15, 'Bakpia', 'Bakpia adalah kue pastri asal Fujian, China yang berupa gulungan tepung panggang dengan berbagai isi.', 'https://cdn.discordapp.com/attachments/906163180328325130/916962624820879431/PiaMalang_2.jpg', 3, NULL, NULL),
 (16, 'Dodol', 'Dodol merupakan salah satu makanan khas Indonesia, berasal dari daerah Jawa Barat dengan bahan dasar pembuatannya adalah tepung beras ketan, santan dan gula. Dodol merupakan makanan semi  basah yang memiliki tekstur plastis. ', 'https://cdn.discordapp.com/attachments/906163180328325130/918921212544049152/Dodol.jpg', 5, NULL, NULL),
-(17, 'Sanjai', 'Karupuak Sanjai adalah sejenis peganan kerupuk dari singkong yang diparut tipis lalu digoreng dan diberi garam sebagai penyedapnya.', 'https://cdn.discordapp.com/attachments/906163180328325130/918921299143827536/Sanjai.jpg', 2, NULL, NULL);
+(17, 'Sanjai', 'Karupuak Sanjai adalah sejenis peganan kerupuk dari singkong yang diparut tipis lalu digoreng dan diberi garam sebagai penyedapnya.', 'https://cdn.discordapp.com/attachments/906163180328325130/918921299143827536/Sanjai.jpg', 2, NULL, NULL),
+(18, 'Kopi', 'Kopi adalah minuman hasil seduhan biji kopi yang telah disangrai dan dihaluskan menjadi bubuk. Kopi merupakan salah satu komoditas di dunia yang dibudidayakan lebih dari 50 negara. Dua varietas pohon kopi yang dikenal secara umum yaitu Kopi Robusta (Coffea canephora) dan Kopi Arabika (Coffea arabica).', 'https://cdn.discordapp.com/attachments/906163180328325130/920283455944806400/Kpi_Gayo_Aceh.jpg\r\n', 7, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `varianoleh`
+-- Struktur dari tabel `varianoleh`
 --
 
 CREATE TABLE `varianoleh` (
@@ -671,7 +676,7 @@ CREATE TABLE `varianoleh` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `varianoleh`
+-- Dumping data untuk tabel `varianoleh`
 --
 
 INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gambaroleh`, `deskripsioleh`, `idrasa`, `idtekstur`, `idbahan`, `komposisi`, `idmasak`, `idlokasi`, `statushalal`, `kadarluarsa`, `carapenyimpanan`, `carapenyajian`, `trivia`, `namacocok`, `idmitra`, `created_at`, `updated_at`, `id_varian`, `idjenis`, `favorit_count`, `satuan`, `hargamin`, `hargamax`, `vegan`, `vegetarian`, `gluten_free`) VALUES
@@ -681,11 +686,11 @@ INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gamb
 (4, 'Strudel Bogor', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906170747700006972/StrudelBogor_1.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906170684105965588/StrudelBogor_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/906170747700006972/StrudelBogor_1.jpg', 'Strudel Bogor memiliki topping isian pada Strudel Bogor ini memunculkan rasa unik yang khas. Sekali gigit, akan membuat anda ketagihan dan ingin mencoba lagi.---Strudel Bogor ini berukuran panjang ±25 cm, kira-kira bisa dipotong menjadi 8 potongan. Dengan packaging rapi, ukuran yang cukup besar dan waktu kadaluarsa relatif singkat, produk ini cocok untuk dibagikan kepada group', 1, 3, 3, 'Pastry, Topping', 1, 53, 1, '3 hari (suhu ruang)---10 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Potong menjadi beberapa bagian, sajikan di atas piring kecil', 'Asal Usul---Strudel sendiri adalah sebuah jenis pastri berlapis yang biasanya diisi dengan manisan. Strudel sudah populer sejak abad ke-16 dan selalu dikaitkan dengan makanan dari Austria. Strudel Bogor adalah modifikasi atas makanan pastry strudel dengan isian berbahan dasar khas Bogor.', 'Group', NULL, NULL, NULL, 4, 4, 1, 'Kotak', 28000, 50000, 0, 0, 0),
 (5, 'Pie Susu Bali', 'Egg Tart', 'https://cdn.discordapp.com/attachments/906163180328325130/906171879868473364/PieSusu_1.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906171879868473364/PieSusu_1.jpg', 'Pie susu ini merupakan salah satu jenis cemilan kekinian yang sedang tren di Indonesia. Kue ini seringkali disajikan sebagai kudapan arisan, isian snack box kantor, hajatan dan juga dijual di pasar tradisional maupun toko kue modern.---Satu potong pie susu sudah dikemas dalam plastik sehingga mudah untuk dibagikan. Maka oleh - oleh ini cocok untuk perseorangan.', 1, 4, 3, 'Cream Susu, Fla, Tepung Terigu, Mentega, Telur, Susu, Tepung Maizena, Gula Halus', 1, 74, 1, '5 hari (suhu ruang)---12 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Sajikan di atas piring kecil', 'Asal Usul---Pie susu merupakan modifikasi dari Egg Tart yang bermula di Portugal pada abad ke-19 di Biara Jerónimos di distrik Lisbon di Belém. Para biarawan memiliki kebiasaan membuat kue tart custard kecil dengan campuran gula, tepung dan kuning telur yang dikaramelkan dalam oven untuk menciptakan penampilan khas dan rasa yang lezat.', 'Perseorangan', NULL, NULL, NULL, 4, 4, 1, '10 pcs', 19500, 37000, 0, 1, 0),
 (6, 'Lapis Talas Bogor', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906172268223270912/LapisTalasBogor_1.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906172268223270912/LapisTalasBogor_1.jpg', 'Lapis Talas dengan cita rasa talas yang dominan dipadukan dengan toping parutan keju, sehingga menghasilkan varian Lapis talas yang enak untuk semua penyuka Talas Bogor---Lapis Talas Bogor cocok untuk menjadi oleh - oleh group karena memiliki daya tahan yang singkat dan hadir dengan varian rasa bermacam - macam.', 1, 3, 4, 'Tepung Terigu, Tepung Talas, Telur Ayam, Gula, Susu, Pengembang Kue, Keju', 3, 53, 1, '4 hari (suhu ruang)---7 hari (suhu kulkas)', 'Harus disimpan di kulkas', 'Potong menjadi beberapa bagian, sajikan di atas piring kecil', 'Asal Usul---Komoditas talas di Bogor cukup berlimpah, itulah sebabnya berbagai macam makanan dan cemilan khas Bogor terbuat dari umbi talas. Talas diolah sedemikian rupa sehingga menghasilkan cita rasa yang khas dan enak pada lapis talas asal Bogor. Lapis talas biaya terdiri dari dua lapis dan taburi berbagai macam topping di atasnya.', 'Group', NULL, NULL, NULL, 2, 4, 1, 'Kotak', 30000, 38000, 0, 1, 0),
-(7, 'Karak Kaliang', '', 'https://cdn.discordapp.com/attachments/906163180328325130/919592883080818739/1200px-Karak_kaliang.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592883080818739/1200px-Karak_kaliang.jpg', 'Kerupuk Berbahan dasar ubi kayu/singkoong dengan warna kuning cerah.', 3, 4, 16, 'Singkong, kunyit , Garam, minyak goreng dan Bumbu', 4, 19, 1, '2 bulan (suhu ruang)', 'Disimpan di tempat yang kering', 'Sajikan diatas piring', 'Bahan Dasar---Karak kaliang berbahan dasar singkong, kunyit, garam serta digoreng dengan minyak panas agar membetuk tekstur yang renyah dengan rasa yang gurih---Nama Asal---\r\nNama karak kaling berasal dari seorang pembeli oleh-oleh dari penjual bumbu masakan siap saji di pasar Bukittinggi. Pedagang bumbu merupakan keturunan India. Namun tak jelas, kapan mulai dinamakan karak kaliang. Oleh-oleh tersebut adalah makanan yang mirip sekali dengan karak kaliang yang kita kenal saat ini. Karak kaliang berasal dari kata “Karak” yang berarti lapisan kering yang keras mewakili tekstur dari karak kaliang serta “kaliang” yang berarti hitam/gelap karena saat itu karak kaliang dijual oleh orang yang berkulit gelap.', 'Group', NULL, NULL, NULL, 17, 2, 1, 'Bungkus', 8000, 11500, 0, 1, 0),
+(7, 'Karak Kaliang', '', 'https://cdn.discordapp.com/attachments/906163180328325130/919592883080818739/1200px-Karak_kaliang.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592883080818739/1200px-Karak_kaliang.jpg', 'Kerupuk Berbahan dasar ubi kayu/singkoong dengan warna kuning cerah.', 3, 4, 16, 'Singkong, kunyit , Garam, minyak goreng dan Bumbu', 4, 19, 1, '2 bulan (suhu ruang)', 'Disimpan di tempat yang kering', 'Sajikan diatas piring', 'Bahan Dasar---Karak kaliang berbahan dasar singkong, kunyit, garam serta digoreng dengan minyak panas agar membetuk tekstur yang renyah dengan rasa yang gurih---Nama Asal---\r\nNama karak kaling berasal dari seorang pembeli oleh-oleh dari penjual bumbu masakan siap saji di pasar Bukittinggi. Pedagang bumbu merupakan keturunan India. Namun tak jelas, kapan mulai dinamakan karak kaliang. Oleh-oleh tersebut adalah makanan yang mirip sekali dengan karak kaliang yang kita kenal saat ini. Karak kaliang berasal dari kata “Karak” yang berarti lapisan kering yang keras mewakili tekstur dari karak kaliang serta “kaliang” yang berarti hitam/gelap karena saat itu karak kaliang dijual oleh orang yang berkulit gelap.', 'Group', NULL, NULL, NULL, 17, 2, 2, 'Bungkus', 8000, 11500, 0, 1, 0),
 (8, 'Kipang Kacang', 'Enting-enting, Teng-teng', 'https://cdn.discordapp.com/attachments/906163180328325130/919592951666077746/1280px-Kipang_Kacang_3.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592951666077746/1280px-Kipang_Kacang_3.jpg', 'Kipang Kacang berbahan dasar kacang tanah yang dihancurkan kasar dan diberi gula merah sebagai perekat lalu dibentuk potongan potongan kecil', 1, 4, 1, 'Kacang Tanah, Garam, Gula Merah dan vanilla', 10, 18, 1, '5 Bulan (Suhu Ruang)', 'Disimpan di tempat yang tertutup dan kering', 'Disajikan diatas piring', 'Bahan Dasar---Kipang kacang berbahan dasar kacang dan memiliki rasa yang manis dan gurih serta textur yang renyah---Asal Mula---tradisi pembuatan kipang kacang sudah ada sejak dahulu. Permintaan kipang kacang sebagai buah tangan bagi para perantau yang hendak balik kerantau.', 'Perseorangan', NULL, NULL, NULL, 7, 5, 0, 'Bungkus', 10000, 18000, 1, 1, 1),
 (9, 'Sanjai Balado', '', 'https://cdn.discordapp.com/attachments/906163180328325130/919592919718051870/1280px-Keripik_singkong_balado_cassava_chips.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592919718051870/1280px-Keripik_singkong_balado_cassava_chips.jpg', 'Sanjai merupakan kerupuk singkong yang memiliki berbagai varian rasa dengan bentuk sesuai dengan bumbu khas masing masing', 2, 4, 16, 'Singkong, Cabai, bumbu khas.', 4, 19, 1, '1 Bulan (Suhu Ruang)', 'Disimpat Tempat Kering dan Tertutup', 'Disajikan Diatas Piring', 'Bahan Dasar---Sanjai balado berbahan dasar singkong/ubi kayu yang dipotong dengan berbagai bentuk sesuai dengan variannya dan memiliki rasa yang beragam seperti pedas hingga pedas manis---\r\nAsal Mula---Menurut sejarah, keripik ini diproduksi sekiar tahun 1970an oleh warga di jalan Sanjai. Orang yang pertama kali menjajakannya adalah nenek Amai Seram, Amai Malan, dan Amai Terimalah. Ketiga nenek ini berjualan keripik tersebut di Los Maninjau, sebuah pasar atas di kawasan Bukittinggi. Seiring dengan perkembangan jaman, jajanan ini mulai populer di kalangan warga sekitar. Kepopulerannya membuat masyarakat sekitar akhirnya mengikutinya untuk memperoleh penghasilan tambahan dari hasil pertanian yang melimpah.Bukan hanya warga sekitar saja, namun warga di luar daerah Sanjai juga ikut memproduksinya. Uniknya, nama Sanjai tetap digunakan untuk melabeli keripik tersebut. Alhasil, terkenallah jajanan tersebut dengan sebutan karupuak singkong sanjai atau keripik sanjai.', 'Group', NULL, NULL, NULL, 17, 2, 0, 'Bungkus', 18000, 35000, 1, 1, 1),
-(10, 'Batiah', 'Rengginang', 'https://cdn.discordapp.com/attachments/906163180328325130/919592834519171122/600px-Batiah_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592834519171122/600px-Batiah_2.jpg', 'Merupakan sejenis keripik yang terbuat dari beras ketan yang di keringkan dan dicetak menjadi keripik', 1, 4, 11, 'Beras Ketan, garam, Gula, Air', 4, 19, 1, '1 Bulan (Suhu Ruang)', 'Simpan Ditempat Kering dan Tertutup', 'Disajikan Diatas Piring', 'Bentu Unik---Batiah memiliki bentuk yang mirip dengan rengginang. Tetapi menggunakan bahan yang berbeda karena rengginang menggunakan beras biasa sebagai bahan utama sedangkan batiah menggunakan beras ketan.', 'Perseorangan', NULL, NULL, NULL, 8, 3, 0, 'Bungkus', 14000, 15000, 1, 1, 1),
-(11, 'Bareh Randang', 'Beras Rendang', 'https://cdn.discordapp.com/attachments/906163180328325130/914385291337433149/Bareh_Randang.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/914385291337433149/Bareh_Randang.jpg', 'Merupakan camilan manis dengan bentuk unik yang berbahan dasar beras ketan atau tepung beras', 1, 3, 11, 'Beras Ketan/Tepung Ketan, Gula, Santan', 5, 19, 1, '5 hari (Suhu Ruang)---\r\n7 Hari (Suhu Kulkas)', 'Bisa disimpan dalam kulkas', 'Disajikan diatas piring', 'asal nama---beras rendang sendiri bukanlah nasi ataupun beras ketan yang dimasukkan ke dalam bumbu rendang. Melainkan pembuatan nya yang menggunakan cara di \"Rendang\" atau mengosengnya yang mirip dengan pembuatan rendang tetapi dengan menggunakan bahan yang berbeda.---Cara Pembuatan---Beras rendang dibuat dengan menggunakan beras ketan yang disangrai hingga kering lalu ditumbuk sehingga menjadi tepung yang nantinya akan di \"Rendang\" bersama dengan gula pasir serta Santan.---Adat---beras rendang disajikan biasanya disajikan dalam acara \"manjapuik marapulai\", Penjemputan mempelai laki-laki di daerah minang serta juga pada pertemuan \"niniak mamak\", tetua/sesepuh kaum', 'Perseorangan', NULL, NULL, NULL, 7, 5, 0, NULL, 20000, 25000, 1, 1, 0),
+(10, 'Batiah', 'Rengginang', 'https://cdn.discordapp.com/attachments/906163180328325130/919592834519171122/600px-Batiah_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/919592834519171122/600px-Batiah_2.jpg', 'Merupakan sejenis keripik yang terbuat dari beras ketan yang di keringkan dan dicetak menjadi keripik', 1, 4, 11, 'Beras Ketan, garam, Gula, Air', 4, 19, 1, '1 Bulan (Suhu Ruang)', 'Simpan Ditempat Kering dan Tertutup', 'Disajikan Diatas Piring', 'Bentu Unik---Batiah memiliki bentuk yang mirip dengan rengginang. Tetapi menggunakan bahan yang berbeda karena rengginang menggunakan beras biasa sebagai bahan utama sedangkan batiah menggunakan beras ketan.', 'Perseorangan', NULL, NULL, NULL, 8, 3, 1, 'Bungkus', 14000, 15000, 1, 1, 1),
+(11, 'Bareh Randang', 'Beras Rendang', 'https://cdn.discordapp.com/attachments/906163180328325130/914385291337433149/Bareh_Randang.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/914385291337433149/Bareh_Randang.jpg', 'Merupakan camilan manis dengan bentuk unik yang berbahan dasar beras ketan atau tepung beras', 1, 3, 11, 'Beras Ketan/Tepung Ketan, Gula, Santan', 5, 19, 1, '5 hari (Suhu Ruang)---\r\n7 Hari (Suhu Kulkas)', 'Bisa disimpan dalam kulkas', 'Disajikan diatas piring', 'asal nama---beras rendang sendiri bukanlah nasi ataupun beras ketan yang dimasukkan ke dalam bumbu rendang. Melainkan pembuatan nya yang menggunakan cara di \"Rendang\" atau mengosengnya yang mirip dengan pembuatan rendang tetapi dengan menggunakan bahan yang berbeda.---Cara Pembuatan---Beras rendang dibuat dengan menggunakan beras ketan yang disangrai hingga kering lalu ditumbuk sehingga menjadi tepung yang nantinya akan di \"Rendang\" bersama dengan gula pasir serta Santan.---Adat---beras rendang disajikan biasanya disajikan dalam acara \"manjapuik marapulai\", Penjemputan mempelai laki-laki di daerah minang serta juga pada pertemuan \"niniak mamak\", tetua/sesepuh kaum', 'Perseorangan', NULL, NULL, NULL, 7, 5, 1, NULL, 20000, 25000, 1, 1, 0),
 (12, 'Pisang Sale', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/914383230508072990/Pisang_Sale.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/914383230508072990/Pisang_Sale.jpg', 'Merupakan Hasil olahkan pisang yang dikeringkan sehingga memiliki daya tahan yang lama', 1, 4, 7, 'Pisang, Tepung', 1, 19, 1, '1 Bulan (Suhu Ruang)', 'Disimpan ditempat tertutup dan kering', 'Disajikan diatas wadah', 'Asall Mula---Pisang sale sendiri sebenarnya merupakan makanan khas Asli dari Karangpucung dan Majenang yang terletak di Kabupaten Cilacap Jawa Tengah. Namun dalam perkembangannya banyak kota lain yang mengembangkan dan memproduksi Sale Pisang. Sehingga saat ini banyak pendapat bahwa keaslian Sale Pisang seperti diakui dari kota tertentu, (salah satunya bukittinggi, Sumatra Barat )', 'Group', NULL, NULL, NULL, 6, 2, 0, 'Bungkus', 14000, 15000, 1, 1, 0),
 (13, 'Kue Sapik', 'Semprong', 'https://cdn.discordapp.com/attachments/906163180328325130/914385036164333588/Kue_Sapik.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/914385036164333588/Kue_Sapik.jpg', 'Kue sapik merupakan sejenis kue kering yang memiliki bentuk unik seperti digulung', 1, 4, 3, 'tepung ketan putih, gula, telur,santan,garam', 1, 19, 1, '1 Bulan (Suhu Ruang)', 'Simpan Ditempat Kering dan Tertutup', 'Disajikan Diatas Wadah', 'Asal nama---Penamaan kue khas lebaran ini berkaitan dengan cara membuatnya. Adonan bahan pembuat kue sapik, tepung beras dan bahan lainnya yang agak kental dimasukkan kedalam cetakan dari besi yang kedua permukaannya sudah diukir sedemikian rupa. Kemudian adonan tersebut dijepit (disapik, bahasa Minang) oleh kedua permukaan cetakan kue.', 'Perseorangan', NULL, NULL, NULL, 8, 3, 0, 'Bungkus', 20000, 25000, 0, 1, 0),
 (14, 'Rakik', 'Peyek', 'https://cdn.discordapp.com/attachments/906163180328325130/914383420782686278/Rakik_Macho__Bulat.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/914383420782686278/Rakik_Macho__Bulat.jpg', 'merupakan sejenis keripik yang memiliki bahan campuran berupa kacang, ikan kecil, maupun udang', 3, 4, 3, 'Tepung Beras, Telur, Ikan/Kacang', 4, 18, 1, '1 Bulan (Suhu Ruang)', 'Disimpang ditempat tertutup dan kering', 'Disajikan Diatas Wadah', 'Kemiripan---Rakik sendiri memiliki bentuk yang mirip dengan rempeyek. Tetapi memiliki bahan campuran yang beragam', 'Perseorangan', NULL, NULL, NULL, 9, 2, 0, 'Bungkus', 9000, 10000, 0, 0, 0),
@@ -704,27 +709,44 @@ INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gamb
 (30, 'Wingko Babat', 'Wingko Babad', 'https://cdn.discordapp.com/attachments/906163180328325130/912730665001308190/WingkoBabat_1.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/912730665001308190/WingkoBabat_1.jpg---https://cdn.discordapp.com/attachments/906163180328325130/912730666049896518/WingkoBabat_3.jpg---https://cdn.discordapp.com/attachments/906163180328325130/912730665378779186/WingkoBabat_2.png', 'Wingko babat merupakan oleh - oleh tradisional yang kerap menjadi oleh - oleh utama saat berkunjung ke Semarang.---Oleh - oleh ini cocok untuk perseorangan karena umumnya wingko sudah dikemas per pcs sehingga cocok untuk porsi 1 orang.', 1, 3, 3, 'Kelapa Muda, Tepung Beras Ketan, Gula', 3, 59, 1, '2 hari (suhu ruang)---5 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Sajikan di atas piring kecil', 'Asal Usul---Sejarah mencatat bahwa kue wingko berasal dari kota kecil bernama Babad yang terletak di dekat Tuban, Jawa Timur. Sejak dulu hingga sekarang, kue wingko biasa dijual di Babad. Dari sinilah kemudian kue wingko terkenal dengan nama “wingko babad”. Sejarah telah mencatat bahwa wingko babad pertama kali muncul di Semarang sekitar tahun 1946.', 'Perseorangan', NULL, NULL, NULL, 12, 4, 0, 'kotak', 52000, 110000, 1, 1, 0),
 (32, 'Bandeng Presto', '', 'https://cdn.discordapp.com/attachments/906163180328325130/912732508406300743/BandengPresto_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/912732508406300743/BandengPresto_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/912732508163039232/BandengPresto_1.jpg', 'Bandeng presto merupakan inovasi yang dibuat masyarakat Semarang. Ikan bandeng presto tercipta karena pemikiran kreatif untuk mengatasi banyaknya duri yang terdapat di daging ikan bandeng.---Oleh - oleh ini cocok untuk group karena ukurannya yang cukup besar, kemasan berisikan 1 ikan besar dan dapat dihidangkan untuk lebih dari 2 orang.', 3, 3, 14, 'Ikan Bandeng, Kunyit, Bawang Putih, Garam', 11, 59, 1, '90 hari (suhu ruang)---100 hari (suhu kulkas)', 'Harus disimpan di kulkas', 'Apabila belum digoreng, goreng hingga kecoklatan, kemudian sajikan di atas piring', 'Asal Usul---Bandeng Presto ditemukan pada tahun 1977 oleh Ibu Hanna Budimulya yang pada awalnya dibuat dalam skala kecil untuk kalangan tertentu saja. Namun karena digemari banyak orang, produksi Bandeng Presto semakin berkembang dan menjadi oleh-oleh khas dari Kota Semarang.', 'Group', NULL, NULL, NULL, 13, 8, 0, 'pcs', 51000, 139000, 0, 0, 1),
 (34, 'Strudel Malang', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/916964979205374002/StrudelMalang_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/916964979205374002/StrudelMalang_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/916964979423457280/StrudelMalang_3.jpg---https://cdn.discordapp.com/attachments/906163180328325130/916964979628994640/StrudelMalang_4.jpg---https://cdn.discordapp.com/attachments/906163180328325130/916964979020816384/StrudelMalang_1.jpg', 'Strudel adalah kue pastry asal Austria yang dibuat dari adonan utama berupa tepung dan bahan kue lain.---Oleh - oleh ini cocok sebagai oleh oleh group karena dikemas untuk strudel yang ukurannya cukup besar dan dapat dipotong - potong menjadi beberapa bagian.', 1, 3, 3, 'Pastry, Topping', 1, 71, 1, '3 hari (suhu ruang)---10 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Potong menjadi beberapa bagian, sajikan di atas piring kecil', 'Asal Usul---Strudel merupakan kue sejenis pastry yang berasal dari Austria, Jerman. Sekilas tentang strudel, ini merupakan salah satu makanan penutup (dessert) yang paling umum dikonsumsi oleh masyarakat Jerman. Mereka seringkall menyebutnya dengan nama Apfelstrudel atau Apple Strudel.---Fakta Menarik---Strudel yang berarti “pusaran air” atau “angin topan” dalam bahasa Jerman ini sudah populer di Eropa sejak abad 18.', 'Group', NULL, NULL, NULL, 4, 4, 0, 'kotak', 53000, 77000, 0, 1, 0),
-(36, 'Keripik Pisang Lampung', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906197474551672892/Renyah.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906197474551672892/Renyah.jpg---https://cdn.discordapp.com/attachments/906163180328325130/914154855000584212/KeripikPisang_1.jpeg', 'Oleh oleh ini merupakan produk olahan buah yang hadir dengan varian rasa bermacam---Kudapan ini cocok untuk menjadi oleh - oleh perseorangan karena sudah dikemas menjadi bungkus kecil', 1, 4, 15, 'Pisang, Bumbu', 4, 32, 1, '21 hari (suhu ruang)---28 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Sajikan di atas piring kecil', 'Asal Usul---Pemilik dari gerai memiliki ide untuk mengembangkan keripik pisang tradisional yang sebelumnya pernah dijual dengan menambahkan beberapa rasa seperti coklat dan kopi', 'Perseorangan', NULL, NULL, NULL, 6, 2, 0, 'kotak', 12000, 38500, 1, 1, 1);
+(36, 'Keripik Pisang Lampung', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/906197474551672892/Renyah.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/906197474551672892/Renyah.jpg---https://cdn.discordapp.com/attachments/906163180328325130/914154855000584212/KeripikPisang_1.jpeg', 'Oleh oleh ini merupakan produk olahan buah yang hadir dengan varian rasa bermacam---Kudapan ini cocok untuk menjadi oleh - oleh perseorangan karena sudah dikemas menjadi bungkus kecil', 1, 4, 15, 'Pisang, Bumbu', 4, 32, 1, '21 hari (suhu ruang)---28 hari (suhu kulkas)', 'Bisa disimpan di kulkas', 'Sajikan di atas piring kecil', 'Asal Usul---Pemilik dari gerai memiliki ide untuk mengembangkan keripik pisang tradisional yang sebelumnya pernah dijual dengan menambahkan beberapa rasa seperti coklat dan kopi', 'Perseorangan', NULL, NULL, NULL, 6, 2, 0, 'kotak', 12000, 38500, 1, 1, 1),
+(38, 'Bakpia Aceh', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283020529913856/Bakpia_Aceh.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920283020529913856/Bakpia_Aceh.jpg', 'Kue kacang hijau yang memiliki bentuk mirip dengan bakpia di Yogyakarta, tetapi memiliki rasa yang khas.\r\n', 1, 3, 1, 'Kacang Hijau, Tepung, Gula halus', 1, 4, 1, '10 Hari', 'Bisa Disimpan di Dalam Kulkas', 'Disajikan Diatas Piring, Dimakan Langsung dari kemasan', 'Asal---Bakpia sendiri sebenarnya bukan merupakan makanan khas dari daerah aceh. Tetapi dari daerah tiongkok yang memiliki arti kue daging karena biasanya di daerah asalnya memiliki isian daging.\r\n', 'Perseorangan', NULL, NULL, NULL, 15, 3, 0, 'Kotak', 20000, 25000, 0, 0, 0),
+(39, 'Kue Bhoi', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283390756933642/Kue-Bhoi-Khas-Aceh-1.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283390756933642/Kue-Bhoi-Khas-Aceh-1.jpg\r\n', 'Kue bolu khas aceh dengan bentuk yang unik seperti ikan, bunga, bintang, binatang, dll.', 1, 3, 3, 'tepung beras, telur bebek dan gula pasir\r\n', 1, 1, 1, '14 hari\r\n', 'Bisa Disimpan di Dalam Kulkas\r\n', 'Disajikan Diatas Piring, Dimakan Langsung dari kemasan\r\n', 'Biasa di makan oleh kalangan ningrat---Dahulu, kue bhoi merupakan penganan kalangan ningrat termasuk keluarga Sultan Iskandar Muda. Penganan ini disajikan kepada tamu istimewa yang datang berkunjung, atau saat perhelatan adat besar seperti pesta perkawinan\r\n', 'Perseorangan', NULL, NULL, NULL, NULL, 4, 0, 'Bungkus', 10000, 20000, 0, 0, 0),
+(40, 'Kopi Gayo', 'Kopi Aceh', 'https://cdn.discordapp.com/attachments/906163180328325130/920283455944806400/Kpi_Gayo_Aceh.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283455944806400/Kpi_Gayo_Aceh.jpg\r\n', 'Kopi jenis Arabica khas aceh dengan rasa yang kuat, tingkat keasaman yang rendah, dan sedikit rasa rempah yang khas\r\n', 5, 10, 2, 'Biji Kopi', 5, 1, 1, '6 Bulan', 'Disimpan Ditempat Yang Kering', 'Diseduh diatas cangkir', 'Asal Usul Kopi Gayo---Perihal sejarah kopi kita tidak bisa lepas dari sejarah kelam kolonialisme khususnya di Indonesia. Politik tanam paksa dan kerasnya perdagangan kopi dunia. Kopi Gayo ada sejak zaman penjajahan Belanda. Abad ke-17, semasa VOC. Setelah penanaman kopi di Pulau Jawa, Belanda, memperluas lahannya hingga ke Sumatera Utara dan Nangroe Aceh Darussalam (NAD). Saat itu, kopi menjadi komoditi penting bagi serikat dagang Belanda tersebut. Di bawah pemerintahan Belanda, banyak petani kopi yang menderita.\r\n', 'perseorangan', NULL, NULL, NULL, 18, 7, 0, 'Bungkus', 50000, 110000, 1, 1, 1),
+(41, 'Kue Keukarah', 'Kue Karah', 'https://cdn.discordapp.com/attachments/906163180328325130/920283520776163368/Kue_Keukarah.jpeg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283520776163368/Kue_Keukarah.jpeg\r\n', 'Kue kering yang memiliki bentuk seperti sarang burung dengan warna kecoklatan\r\n', 1, 4, 3, 'Tepung Beras, Gula Pasir\r\n', 4, 1, 1, '1 Bulan\r\n', 'Disimpan di Tempat yang Kering', 'Disajikan Diatas Piring, Dimakan Langsung dari kemasan\r\n', 'Penyajian---kue ini sering dijumpai pada pesta pernikahan sebagai hantaran dari pihak laki-laki kepada pihak perempuan. Selain itu menjelang hari raya atau acara adat dan Kenduri Aceh,kue ini juga tak pernah absen dalam penyajian kudapan. Penyajian kudapan ini juga dapat ditemui pada acara penyambutan tamu atau sebagai teman minum teh.\r\n', 'Group', NULL, NULL, NULL, NULL, 3, 0, 'Bungkus', 13000, 20000, 1, 1, 0),
+(42, 'Bika Ambon', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283623482073088/bika-ambon-bika-plate-slice.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283623482073088/bika-ambon-bika-plate-slice.jpg\r\n', 'Bika Ambon adalah salah satu makanan khas jenis kue basah. Kue satu ini memiliki ciri khas dengan warnanya yang kuning dan memiliki rongga-rongga di bagian dalamnya.\r\n', 1, 3, 3, 'Tepung terigu, Santan, Gula Pasir, Telur\r\n', 1, 6, 1, '3 Hari', 'Bisa Disimpan di Dalam Kulkas', 'Disajikan Diatas Piring\r\n', 'Asal Usul---Jika ditanya soal asal-usul Bika Ambon, ada banyak versi cerita yang beredar di masyarakat. Ada yang mengatakan, kue satu ini dinamai Bika Ambon lantaran tempat pertama kali kue ini dijual dan menjadi populer adalah di simpang Jalan Ambon Sei Kera Medan.\r\n', 'Perseorangan', NULL, NULL, NULL, NULL, 4, 0, 'Kotak', 20000, 65000, 0, 0, 0),
+(43, 'Pancake Durian', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283717841330176/Durian_Pancake.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283717841330176/Durian_Pancake.jpg\r\n', 'Pancake Durian Panekuk durian atau pancake durian adalah makanan ringan berupa puree daging durian dan vla atau krim kocok yang dibalut dengan kulit crepes atau dadar gulung. Panganan ini pertama kali dipelopori oleh pedagang-pedagang kue rumahan di Kota Medan, dan lambat laun tersebar di kota-kota lain di Indonesia, seperti Jambi, Semarang, Jakarta, dan lain-lain.\r\n', 1, 3, 3, 'Tepung Terigu, Gula, Telur, Durian, Susu\r\n', 1, 6, 1, '3 Hari', 'Bisa Disimpan di Dalam Kulkas', 'Disajikan Diatas Piring\r\n', 'Asal Mula--- Pancake Durian ini dipelopori oleh pedagang-pedagang kue rumahan di Kota Medan. Kemudian, ketika semakin dikenal kue ini mulai menyebar di berbagai kota di Indonesia seperti Jambi, Jakarta, Semarang juga kota lainnya.', 'perseorangan', NULL, NULL, NULL, 4, 4, 0, 'Kotak', 30000, 60000, 0, 0, 0),
+(44, 'Kopi Sidikalang', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283781619933214/Kopi_Sidikalang.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283781619933214/Kopi_Sidikalang.jpg\r\n', 'Merupakan kopi khas daerah sumatera utara yang memiliki aroma dan cita rasa yang khas', 1, 10, 2, 'Biji Kopi', 5, 6, 1, '6 Bulan', 'Disimpan di Tempat Kering', 'Diseduh diatas cangkir\r\n', 'Kesehatan---Cocok disajikan untuk penderita lambung bermasalah, karena Tingkat keasaman yang dihasilkan Kopi Sidikalang ini terbilang rendah jika dibandingkan dengan kopi jenis lain. Sehingga cocok dikonsumsi untuk pecinta kopi yang memiliki masalah lambung.\r\n', 'Perseorangan', NULL, NULL, NULL, 18, 7, 0, 'Bungkus', 50000, 150000, 1, 1, 1),
+(45, 'Pempek', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920283813098176512/Pempek.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920283813098176512/Pempek.jpg\r\n', 'Merupakan Olahan ikan dari Sumatra Selatana, khususnya palembang yang biasa disantap dengan kuah Cuko\r\n', 3, 6, 3, 'Ikan Tenggiri, Tepung Sagu, garam, telur\r\n', 2, 14, 1, '3 Hari', 'Bisa Disimpan di Dalam Kulkas\r\n', 'Disajikan Diatas Mangkuk\r\n', 'Asal Mula Nama---Sebelumnya nama empek empek sendiri merupakan Kelesan. Tetapi mulai populer dipanggil pempek karena yang menjajakan makanan ini sebelumnya adalah seorang tionghoa bernama Apeq\r\n', 'Group', NULL, NULL, NULL, NULL, 8, 0, 'Bungkus', 100000, 150000, 0, 0, 0),
+(46, 'Kue Maksuba', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920287157879468052/Kue-Maksuba.jpg\r\n', 'https://cdn.discordapp.com/attachments/906163180328325130/920287157879468052/Kue-Maksuba.jpg\r\n', 'Merupakan Kue khas palembang yang biasanya hanya disajikan saat momen penting seperti idul fitri, idlu adha, pernikahan, dan lain lain\r\n', 1, 3, 21, 'Telur Bebek, Gula Pasir, Mentega, Susu Kental Manis\r\n', 1, 14, 1, '14 Hari', 'Bisa Disimpan di Dalam Kulkas\r\n', 'Disajikan Diatas Piring\r\n', 'Dulunya dimasak oleh orang tertentu---Zaman dulu, kue maksuba hanya bisa dimasak oleh seorang Panggong, sebutan untuk juru masak tradisional di Palembang. Konon, Panggong mewarisi kemampuan memasak kue ini secara turun-temurun. Saat ini semua orang bisa membuat kue lezat ini. Meski bahan dasarnya sederhana tapi tak mudah untuk membuatnya.\r\n', 'Perseorangan', NULL, NULL, NULL, NULL, 4, 0, 'Kotak', 100000, 200000, 0, 0, 0),
+(48, 'Bakpia Kukus', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920454593756938280/bakpia_kukus_utama.jpg', 'Unik dan Super Enak!!! Ini adalah kata-kata yang sangat pas untuk menggambarkan istimewanya Bakpia Kukus Tugu Jogja. Diolah dari bahan-bahan premium sehingga menghasilkan Bakpia Kukus dengan citarasa yang menggugah selera. Dikemas cantik nan eksklusif sehingga Bakpia Kukus Tugu Jogja ini semakin istimewa jika dijadikan oleh-oleh untuk orang-orang terdekat.', 1, 3, 3, 'Telur, gula pasir, emulsifier, tepung terigu, susu bubuk, cokelat bubuk, baking powder, margarin, cokelat pasta, susu cair, tepung maizena', 3, 65, 1, '6 hari suhu ruang---bulan freezer', 'simpan di dalam freezer', 'dijadikan camilan, dijadikan teman minum teh', 'Setelah migrasi besar dari Cina abad ke 18, terjadilah akulturasi budaya Cina dan lokal di Nusantara. Makanan adalah wujud paling nyata dari akulturasi tersebut dan dekat dengan kita setiap hari.---Bakpia yang semula menggunakan daging babi, diadaptasi menggunakan kacang hijau dan kacang merah. Kwik Sun Kwok adalah seorang pengusaha Tionghoa pelopor pembuatan bakpia di Jawa pada tahun 1940 an, racikannya ini sangat digemari masyarakat Jawa.---Racikannya kemudian dikembangkan di Kampung Pathuk, Yogyakarta, sehingga dikenal sebagai Bakpia Pathuk', 'teh', NULL, '2021-12-14 23:22:25', '2021-12-14 23:22:25', 1, 4, 0, NULL, 20000, 38000, 0, 0, 0),
+(49, 'Kue kering Yogyakarta', '', 'https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920461289262829638/cookies_utama.jpg', 'Kue kering menjadi salah satu kue yang digemari oleh masyarakat Indonesia. Tekstur nya yang renyah dengan rasa yang manis menjadi daya tarik dari kue kering ini. ', 1, 4, 3, 'Tepung, baking soda, butter, gula pasir, brown sugar, vanilla extract, telur', 1, 65, 1, '6 bulan', 'Simpan di wadah tertutup---Hindarkan dari sinar matahari', 'Dijadikan camilan---Dijadikan teman minum teh dan susu', 'Nama ‘cookies’ diambil dari kata serapan asal Belanda ‘koekje’ yang artinya kue kecil.---Di Belanda, cookies terbuat dari adonan kue manis yang dibuat berukuran kecil lalu dipanggang. Untuk memakan cookies pun sangatlah praktis, cukup menggunakan tangan yang disuap langsung ke dalam mulut.---Tidak perlu menggunakan pisau ataupun sendok. Kebiasaan memakan cookies itu kemudian dipopulerkan Belanda hingga ke Amerika Serikat.', 'teh, susu', NULL, '2021-12-14 23:30:01', '2021-12-14 23:30:01', 8, 3, 0, NULL, 20000, 80000, 0, 1, 0),
+(50, 'Sambal matah', 'Sambal bawang', 'https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920464510362472508/sambal_matah_utama.jpg', 'Sambal matah spesial, dibuat dari cabai pilian.---Kepedasan dan kesegaranya dijamin membuat mulutmu terbakar.', 2, 7, 5, 'bawang merah, bawang putih, cabai merah, terasi, garam, sereh, jeruk lemo, minyak kelapa', 8, 66, 1, '1 minggu pada suhu ruang---6 bulan pada kulkas ', 'Simpan di dalam wadah tertutup---Simpan di dalam kulkas', 'Disajikan sebagai pelengkap hidangan', 'Sambal matah berasal dari kata sambal mentah. Sambal ini biasanya disertakan sebagai pelengkap hidangan.', 'nasi campur, ayam goreng', NULL, '2021-12-14 23:52:18', '2021-12-14 23:52:18', 11, 6, 0, NULL, 30000, 50000, 1, 1, 1);
+INSERT INTO `varianoleh` (`idoleh`, `namaoleh`, `namalain`, `gambarutama`, `gambaroleh`, `deskripsioleh`, `idrasa`, `idtekstur`, `idbahan`, `komposisi`, `idmasak`, `idlokasi`, `statushalal`, `kadarluarsa`, `carapenyimpanan`, `carapenyajian`, `trivia`, `namacocok`, `idmitra`, `created_at`, `updated_at`, `id_varian`, `idjenis`, `favorit_count`, `satuan`, `hargamin`, `hargamax`, `vegan`, `vegetarian`, `gluten_free`) VALUES
+(51, 'Kopi khas Surabaya', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920468738472554556/kopi_utama.jpg', 'Kopi adalah minuman hasil seduhan biji kopi yang telah disangrai dan dihaluskan menjadi bubuk. Rasa pahitnya dijamin membuatmu lebih tenang.', 5, 3, 2, 'kopi', 8, 66, 1, '1 tahun', 'Jauhkan dari sinar matahari', 'Tuang pada gelas dengan air panas', 'Sejarah kopi telah dicatat sejauh pada abad ke-9.---Pertama kali, kopi hanya ada di Ethiopia, di mana biji-bijian asli ditanam oleh orang Ethiopia dataran tinggi. Akan tetapi, ketika bangsa Arab mulai meluaskan perdagangannya, biji kopi pun telah meluas sampai ke Afrika Utara dan biji kopi di sana ditanam secara massal.---Dari Afrika Utara itulah biji kopi mulai meluas dari Asia sampai pasaran Eropa dan ketenarannya sebagai minuman mulai menyebar.', 'susu', NULL, '2021-12-15 00:05:43', '2021-12-15 00:05:43', 18, 7, 0, NULL, 30000, 45000, 1, 1, 1),
+(52, 'Jamur crispy', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920503535085441085/jamur_crispy_utama_2.jpg', 'Cemilan yang super crispy ini diolah dari jamur tiram segar pilihan yang diolah dengan beragam bumbu rempah hingga menjadikannya lezat.---Yuk selalu siap sedia Amura Jamur Crispy biar ngumpul makin seru.', 3, 4, 8, 'jamur, tepung, garam, merica, tepung maizena, tepung roti, minyak, penyedap rasa', 4, 55, 1, '1 tahun', 'simpan di wadah tertutup', 'disajikan sebagai lauk, camilan', 'Menurut sejarah jamur dulu dijadikan sebagai hidangan populer bagi para raja di Mesir. Kini, jamur populer di masyarakat dan banyak disajikan dalam berbagaimenu makanan yang lezat. Bahkan, ada beberapa di antaranya berperan sebagai herbal. Jamur mulai dikenal sebagai bahan pangan sejak 3.000 tahun lalu.', 'lauk', NULL, '2021-12-15 02:20:16', '2021-12-15 02:20:16', 11, 2, 0, NULL, 26000, 40000, 1, 1, 0),
+(53, 'Manisan Buah', 'Manisan Basah', 'https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506083229990942/manisan_buah_utama_2.jpg', 'Manisan buah, melelehkan mulut dengan rasa manis masamnya.---                                                                                                                                                                                                                                                                Camilan ini hadir dengan kemasan praktis yang dapat dibawa kemana-mana, sehingga cocok untuk konsumsi pribadi, konsumsi saat berpergian, diberikan kepada kolega maupun ke keluarga.', 1, 10, 7, 'Pepaya, air, kapur sirih, gula pasir, citron', 2, 55, 1, '1 minggu', 'Simpan di kulkas(jangan freezer)', 'Camilan', 'Sementara itu China mencatat bahwa mereka mulai mengenal manisan sejak masa pemerintahan Dinasti Song (960-1279 Masehi).---Saat itu selir kesayangan raja jatuh sakit dan tidak bisa makan. Tabib yang saat itu merawat sang selir memiliki ide untuk menyajikan manisan buah hawthorne. Ini adalah sejenis beri-berian yang tanamannya berduri dan memiliki buah yang terasa asam. Buah haw ini lalu ditusuk dengan batang bambu sehingga seperti sate lalu dicelupkan ke dalam sirup gula hingga terbentuk lapisan kristal di bagian luarnya. Ternyata nafsu makan sang selir pun kembali dan ia menjadi sehat.---Sejak itu manisan buah—masyarakat China menyebutnya tanghulu—dianggap sebagai obat yang manjur.', 'camilan', NULL, '2021-12-15 02:33:16', '2021-12-15 02:33:16', 7, 5, 0, NULL, 17000, NULL, 1, 1, 0),
+(56, 'Bumbu nasi goreng', NULL, 'https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg', 'https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg---https://cdn.discordapp.com/attachments/906163180328325130/920506943133614160/bumbu_nasu_goreng_utama.jpg', 'Kelezatan Nasi Goreng khas Indonesia memang tidak diragukan lagi kelezatannya. Cita rasanya yang lezat terbuat dari cabai merah, cabai rawit, terasi dan kecap manis. Satu langkah mudah untuk membuat Nasi Goreng yang lezat, cukup tambahkan nasi dan Bumbu Nasi Goreng.', 3, 3, 18, 'garam, gula, penguat rasa, bawang merah, bawang putih, bubuk kecap,pewarna', 8, 72, 1, '1 bulan', 'Simpan di wadah tertutup', 'Ditumis dengan nasi', 'Nasi goreng ternyata sudah ada sejak ribuan tahun yang lalu, yakni sekitar tahun 4000 Sebelum Masehi. Makanan ini tidak berasal dari Indonesia, melainkan sebagai makanan tradisional masyarakat Tionghoa. Ide memasak nasi goreng dimulai dari kebiasaan masyarakat Tionghoa yang tidak suka dengan makanan yang sudah dingin. Oleh sebab itu, mereka mencoba untuk memasak kembali nasi yang sudah dingin. Agar lebih enak, mereka memasukkan bumbu-bumbu sewaktu memasaknya. Tidak disangka, ternyata nasi goreng yang dibuat sangat digemari masyarakat Tionghoa.', 'nasi', NULL, '2021-12-15 02:42:58', '2021-12-15 02:42:58', 9, 6, 0, NULL, 30000, NULL, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `bahandasar`
+-- Indeks untuk tabel `bahandasar`
 --
 ALTER TABLE `bahandasar`
   ADD PRIMARY KEY (`idbahan`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `favorit`
+-- Indeks untuk tabel `favorit`
 --
 ALTER TABLE `favorit`
   ADD PRIMARY KEY (`idfavorit`),
@@ -732,44 +754,44 @@ ALTER TABLE `favorit`
   ADD KEY `favorit_id_foreign` (`id`);
 
 --
--- Indexes for table `jenisoleh`
+-- Indeks untuk tabel `jenisoleh`
 --
 ALTER TABLE `jenisoleh`
   ADD PRIMARY KEY (`idjenis`);
 
 --
--- Indexes for table `lokasi`
+-- Indeks untuk tabel `lokasi`
 --
 ALTER TABLE `lokasi`
   ADD PRIMARY KEY (`idlokasi`);
 
 --
--- Indexes for table `masak`
+-- Indeks untuk tabel `masak`
 --
 ALTER TABLE `masak`
   ADD PRIMARY KEY (`idmasak`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mitra`
+-- Indeks untuk tabel `mitra`
 --
 ALTER TABLE `mitra`
   ADD PRIMARY KEY (`idmitra`),
   ADD KEY `mitra_idlokasi_foreign` (`idlokasi`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -777,7 +799,7 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `produk_mitra`
+-- Indeks untuk tabel `produk_mitra`
 --
 ALTER TABLE `produk_mitra`
   ADD PRIMARY KEY (`id_produk_mitra`),
@@ -785,19 +807,19 @@ ALTER TABLE `produk_mitra`
   ADD KEY `produk_mitra_idmitra_foreign` (`idmitra`);
 
 --
--- Indexes for table `rasa`
+-- Indeks untuk tabel `rasa`
 --
 ALTER TABLE `rasa`
   ADD PRIMARY KEY (`idrasa`);
 
 --
--- Indexes for table `tekstur`
+-- Indeks untuk tabel `tekstur`
 --
 ALTER TABLE `tekstur`
   ADD PRIMARY KEY (`idtekstur`);
 
 --
--- Indexes for table `tempatbeli`
+-- Indeks untuk tabel `tempatbeli`
 --
 ALTER TABLE `tempatbeli`
   ADD PRIMARY KEY (`idtempatbeli`),
@@ -806,21 +828,21 @@ ALTER TABLE `tempatbeli`
   ADD KEY `tempatbeli_idmitra_foreign` (`idmitra`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `varianjenis`
+-- Indeks untuk tabel `varianjenis`
 --
 ALTER TABLE `varianjenis`
   ADD PRIMARY KEY (`id_varian`),
   ADD KEY `varian_jenis_idjenis_foreign` (`idjenis`);
 
 --
--- Indexes for table `varianoleh`
+-- Indeks untuk tabel `varianoleh`
 --
 ALTER TABLE `varianoleh`
   ADD PRIMARY KEY (`idoleh`),
@@ -834,131 +856,131 @@ ALTER TABLE `varianoleh`
   ADD KEY `varianoleh_idjenis_foreign` (`idjenis`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `bahandasar`
+-- AUTO_INCREMENT untuk tabel `bahandasar`
 --
 ALTER TABLE `bahandasar`
   MODIFY `idbahan` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `favorit`
+-- AUTO_INCREMENT untuk tabel `favorit`
 --
 ALTER TABLE `favorit`
-  MODIFY `idfavorit` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idfavorit` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `jenisoleh`
+-- AUTO_INCREMENT untuk tabel `jenisoleh`
 --
 ALTER TABLE `jenisoleh`
   MODIFY `idjenis` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `lokasi`
+-- AUTO_INCREMENT untuk tabel `lokasi`
 --
 ALTER TABLE `lokasi`
   MODIFY `idlokasi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
--- AUTO_INCREMENT for table `masak`
+-- AUTO_INCREMENT untuk tabel `masak`
 --
 ALTER TABLE `masak`
   MODIFY `idmasak` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `mitra`
+-- AUTO_INCREMENT untuk tabel `mitra`
 --
 ALTER TABLE `mitra`
   MODIFY `idmitra` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `produk_mitra`
+-- AUTO_INCREMENT untuk tabel `produk_mitra`
 --
 ALTER TABLE `produk_mitra`
   MODIFY `id_produk_mitra` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `rasa`
+-- AUTO_INCREMENT untuk tabel `rasa`
 --
 ALTER TABLE `rasa`
   MODIFY `idrasa` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tekstur`
+-- AUTO_INCREMENT untuk tabel `tekstur`
 --
 ALTER TABLE `tekstur`
   MODIFY `idtekstur` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `tempatbeli`
+-- AUTO_INCREMENT untuk tabel `tempatbeli`
 --
 ALTER TABLE `tempatbeli`
   MODIFY `idtempatbeli` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `varianjenis`
+-- AUTO_INCREMENT untuk tabel `varianjenis`
 --
 ALTER TABLE `varianjenis`
-  MODIFY `id_varian` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_varian` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `varianoleh`
+-- AUTO_INCREMENT untuk tabel `varianoleh`
 --
 ALTER TABLE `varianoleh`
-  MODIFY `idoleh` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idoleh` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `favorit`
+-- Ketidakleluasaan untuk tabel `favorit`
 --
 ALTER TABLE `favorit`
   ADD CONSTRAINT `favorit_id_foreign` FOREIGN KEY (`id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `favorit_idoleh_foreign` FOREIGN KEY (`idoleh`) REFERENCES `varianoleh` (`idoleh`);
 
 --
--- Constraints for table `mitra`
+-- Ketidakleluasaan untuk tabel `mitra`
 --
 ALTER TABLE `mitra`
   ADD CONSTRAINT `mitra_idlokasi_foreign` FOREIGN KEY (`idlokasi`) REFERENCES `lokasi` (`idlokasi`);
 
 --
--- Constraints for table `produk_mitra`
+-- Ketidakleluasaan untuk tabel `produk_mitra`
 --
 ALTER TABLE `produk_mitra`
   ADD CONSTRAINT `produk_mitra_idmitra_foreign` FOREIGN KEY (`idmitra`) REFERENCES `mitra` (`idmitra`),
   ADD CONSTRAINT `produk_mitra_idoleh_foreign` FOREIGN KEY (`idoleh`) REFERENCES `varianoleh` (`idoleh`);
 
 --
--- Constraints for table `tempatbeli`
+-- Ketidakleluasaan untuk tabel `tempatbeli`
 --
 ALTER TABLE `tempatbeli`
   ADD CONSTRAINT `tempatbeli_idlokasi_foreign` FOREIGN KEY (`idlokasi`) REFERENCES `lokasi` (`idlokasi`),
@@ -966,13 +988,13 @@ ALTER TABLE `tempatbeli`
   ADD CONSTRAINT `tempatbeli_idoleh_foreign` FOREIGN KEY (`idoleh`) REFERENCES `varianoleh` (`idoleh`);
 
 --
--- Constraints for table `varianjenis`
+-- Ketidakleluasaan untuk tabel `varianjenis`
 --
 ALTER TABLE `varianjenis`
   ADD CONSTRAINT `varian_jenis_idjenis_foreign` FOREIGN KEY (`idjenis`) REFERENCES `jenisoleh` (`idjenis`);
 
 --
--- Constraints for table `varianoleh`
+-- Ketidakleluasaan untuk tabel `varianoleh`
 --
 ALTER TABLE `varianoleh`
   ADD CONSTRAINT `varianoleh_id_varian_foreign` FOREIGN KEY (`id_varian`) REFERENCES `varianjenis` (`id_varian`),

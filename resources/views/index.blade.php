@@ -30,8 +30,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="row">
-                            <h5>Oleh - oleh terpopuler di sekitarmu <a class="text-secondary" href="#"
-                                    style="font-size: 14px"> Lebih</a>
+                            <h5>Oleh - oleh terpopuler di sekitarmu
                             </h5>
                         </div>
                     </div>
@@ -151,8 +150,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h5>Rekomendasi oleh - oleh yang cocok untuk perseorangan <a class="text-secondary" href="#"
-                                style="font-size: 14px"> Lebih</a></h5>
+                        <h5>Rekomendasi oleh - oleh yang cocok untuk perseorangan </h5>
                     </div>
                     <div class="col-4 text-end">
 
@@ -270,8 +268,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h5>Rekomendasi oleh - oleh yang cocok untuk group <a class="text-secondary" href="#"
-                                style="font-size: 14px"> Lebih</a></h5>
+                        <h5>Rekomendasi oleh - oleh yang cocok untuk group </h5>
                     </div>
                     <div class="col-4 text-end">
 
@@ -389,8 +386,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <h5>Rekomendasi oleh - oleh dibawah Rp.40000 <a class="text-secondary" href="#"
-                                style="font-size: 14px;"> Lebih</a></h5>
+                        <h5>Rekomendasi oleh - oleh dibawah Rp.40000 </h5>
                     </div>
                     <div class="col-4 text-end">
                         <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehHarga" role="button"
@@ -510,8 +506,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-8">
-                                    <h5>Rekomendasi oleh - oleh dari lokasi yang pernah kamu kunjungi <a class="text-secondary"
-                                            href="#" style="font-size: 14px;"> Lebih</a></h5>
+                                    <h5>Rekomendasi oleh - oleh dari lokasi yang pernah kamu kunjungi </h5>
                                 </div>
                                 <div class="col-4 text-end">
                                     <a class="btn btn-secondary mb-3 mr-1 btn-sm" data-bs-target="#olehPernah" role="button"

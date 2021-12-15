@@ -577,7 +577,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                                {{-- <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a> --}}
                             </div>
                         </div>
                     </section>
@@ -699,7 +699,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a>
+                                {{-- <a href="#" class="link-dark text-end col-12">Lebih Banyak >>></a> --}}
                             </div>
                         </div>
                     </section>
